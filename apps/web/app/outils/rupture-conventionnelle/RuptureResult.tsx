@@ -3,6 +3,7 @@
 import { ResultCard } from "@ecosysteme/ui";
 import type { RuptureOutput } from "@ecosysteme/core/salary";
 import { track } from "@ecosysteme/analytics";
+import { ExportPDFButton } from "../../lib/ExportPDFButton";
 
 interface RuptureResultProps {
   result: RuptureOutput;
@@ -76,6 +77,29 @@ export function RuptureResult({ result, conventionCollective }: RuptureResultPro
             </div>
           </div>
         }
+      />
+
+      <ExportPDFButton
+        toolSlug="rupture-conventionnelle"
+        templateData={{
+          title: "Calcul indemnite rupture conventionnelle",
+          toolName: "Rupture conventionnelle",
+          generatedAt: new Date().toLocaleDateString("fr-FR"),
+          sections: [
+            {
+              heading: "Resultat",
+              rows: [
+                { label: "Salaire de reference", value: `${formatEuros(detail.baseCalcul)} EUR/mois` },
+                { label: "Anciennete", value: formatAnciennete(detail.ancienneteTotaleEnAnnees) },
+                { label: "Tranche 1 (jusqu'a 10 ans)", value: `${formatEuros(detail.montantPremierTranche)} EUR` },
+                { label: "Tranche 2 (au-dela de 10 ans)", value: `${formatEuros(detail.montantDeuxiemeTranche)} EUR` },
+                { label: "Indemnite minimale legale", value: `${formatEuros(result.montantMinimalLegal)} EUR` },
+              ],
+            },
+          ],
+          sources: [{ label: "Code du travail — Art. L1237-19-1", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000036761986" }],
+          disclaimer: "Les resultats sont fournis a titre indicatif. Consultez un professionnel pour toute decision.",
+        }}
       />
 
       {!conventionCollective && (
