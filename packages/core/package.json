@@ -1,0 +1,45 @@
+{
+  "name": "@ecosysteme/core",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./salary": {
+      "types": "./dist/salary/index.d.ts",
+      "import": "./dist/salary/index.js"
+    },
+    "./fiscal": {
+      "types": "./dist/fiscal/index.d.ts",
+      "import": "./dist/fiscal/index.js"
+    },
+    "./property": {
+      "types": "./dist/property/index.d.ts",
+      "import": "./dist/property/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@ecosysteme/tsconfig": "workspace:*",
+    "@ecosysteme/eslint-config": "workspace:*",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0",
+    "eslint": "^9.0.0"
+  }
+}
