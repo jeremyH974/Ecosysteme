@@ -23,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const guides = [
     "comment-calculer-indemnite-rupture-conventionnelle",
+    "smic-2026",
+    "differences-brut-net",
+    "salaire-cadre-non-cadre",
+    "2500-brut-en-net",
+    "3000-brut-en-net",
+    "2000-brut-en-net",
   ];
 
   return [

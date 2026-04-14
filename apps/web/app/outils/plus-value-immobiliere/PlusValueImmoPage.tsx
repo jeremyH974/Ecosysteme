@@ -8,6 +8,7 @@ import type { PlusValueImmoOutput } from "@ecosysteme/core/property";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_PV } from "../../lib/faq-data";
+import { PlusValueContent } from "./PlusValueContent";
 
 function fmt(n: number) {
   return new Intl.NumberFormat("fr-FR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(n));
@@ -202,6 +203,7 @@ export function PlusValueImmoPage() {
         </div>
       </div>
 
+      <PlusValueContent />
       <FAQ items={FAQ_PV} />
     </ToolLayout>
   );

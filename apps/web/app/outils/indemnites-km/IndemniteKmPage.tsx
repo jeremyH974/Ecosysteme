@@ -8,6 +8,7 @@ import type { IndemniteKmOutput } from "@ecosysteme/core/fiscal";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_KM } from "../../lib/faq-data";
+import { IndemniteKmContent } from "./IndemniteKmContent";
 
 const BAREME_KM = [
   { puissance: "3", jusqu_a_5000: { coeff: 0.529, ajout: 0 }, de_5001_a_20000: { coeff: 0.316, ajout: 1065 }, au_dela_20000: { coeff: 0.370, ajout: 0 } },
@@ -159,6 +160,7 @@ export function IndemniteKmPage() {
         </div>
       </div>
 
+      <IndemniteKmContent />
       <FAQ items={FAQ_KM} />
     </ToolLayout>
   );

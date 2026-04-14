@@ -8,6 +8,7 @@ import type { ComparateurStatutsOutput } from "@ecosysteme/core/fiscal";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_COMPARATEUR } from "../../lib/faq-data";
+import { ComparateurContent } from "./ComparateurContent";
 
 const TRANCHES_IR = [
   { de: 0, jusqu_a: 11600, taux: 0.00 },
@@ -229,6 +230,7 @@ export function ComparateurStatutsPage() {
         </div>
       </div>
 
+      <ComparateurContent />
       <FAQ items={FAQ_COMPARATEUR} />
     </ToolLayout>
   );
