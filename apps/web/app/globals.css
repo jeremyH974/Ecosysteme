@@ -53,3 +53,12 @@
 body {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
+
+/* Force input text color for readability in both modes */
+input, select, textarea {
+  color: var(--color-foreground);
+}
+input::placeholder {
+  color: var(--color-muted);
+}
+
