@@ -8,6 +8,7 @@ import type { BrutNetOutput } from "@ecosysteme/core/salary";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_BRUT_NET } from "../../lib/faq-data";
+import { BrutNetContent } from "./BrutNetContent";
 
 // Taux 2024
 const TAUX = {
@@ -452,6 +453,8 @@ export function SimuBrutNetPage() {
           <ToolRecommendations currentToolSlug="simu-brut-net" />
         </div>
       )}
+
+      <BrutNetContent />
 
       <FAQ items={FAQ_BRUT_NET} />
     </ToolLayout>
