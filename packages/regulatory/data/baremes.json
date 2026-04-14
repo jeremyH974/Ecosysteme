@@ -1,7 +1,7 @@
 {
   "baremes": [
     {
-      "id": "rupture_conventionnelle_2024",
+      "id": "rupture_conventionnelle",
       "nom": "Indemnite rupture conventionnelle",
       "categorie": "rupture_conventionnelle",
       "valeur": {
@@ -14,25 +14,25 @@
       "date_debut": "2017-09-23T00:00:00Z",
       "date_fin": null,
       "source_url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000036761986",
-      "source_label": "Code du travail — Art. L1237-19-1",
-      "verifie_le": "2024-01-15T00:00:00Z",
-      "verifie_par": "INIT"
+      "source_label": "Code du travail — Art. L1234-9 et L1237-13",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
     },
     {
-      "id": "smic_horaire_2024",
-      "nom": "SMIC horaire brut 2024",
+      "id": "smic_2026",
+      "nom": "SMIC horaire brut 2026",
       "categorie": "smic",
-      "valeur": 11.65,
-      "date_debut": "2024-01-01T00:00:00Z",
+      "valeur": 12.02,
+      "date_debut": "2026-01-01T00:00:00Z",
       "date_fin": null,
-      "source_url": "https://www.service-public.fr/particuliers/vosdroits/F2300",
-      "source_label": "Service-Public.fr — SMIC 2024",
-      "verifie_le": "2024-01-15T00:00:00Z",
-      "verifie_par": "INIT"
+      "source_url": "https://www.info.gouv.fr/actualite/le-smic-revalorise-au-1er-janvier-2026",
+      "source_label": "info.gouv.fr — SMIC 2026 (+1.18%)",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
     },
     {
-      "id": "cotisations_salariales_2024",
-      "nom": "Cotisations salariales 2024",
+      "id": "cotisations_salariales_2026",
+      "nom": "Cotisations salariales 2026",
       "categorie": "cotisations_salariales",
       "valeur": {
         "base_csg_crds": 0.9825,
@@ -46,63 +46,64 @@
         "ceg_t2": 0.0108,
         "apec": 0.00024
       },
-      "date_debut": "2024-01-01T00:00:00Z",
+      "date_debut": "2026-01-01T00:00:00Z",
       "date_fin": null,
       "source_url": "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-secteur-prive.html",
-      "source_label": "URSSAF — Taux de cotisations secteur prive 2024",
-      "verifie_le": "2024-01-15T00:00:00Z",
-      "verifie_par": "INIT"
+      "source_label": "URSSAF — Taux cotisations salariales 2026",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT",
+      "notes": "Taux salariales inchanges par rapport a 2024/2025. Seules les patronales vieillesse deplafonnee ont change (2.02->2.11%)"
     },
     {
-      "id": "pass_2024",
-      "nom": "Plafond Annuel Securite Sociale 2024",
+      "id": "pass_2026",
+      "nom": "Plafond Securite Sociale 2026",
       "categorie": "cotisations_salariales",
       "valeur": {
-        "pass_mensuel": 3864,
-        "pass_annuel": 46368
+        "pass_mensuel": 4005,
+        "pass_annuel": 48060
       },
-      "date_debut": "2024-01-01T00:00:00Z",
+      "date_debut": "2026-01-01T00:00:00Z",
       "date_fin": null,
-      "source_url": "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/plafonds.html",
-      "source_label": "URSSAF — Plafond Securite Sociale 2024",
-      "verifie_le": "2024-01-15T00:00:00Z",
-      "verifie_par": "INIT"
+      "source_url": "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/plafonds-securite-sociale.html",
+      "source_label": "URSSAF — PASS 2026 (+2%)",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
     },
     {
-      "id": "tranches_ir_2024",
-      "nom": "Bareme impot sur le revenu 2024 (revenus 2023)",
+      "id": "tranches_ir_2026",
+      "nom": "Bareme IR 2026 (revenus 2025)",
       "categorie": "tranches_ir",
       "valeur": {
         "tranches": [
-          { "de": 0, "jusqu_a": 11293, "taux": 0.00 },
-          { "de": 11294, "jusqu_a": 28797, "taux": 0.11 },
-          { "de": 28798, "jusqu_a": 82341, "taux": 0.30 },
-          { "de": 82342, "jusqu_a": 177106, "taux": 0.41 },
-          { "de": 177107, "jusqu_a": null, "taux": 0.45 }
+          { "de": 0, "jusqu_a": 11600, "taux": 0.00 },
+          { "de": 11601, "jusqu_a": 29579, "taux": 0.11 },
+          { "de": 29580, "jusqu_a": 84577, "taux": 0.30 },
+          { "de": 84578, "jusqu_a": 181917, "taux": 0.41 },
+          { "de": 181918, "jusqu_a": null, "taux": 0.45 }
         ]
       },
-      "date_debut": "2024-01-01T00:00:00Z",
+      "date_debut": "2026-01-01T00:00:00Z",
       "date_fin": null,
-      "source_url": "https://www.service-public.fr/particuliers/vosdroits/F1419",
-      "source_label": "Service-Public.fr — Bareme IR 2024",
-      "verifie_le": "2024-01-15T00:00:00Z",
-      "verifie_par": "INIT"
+      "source_url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1419",
+      "source_label": "Service-Public — Bareme IR 2026 (revenus 2025, +0.9%)",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
     },
     {
-      "id": "taux_is_2024",
-      "nom": "Taux impot sur les societes 2024",
+      "id": "taux_is_2026",
+      "nom": "Taux IS 2026",
       "categorie": "taux_is",
       "valeur": {
         "taux_reduit": 0.15,
         "seuil_reduit": 42500,
         "taux_normal": 0.25
       },
-      "date_debut": "2024-01-01T00:00:00Z",
+      "date_debut": "2026-01-01T00:00:00Z",
       "date_fin": null,
-      "source_url": "https://entreprendre.service-public.fr/vosdroits/F23575",
-      "source_label": "Service-Public Entreprendre — IS 2024",
-      "verifie_le": "2024-01-15T00:00:00Z",
-      "verifie_par": "INIT"
+      "source_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F23575",
+      "source_label": "Service-Public Entreprendre — IS 2026 (inchange)",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
     },
     {
       "id": "irl_t4_2023",
@@ -111,10 +112,10 @@
       "valeur": { "trimestre": "T4", "annee": 2023, "indice": 142.06 },
       "date_debut": "2024-01-15T00:00:00Z",
       "date_fin": null,
-      "source_url": "https://www.insee.fr/fr/statistiques/serie/001515333",
-      "source_label": "INSEE — IRL T4 2023",
-      "verifie_le": "2024-01-20T00:00:00Z",
-      "verifie_par": "INIT"
+      "source_url": "https://www.anil.org/outils/indices-et-plafonds/tableau-de-lirl/",
+      "source_label": "ANIL/INSEE — IRL T4 2023",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
     },
     {
       "id": "irl_t1_2024",
@@ -123,10 +124,10 @@
       "valeur": { "trimestre": "T1", "annee": 2024, "indice": 143.46 },
       "date_debut": "2024-04-15T00:00:00Z",
       "date_fin": null,
-      "source_url": "https://www.insee.fr/fr/statistiques/serie/001515333",
-      "source_label": "INSEE — IRL T1 2024",
-      "verifie_le": "2024-04-20T00:00:00Z",
-      "verifie_par": "INIT"
+      "source_url": "https://www.anil.org/outils/indices-et-plafonds/tableau-de-lirl/",
+      "source_label": "ANIL/INSEE — IRL T1 2024",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
     },
     {
       "id": "irl_t2_2024",
@@ -135,10 +136,10 @@
       "valeur": { "trimestre": "T2", "annee": 2024, "indice": 145.17 },
       "date_debut": "2024-07-15T00:00:00Z",
       "date_fin": null,
-      "source_url": "https://www.insee.fr/fr/statistiques/serie/001515333",
-      "source_label": "INSEE — IRL T2 2024",
-      "verifie_le": "2024-07-20T00:00:00Z",
-      "verifie_par": "INIT"
+      "source_url": "https://www.anil.org/outils/indices-et-plafonds/tableau-de-lirl/",
+      "source_label": "ANIL/INSEE — IRL T2 2024",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
     },
     {
       "id": "irl_t3_2024",
@@ -147,10 +148,10 @@
       "valeur": { "trimestre": "T3", "annee": 2024, "indice": 144.51 },
       "date_debut": "2024-10-15T00:00:00Z",
       "date_fin": null,
-      "source_url": "https://www.insee.fr/fr/statistiques/serie/001515333",
-      "source_label": "INSEE — IRL T3 2024",
-      "verifie_le": "2024-10-20T00:00:00Z",
-      "verifie_par": "INIT"
+      "source_url": "https://www.anil.org/outils/indices-et-plafonds/tableau-de-lirl/",
+      "source_label": "ANIL/INSEE — IRL T3 2024",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
     },
     {
       "id": "irl_t4_2024",
@@ -159,10 +160,58 @@
       "valeur": { "trimestre": "T4", "annee": 2024, "indice": 144.64 },
       "date_debut": "2025-01-15T00:00:00Z",
       "date_fin": null,
-      "source_url": "https://www.insee.fr/fr/statistiques/serie/001515333",
-      "source_label": "INSEE — IRL T4 2024",
-      "verifie_le": "2025-01-20T00:00:00Z",
-      "verifie_par": "INIT"
+      "source_url": "https://www.anil.org/outils/indices-et-plafonds/tableau-de-lirl/",
+      "source_label": "ANIL/INSEE — IRL T4 2024",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
+    },
+    {
+      "id": "irl_t1_2025",
+      "nom": "IRL T1 2025",
+      "categorie": "indices_loyers",
+      "valeur": { "trimestre": "T1", "annee": 2025, "indice": 145.47 },
+      "date_debut": "2025-04-15T00:00:00Z",
+      "date_fin": null,
+      "source_url": "https://www.anil.org/outils/indices-et-plafonds/tableau-de-lirl/",
+      "source_label": "ANIL/INSEE — IRL T1 2025 (+1.40%)",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
+    },
+    {
+      "id": "irl_t2_2025",
+      "nom": "IRL T2 2025",
+      "categorie": "indices_loyers",
+      "valeur": { "trimestre": "T2", "annee": 2025, "indice": 146.68 },
+      "date_debut": "2025-07-15T00:00:00Z",
+      "date_fin": null,
+      "source_url": "https://www.anil.org/outils/indices-et-plafonds/tableau-de-lirl/",
+      "source_label": "ANIL/INSEE — IRL T2 2025 (+1.04%)",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
+    },
+    {
+      "id": "irl_t3_2025",
+      "nom": "IRL T3 2025",
+      "categorie": "indices_loyers",
+      "valeur": { "trimestre": "T3", "annee": 2025, "indice": 145.77 },
+      "date_debut": "2025-10-15T00:00:00Z",
+      "date_fin": null,
+      "source_url": "https://www.anil.org/outils/indices-et-plafonds/tableau-de-lirl/",
+      "source_label": "ANIL/INSEE — IRL T3 2025 (+0.87%)",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
+    },
+    {
+      "id": "irl_t4_2025",
+      "nom": "IRL T4 2025",
+      "categorie": "indices_loyers",
+      "valeur": { "trimestre": "T4", "annee": 2025, "indice": 145.78 },
+      "date_debut": "2026-01-15T00:00:00Z",
+      "date_fin": null,
+      "source_url": "https://www.anil.org/outils/indices-et-plafonds/tableau-de-lirl/",
+      "source_label": "ANIL/INSEE — IRL T4 2025 (+0.79%)",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
     }
   ]
 }

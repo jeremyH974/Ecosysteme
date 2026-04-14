@@ -11,11 +11,11 @@ export interface TMIFormData {
 }
 
 const TRANCHES_DEFAUT = [
-  { de: 0, jusqu_a: 11293, taux: 0.00 },
-  { de: 11294, jusqu_a: 28797, taux: 0.11 },
-  { de: 28798, jusqu_a: 82341, taux: 0.30 },
-  { de: 82342, jusqu_a: 177106, taux: 0.41 },
-  { de: 177107, jusqu_a: null, taux: 0.45 },
+  { de: 0, jusqu_a: 11600, taux: 0.00 },
+  { de: 11601, jusqu_a: 29579, taux: 0.11 },
+  { de: 29580, jusqu_a: 84577, taux: 0.30 },
+  { de: 84578, jusqu_a: 181917, taux: 0.41 },
+  { de: 181918, jusqu_a: null, taux: 0.45 },
 ];
 
 export function useTMI() {

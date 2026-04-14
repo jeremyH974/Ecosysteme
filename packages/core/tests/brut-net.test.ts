@@ -14,7 +14,7 @@ const TAUX_2024 = {
   agircArrcoT2: 0.0864,
   cegT2: 0.0108,
   apec: 0.00024,
-  passMensuel: 3864,
+  passMensuel: 4005,
 };
 
 function calc(salaire: number, statut: "non_cadre" | "cadre" = "non_cadre", tempsPartiel = 1) {
@@ -54,7 +54,7 @@ describe("calculerBrutNet", () => {
 
   test("Cas 3 — Non-cadre 3000 EUR : sous le PASS, pas de T2", () => {
     const result = calc(3000);
-    // 3000 < 3864 → montant AGIRC T2 = 0
+    // 3000 < 4005 → montant AGIRC T2 = 0
     // Retraite complementaire = T1 seulement : 3000 * 0.0315 = 94.50
     expect(result.detail.montantRetraiteComplementaire).toBeCloseTo(3000 * 0.0315, 2);
     expect(result.detail.montantApec).toBe(0);
@@ -77,17 +77,17 @@ describe("calculerBrutNet", () => {
   // CAS AVEC DEPASSEMENT DU PASS (tranche 2)
   // =====================================================
 
-  test("Cas 6 — Salaire = PASS exactement (3864 EUR)", () => {
-    const result = calc(3864);
+  test("Cas 6 — Salaire = PASS exactement (4005 EUR)", () => {
+    const result = calc(4005);
     // Brut T2 = 0 → pas de cotisations T2
-    expect(result.detail.montantRetraiteComplementaire).toBeCloseTo(3864 * 0.0315, 2);
+    expect(result.detail.montantRetraiteComplementaire).toBeCloseTo(4005 * 0.0315, 2);
   });
 
   test("Cas 7 — Salaire au-dessus du PASS (5000 EUR)", () => {
     const result = calc(5000);
-    const brutT2 = 5000 - 3864; // 1136
+    const brutT2 = 5000 - 4005; // 1136
     // Retraite complementaire = T1 + T2 + CEG T2
-    const expectedT1 = 3864 * 0.0315;
+    const expectedT1 = 4005 * 0.0315;
     const expectedT2 = brutT2 * 0.0864;
     const expectedCeg = brutT2 * 0.0108;
     expect(result.detail.montantRetraiteComplementaire).toBeCloseTo(
@@ -104,7 +104,7 @@ describe("calculerBrutNet", () => {
 
   test("Cas 9 — Salaire 3x PASS (11592 EUR)", () => {
     const result = calc(11592);
-    const brutT2 = 11592 - 3864;
+    const brutT2 = 11592 - 4005;
     const expectedAgircT2 = brutT2 * 0.0864;
     expect(expectedAgircT2).toBeGreaterThan(600); // verification sanity
     expect(result.salaireNetAvantImpot).toBeGreaterThan(0);
@@ -115,11 +115,11 @@ describe("calculerBrutNet", () => {
   // SMIC ET PETITS SALAIRES
   // =====================================================
 
-  test("Cas 10 — Salaire au SMIC (1766.92 EUR)", () => {
-    const result = calc(1766.92);
-    // Sous le PASS, pas de T2
-    expect(result.salaireNetAvantImpot).toBeGreaterThan(1350);
-    expect(result.salaireNetAvantImpot).toBeLessThan(1450);
+  test("Cas 10 — Salaire au SMIC 2026 (1823.07 EUR brut)", () => {
+    const result = calc(1823.07);
+    // ~20% cotisations → net ~1458
+    expect(result.salaireNetAvantImpot).toBeGreaterThan(1400);
+    expect(result.salaireNetAvantImpot).toBeLessThan(1500);
   });
 
   test("Cas 11 — Salaire 1200 EUR (temps partiel)", () => {
@@ -134,7 +134,7 @@ describe("calculerBrutNet", () => {
 
   test("Cas 12 — Temps partiel 50%, salaire 1250 EUR", () => {
     const result = calc(1250, "non_cadre", 0.5);
-    // PASS ajuste = 3864 * 0.5 = 1932
+    // PASS ajuste = 4005 * 0.5 = 1932
     // 1250 < 1932 → tout en T1
     expect(result.detail.montantVieillessePlafonnee).toBeCloseTo(1250 * 0.069, 2);
     expect(result.salaireNetAvantImpot).toBeGreaterThan(900);
@@ -142,18 +142,18 @@ describe("calculerBrutNet", () => {
 
   test("Cas 13 — Temps partiel 80%, salaire 2000 EUR", () => {
     const result = calc(2000, "non_cadre", 0.8);
-    // PASS ajuste = 3864 * 0.8 = 3091.20
+    // PASS ajuste = 4005 * 0.8 = 3091.20
     // 2000 < 3091.20 → tout en T1
     expect(result.detail.montantVieillessePlafonnee).toBeCloseTo(2000 * 0.069, 2);
   });
 
   test("Cas 14 — Temps partiel 50% avec depassement PASS ajuste", () => {
-    // PASS ajuste = 3864 * 0.5 = 1932
+    // PASS ajuste = 4005 * 0.5 = 1932
     // Salaire 2500 > 1932 → T2 = 568
     const result = calc(2500, "non_cadre", 0.5);
-    const passAjuste = 3864 * 0.5;
+    const passAjuste = 4005 * 0.5;
     const brutT2 = 2500 - passAjuste;
-    expect(brutT2).toBeCloseTo(568, 0);
+    expect(brutT2).toBeCloseTo(497.5, 0);
     expect(result.detail.montantRetraiteComplementaire).toBeGreaterThan(
       2500 * 0.0315, // serait plus car T2
     );

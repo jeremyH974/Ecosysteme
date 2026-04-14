@@ -13,10 +13,10 @@ import { BrutNetContent } from "./BrutNetContent";
 const TAUX = {
   baseCsgCrds: 0.9825, csgDeductible: 0.068, csgNonDeductible: 0.024, crds: 0.005,
   vieillessePlafonnee: 0.069, vieillesseDeplafonnee: 0.004, agircArrcoT1: 0.0315,
-  agircArrcoT2: 0.0864, cegT2: 0.0108, apec: 0.00024, passMensuel: 3864,
+  agircArrcoT2: 0.0864, cegT2: 0.0108, apec: 0.00024, passMensuel: 4005,
 };
 
-const SMIC_HORAIRE = 11.65;
+const SMIC_HORAIRE = 12.02;
 const HEURES_MOIS_STD = 151.67;
 
 type Statut = "non_cadre" | "cadre";

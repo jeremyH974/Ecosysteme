@@ -3,19 +3,19 @@ import { getBaremeActif, getBaremesParCategorie, getAllBaremes } from "../src/st
 
 describe("getBaremeActif", () => {
   test("retourne le bareme SMIC actif", () => {
-    const smic = getBaremeActif("smic", new Date("2024-06-15"));
-    expect(smic.id).toBe("smic_horaire_2024");
-    expect(smic.valeur).toBe(11.65);
+    const smic = getBaremeActif("smic", new Date("2026-04-01"));
+    expect(smic.id).toBe("smic_2026");
+    expect(smic.valeur).toBe(12.02);
   });
 
   test("retourne le bareme rupture conventionnelle actif", () => {
-    const rupture = getBaremeActif("rupture_conventionnelle", new Date("2024-06-15"));
-    expect(rupture.id).toBe("rupture_conventionnelle_2024");
+    const rupture = getBaremeActif("rupture_conventionnelle", new Date("2026-04-01"));
+    expect(rupture.id).toBe("rupture_conventionnelle");
     expect(rupture.categorie).toBe("rupture_conventionnelle");
   });
 
   test("leve une erreur pour une categorie sans bareme", () => {
-    expect(() => getBaremeActif("baremes_km", new Date("2024-06-15"))).toThrow(
+    expect(() => getBaremeActif("baremes_km", new Date("2026-04-01"))).toThrow(
       "BAREME_INTROUVABLE",
     );
   });
@@ -39,8 +39,8 @@ describe("getBaremesParCategorie", () => {
 });
 
 describe("getAllBaremes", () => {
-  test("retourne au moins 2 baremes (seed data)", () => {
+  test("retourne au moins 10 baremes", () => {
     const all = getAllBaremes();
-    expect(all.length).toBeGreaterThanOrEqual(2);
+    expect(all.length).toBeGreaterThanOrEqual(10);
   });
 });
