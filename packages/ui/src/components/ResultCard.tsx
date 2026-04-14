@@ -14,37 +14,41 @@ export function ResultCard({ label, value, unit, interpretation, detail }: Resul
   const [detailOpen, setDetailOpen] = useState(false);
 
   return (
-    <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+    <div className="overflow-hidden rounded-xl border border-border bg-surface-card shadow-sm">
       {/* Resultat principal */}
-      <div className="border-b border-gray-100 bg-gradient-to-br from-emerald-50/50 to-white p-6">
-        <p className="text-xs font-medium uppercase tracking-wider text-emerald-700">{label}</p>
-
-        <p className="mt-3 flex items-baseline gap-2">
-          <span className="text-4xl font-extrabold tracking-tight text-gray-900">{value}</span>
-          {unit && <span className="text-base font-medium text-gray-400">{unit}</span>}
+      <div className="border-b border-border/60 bg-accent-light px-5 py-5 sm:px-6">
+        <p className="text-xs font-semibold uppercase tracking-wider text-accent">{label}</p>
+        <p className="mt-2.5 flex items-baseline gap-2">
+          <span className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">{value}</span>
+          {unit && <span className="text-sm font-medium text-muted">{unit}</span>}
         </p>
       </div>
 
       {/* Interpretation */}
-      <div className="p-6">
-        <p className="text-sm leading-relaxed text-gray-600">{interpretation}</p>
+      <div className="px-5 py-4 sm:px-6">
+        <p className="text-[13px] leading-relaxed text-muted">{interpretation}</p>
 
         {detail && (
-          <div className="mt-5">
+          <div className="mt-4 border-t border-border/60 pt-4">
             <button
               type="button"
               onClick={() => setDetailOpen((prev) => !prev)}
-              className="inline-flex items-center gap-1 text-sm font-medium text-emerald-700 hover:text-emerald-800 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-accent transition-colors hover:text-accent-hover"
               aria-expanded={detailOpen}
             >
-              <span className="inline-block transition-transform duration-200" style={{ transform: detailOpen ? "rotate(90deg)" : "rotate(0deg)" }}>
-                &#9654;
-              </span>
-              {detailOpen ? "Masquer le detail" : "Voir le detail du calcul"}
+              <svg
+                className="h-3 w-3 transition-transform duration-200"
+                style={{ transform: detailOpen ? "rotate(90deg)" : "rotate(0deg)" }}
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
+              </svg>
+              {detailOpen ? "Masquer le detail" : "Detail du calcul"}
             </button>
 
             {detailOpen && (
-              <div className="mt-4 rounded-lg border border-gray-100 bg-stone-50 p-5 text-sm animate-in fade-in duration-200">
+              <div className="mt-3 rounded-lg bg-surface p-4 text-sm">
                 {detail}
               </div>
             )}

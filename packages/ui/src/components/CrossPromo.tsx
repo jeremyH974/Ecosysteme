@@ -6,17 +6,17 @@ export interface CrossPromoProps {
 
 export function CrossPromo({ toolName, toolUrl, description }: CrossPromoProps) {
   return (
-    <div className="rounded-md border border-gray-100 bg-gray-50 p-4">
-      <p className="text-xs font-medium uppercase tracking-wide text-gray-400">
-        Vous pourriez aussi avoir besoin de...
+    <a
+      href={toolUrl}
+      className="group block rounded-lg border border-border bg-surface-card p-4 transition-all hover:border-accent/30 hover:shadow-sm"
+    >
+      <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-light">
+        Outil recommande
       </p>
-      <a
-        href={toolUrl}
-        className="mt-1 block text-sm font-medium text-emerald-700 hover:text-emerald-800"
-      >
+      <p className="mt-1 text-sm font-medium text-foreground group-hover:text-accent">
         {toolName}
-      </a>
-      <p className="mt-0.5 text-xs text-gray-500">{description}</p>
-    </div>
+      </p>
+      <p className="mt-0.5 text-xs text-muted">{description}</p>
+    </a>
   );
 }

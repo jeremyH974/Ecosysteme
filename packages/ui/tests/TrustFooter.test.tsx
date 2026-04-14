@@ -24,7 +24,7 @@ describe("TrustFooter", () => {
 
   test("affiche le lien vers la source", () => {
     render(<TrustFooter {...defaultProps} />);
-    const link = screen.getByRole("link", { name: "Voir la source" });
+    const link = screen.getByRole("link", { name: "consulter" });
     expect(link).toHaveAttribute(
       "href",
       "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000036761986",

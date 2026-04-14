@@ -19,26 +19,43 @@ export const metadata: Metadata = {
 
 function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-gray-200/80 bg-white/80 backdrop-blur-lg">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-emerald-700 text-xs font-bold text-white">E</span>
-          <span className="text-sm font-semibold tracking-tight text-gray-900">Ecosysteme</span>
+    <nav className="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-md">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3">
+        <Link href="/" className="flex items-center gap-2.5">
+          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent text-sm font-bold text-white">E</span>
+          <span className="text-[15px] font-semibold tracking-tight text-foreground">Ecosysteme</span>
         </Link>
-        <div className="flex items-center gap-6">
-          <Link href="/outils" className="text-sm text-gray-600 hover:text-gray-900">Outils</Link>
+        <div className="flex items-center gap-5">
+          <Link href="/outils" className="text-sm text-muted transition-colors hover:text-foreground">Tous les outils</Link>
         </div>
       </div>
     </nav>
   );
 }
 
+function Footer() {
+  return (
+    <footer className="border-t border-border bg-white">
+      <div className="mx-auto max-w-5xl px-5 py-8">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-sm font-medium text-foreground">Ecosysteme</p>
+            <p className="mt-0.5 text-xs text-muted">Calculateurs utilitaires de reference pour la France</p>
+          </div>
+          <p className="text-xs text-muted-light">Resultats indicatifs. Sources officielles citees sur chaque outil.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body className="min-h-screen bg-stone-50 font-sans text-gray-900 antialiased">
+      <body className="min-h-screen bg-surface font-sans text-foreground antialiased">
         <Navbar />
-        {children}
+        <div className="min-h-[calc(100vh-120px)]">{children}</div>
+        <Footer />
       </body>
     </html>
   );

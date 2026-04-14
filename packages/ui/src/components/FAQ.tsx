@@ -17,22 +17,31 @@ export function FAQ({ items, title = "Questions frequentes" }: FAQProps) {
 
   return (
     <div className="mt-12">
-      <h2 className="text-lg font-bold text-gray-900">{title}</h2>
-      <div className="mt-4 divide-y divide-gray-200 border-t border-gray-200">
+      <h2 className="text-base font-bold text-foreground">{title}</h2>
+      <div className="mt-4 divide-y divide-border rounded-xl border border-border bg-surface-card overflow-hidden">
         {items.map((item, i) => (
           <div key={i}>
             <button
               type="button"
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              className="flex w-full items-center justify-between py-4 text-left"
+              className="flex w-full items-center justify-between px-5 py-3.5 text-left transition-colors hover:bg-surface"
               aria-expanded={openIndex === i}
             >
-              <span className="text-sm font-medium text-gray-900">{item.question}</span>
-              <span className="ml-4 text-gray-400">{openIndex === i ? "−" : "+"}</span>
+              <span className="text-sm font-medium text-foreground pr-4">{item.question}</span>
+              <svg
+                className="h-4 w-4 shrink-0 text-muted transition-transform duration-200"
+                style={{ transform: openIndex === i ? "rotate(180deg)" : "rotate(0deg)" }}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
             {openIndex === i && (
-              <div className="pb-4 pr-8">
-                <p className="text-sm leading-relaxed text-gray-600">{item.answer}</p>
+              <div className="border-t border-border/50 bg-surface px-5 py-4">
+                <p className="text-sm leading-relaxed text-muted">{item.answer}</p>
               </div>
             )}
           </div>
