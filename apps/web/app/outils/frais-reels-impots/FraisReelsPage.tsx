@@ -5,7 +5,7 @@ import { ToolLayout, TrustFooter, FormField, FAQ } from "@ecosysteme/ui";
 import { track } from "@ecosysteme/analytics";
 import { calculerFraisReels } from "@ecosysteme/core/fiscal";
 import type { FraisReelsOutput } from "@ecosysteme/core/fiscal";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_FRAIS_REELS } from "../../lib/faq-data";
 import { FraisReelsContent } from "./FraisReelsContent";
@@ -296,7 +296,7 @@ export function FraisReelsPage() {
                   disclaimer: "Les resultats sont fournis a titre indicatif. Consultez un expert-comptable pour votre declaration.",
                 }} />
               </div>
-              <ToolRecommendations currentToolSlug="frais-reels-impots" />
+              <NextStepBlock currentToolSlug="frais-reels-impots" />
             </>
           )}
 

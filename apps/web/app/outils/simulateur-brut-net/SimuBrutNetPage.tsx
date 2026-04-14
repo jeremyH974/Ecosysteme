@@ -5,7 +5,7 @@ import { ToolLayout, TrustFooter, FAQ } from "@ecosysteme/ui";
 import { track } from "@ecosysteme/analytics";
 import { calculerBrutNet } from "@ecosysteme/core/salary";
 import type { BrutNetOutput } from "@ecosysteme/core/salary";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_BRUT_NET } from "../../lib/faq-data";
 import { BrutNetContent } from "./BrutNetContent";
@@ -256,7 +256,7 @@ export function SimuBrutNetPage() {
               disclaimer: "Resultats indicatifs.",
             }} />
           </div>
-          <ToolRecommendations currentToolSlug="simu-brut-net" />
+          <NextStepBlock currentToolSlug="simu-brut-net" />
         </div>
       )}
 

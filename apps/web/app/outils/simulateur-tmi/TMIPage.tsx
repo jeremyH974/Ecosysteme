@@ -4,7 +4,7 @@ import { type FormEvent, useEffect, useState } from "react";
 import { ToolLayout, TrustFooter, FormField, ResultCard, FAQ } from "@ecosysteme/ui";
 import { track } from "@ecosysteme/analytics";
 import { useTMI } from "./useTMI";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_TMI } from "../../lib/faq-data";
 import { TMIContent } from "./TMIContent";
@@ -148,7 +148,7 @@ export function TMIPage() {
                   disclaimer: "Les resultats sont fournis a titre indicatif.",
                 }} />
               </div>
-              <ToolRecommendations currentToolSlug="simulateur-tmi" />
+              <NextStepBlock currentToolSlug="simulateur-tmi" />
             </>
           )}
 

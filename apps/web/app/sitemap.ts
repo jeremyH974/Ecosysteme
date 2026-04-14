@@ -54,6 +54,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     })),
 
+    // Situations — priority 0.8
+    ...["salarie", "independant", "immobilier", "impots"].map((slug) => ({
+      url: `${BASE_URL}/situations/${slug}`,
+      lastModified: LAST_MODIFIED,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+
     // Guides — priority 0.8
     ...guides.map((slug) => ({
       url: `${BASE_URL}/guides/${slug}`,

@@ -5,7 +5,7 @@ import { ToolLayout, TrustFooter, FormField, ResultCard, FAQ } from "@ecosysteme
 import { track } from "@ecosysteme/analytics";
 import { comparerStatuts } from "@ecosysteme/core/fiscal";
 import type { ComparateurStatutsOutput } from "@ecosysteme/core/fiscal";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_COMPARATEUR } from "../../lib/faq-data";
 import { ComparateurContent } from "./ComparateurContent";
@@ -218,7 +218,7 @@ export function ComparateurStatutsPage() {
                   disclaimer: "Les resultats sont fournis a titre indicatif. Simulation simplifiee, consultez un expert-comptable.",
                 }} />
               </div>
-              <ToolRecommendations currentToolSlug="comparateur-statuts" />
+              <NextStepBlock currentToolSlug="comparateur-statuts" />
             </>
           )}
 

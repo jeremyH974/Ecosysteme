@@ -5,7 +5,7 @@ import { ToolLayout, TrustFooter, FormField, ResultCard, FAQ } from "@ecosysteme
 import { track } from "@ecosysteme/analytics";
 import { calculerPlusValueImmo } from "@ecosysteme/core/property";
 import type { PlusValueImmoOutput } from "@ecosysteme/core/property";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_PV } from "../../lib/faq-data";
 import { PlusValueContent } from "./PlusValueContent";
@@ -191,7 +191,7 @@ export function PlusValueImmoPage() {
                   disclaimer: "Les resultats sont fournis a titre indicatif.",
                 }} />
               </div>
-              <ToolRecommendations currentToolSlug="plus-value-immo" />
+              <NextStepBlock currentToolSlug="plus-value-immo" />
             </>
           )}
 

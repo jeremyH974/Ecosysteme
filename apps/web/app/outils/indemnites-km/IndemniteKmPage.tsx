@@ -5,7 +5,7 @@ import { ToolLayout, TrustFooter, FormField, ResultCard, FAQ } from "@ecosysteme
 import { track } from "@ecosysteme/analytics";
 import { calculerIndemnitesKm } from "@ecosysteme/core/fiscal";
 import type { IndemniteKmOutput } from "@ecosysteme/core/fiscal";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_KM } from "../../lib/faq-data";
 import { IndemniteKmContent } from "./IndemniteKmContent";
@@ -148,7 +148,7 @@ export function IndemniteKmPage() {
                   disclaimer: "Les resultats sont fournis a titre indicatif.",
                 }} />
               </div>
-              <ToolRecommendations currentToolSlug="indemnites-km" />
+              <NextStepBlock currentToolSlug="indemnites-km" />
             </>
           )}
 

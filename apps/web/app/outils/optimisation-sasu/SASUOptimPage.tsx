@@ -6,7 +6,7 @@ import { track } from "@ecosysteme/analytics";
 import { SASUOptimForm } from "./SASUOptimForm";
 import { SASUOptimResult } from "./SASUOptimResult";
 import { useSASUOptim } from "./useSASUOptim";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { FAQ_SASU } from "../../lib/faq-data";
 import { SASUContent } from "./SASUContent";
 
@@ -62,7 +62,7 @@ export function SASUOptimPage() {
           {result && (
             <>
               <SASUOptimResult result={result} />
-              <ToolRecommendations currentToolSlug="sasu-optim" />
+              <NextStepBlock currentToolSlug="sasu-optim" />
             </>
           )}
 

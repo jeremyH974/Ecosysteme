@@ -6,4 +6,7 @@ export type AnalyticsEvent =
   | { name: "cross_promo_click"; props: { from: string; to: string } }
   | { name: "trust_footer_click"; props: { tool: string; source: string } }
   | { name: "detail_expanded"; props: { tool: string } }
-  | { name: "signal_not_covered"; props: { tool: string; message?: string } };
+  | { name: "signal_not_covered"; props: { tool: string; message?: string } }
+  | { name: "situation_click"; props: { situation: string } }
+  | { name: "next_step_click"; props: { from: string; to: string } }
+  | { name: "outils_filter"; props: { situation: string } };

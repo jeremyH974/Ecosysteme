@@ -6,7 +6,7 @@ import { track } from "@ecosysteme/analytics";
 import { RuptureForm } from "./RuptureForm";
 import { RuptureResult } from "./RuptureResult";
 import { useRuptureCalc } from "./useRuptureCalc";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { FAQ_RUPTURE } from "../../lib/faq-data";
 import { RuptureContent } from "./RuptureContent";
 
@@ -64,7 +64,7 @@ export function RuptureCalcPage() {
           {result && (
             <>
               <RuptureResult result={result} />
-              <ToolRecommendations currentToolSlug="rupture-calc" />
+              <NextStepBlock currentToolSlug="rupture-calc" />
             </>
           )}
 

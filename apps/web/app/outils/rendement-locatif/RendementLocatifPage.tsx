@@ -5,7 +5,7 @@ import { ToolLayout, TrustFooter, FormField, ResultCard, FAQ } from "@ecosysteme
 import { track } from "@ecosysteme/analytics";
 import { calculerRendementLocatif } from "@ecosysteme/core/property";
 import type { RendementLocatifOutput } from "@ecosysteme/core/property";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_RENDEMENT } from "../../lib/faq-data";
 import { RendementContent } from "./RendementContent";
@@ -116,7 +116,7 @@ export function RendementLocatifPage() {
                   disclaimer: "Les resultats sont fournis a titre indicatif.",
                 }} />
               </div>
-              <ToolRecommendations currentToolSlug="rendement-locatif" />
+              <NextStepBlock currentToolSlug="rendement-locatif" />
             </>
           )}
           {!result && !error && <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-gray-200 p-8"><p className="text-center text-sm text-gray-400">Remplissez le formulaire pour obtenir votre estimation</p></div>}

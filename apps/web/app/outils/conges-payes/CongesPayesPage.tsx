@@ -5,7 +5,7 @@ import { ToolLayout, TrustFooter, FAQ } from "@ecosysteme/ui";
 import { track } from "@ecosysteme/analytics";
 import { calculerCongesPayes } from "@ecosysteme/core/salary";
 import type { CongesPayesOutput } from "@ecosysteme/core/salary";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_CONGES } from "../../lib/faq-data";
 import { CongesPayesContent } from "./CongesPayesContent";
@@ -190,7 +190,7 @@ export function CongesPayesPage() {
             }} />
           </div>
 
-          <ToolRecommendations currentToolSlug="conges-payes" />
+          <NextStepBlock currentToolSlug="conges-payes" />
         </div>
       )}
 

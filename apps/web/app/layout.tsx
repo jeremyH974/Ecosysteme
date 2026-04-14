@@ -56,8 +56,12 @@ function Navbar() {
           <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-white">E</span>
           <span className="text-[15px] font-semibold tracking-tight text-foreground">Ecosysteme</span>
         </Link>
-        <div className="flex items-center gap-4">
-          <Link href="/outils" className="text-sm text-muted transition-colors hover:text-foreground">Outils</Link>
+        <div className="flex items-center gap-1 sm:gap-3 overflow-x-auto">
+          <Link href="/situations/salarie" className="whitespace-nowrap rounded-md px-2 py-1 text-xs sm:text-sm text-muted transition-colors hover:text-foreground hover:bg-surface">Salarie</Link>
+          <Link href="/situations/independant" className="whitespace-nowrap rounded-md px-2 py-1 text-xs sm:text-sm text-muted transition-colors hover:text-foreground hover:bg-surface">Independant</Link>
+          <Link href="/situations/immobilier" className="whitespace-nowrap rounded-md px-2 py-1 text-xs sm:text-sm text-muted transition-colors hover:text-foreground hover:bg-surface">Immobilier</Link>
+          <Link href="/situations/impots" className="whitespace-nowrap rounded-md px-2 py-1 text-xs sm:text-sm text-muted transition-colors hover:text-foreground hover:bg-surface">Impots</Link>
+          <Link href="/outils" className="whitespace-nowrap rounded-md px-2 py-1 text-xs sm:text-sm text-muted transition-colors hover:text-foreground hover:bg-surface">Outils</Link>
           <ThemeToggle />
         </div>
       </div>

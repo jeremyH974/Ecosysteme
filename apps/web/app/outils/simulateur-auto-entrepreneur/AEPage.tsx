@@ -5,7 +5,7 @@ import { ToolLayout, TrustFooter, FormField, ResultCard, FAQ } from "@ecosysteme
 import { track } from "@ecosysteme/analytics";
 import { calculerAutoEntrepreneur } from "@ecosysteme/core/fiscal";
 import type { AEOutput } from "@ecosysteme/core/fiscal";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_AE } from "../../lib/faq-data";
 import { AEContent } from "./AEContent";
@@ -116,7 +116,7 @@ export function AEPage() {
                   disclaimer: "Les resultats sont fournis a titre indicatif.",
                 }} />
               </div>
-              <ToolRecommendations currentToolSlug="simulateur-ae" />
+              <NextStepBlock currentToolSlug="simulateur-ae" />
             </>
           )}
           {!result && !error && <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-gray-200 p-8"><p className="text-center text-sm text-gray-400">Remplissez le formulaire pour obtenir votre estimation</p></div>}

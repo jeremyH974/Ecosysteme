@@ -5,7 +5,7 @@ import { ToolLayout, TrustFooter, FAQ } from "@ecosysteme/ui";
 import { track } from "@ecosysteme/analytics";
 import { calculerRetraite } from "@ecosysteme/core/salary";
 import type { RetraiteOutput } from "@ecosysteme/core/salary";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_RETRAITE } from "../../lib/faq-data";
 import { RetraiteContent } from "./RetraiteContent";
@@ -241,7 +241,7 @@ export function SimulateurRetraitePage() {
             }} />
           </div>
 
-          <ToolRecommendations currentToolSlug="simulateur-retraite" />
+          <NextStepBlock currentToolSlug="simulateur-retraite" />
         </div>
       )}
 

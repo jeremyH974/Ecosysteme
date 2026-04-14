@@ -6,7 +6,7 @@ import { track } from "@ecosysteme/analytics";
 import { RevisionLoyerForm } from "./RevisionLoyerForm";
 import { RevisionLoyerResult } from "./RevisionLoyerResult";
 import { useRevisionLoyer } from "./useRevisionLoyer";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { FAQ_LOYER } from "../../lib/faq-data";
 import { RevisionLoyerContent } from "./RevisionLoyerContent";
 import { IRLAlertOptIn } from "./IRLAlertOptIn";
@@ -60,7 +60,7 @@ export function RevisionLoyerPage() {
             <>
               <RevisionLoyerResult result={result} />
               <IRLAlertOptIn />
-              <ToolRecommendations currentToolSlug="revision-loyer" />
+              <NextStepBlock currentToolSlug="revision-loyer" />
             </>
           )}
 

@@ -5,7 +5,7 @@ import { ToolLayout, TrustFooter, FAQ } from "@ecosysteme/ui";
 import { track } from "@ecosysteme/analytics";
 import { calculerJoursOuvres } from "@ecosysteme/core/dates";
 import type { JoursOuvresOutput } from "@ecosysteme/core/dates";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_JOURS_OUVRES } from "../../lib/faq-data";
 import { JoursOuvresContent } from "./JoursOuvresContent";
@@ -218,7 +218,7 @@ export function JoursOuvresPage() {
                   disclaimer: "Les resultats sont fournis a titre indicatif. Le calcul ne prend pas en compte les jours feries supplementaires (DOM-TOM, Alsace-Moselle, conventions collectives).",
                 }} />
               </div>
-              <ToolRecommendations currentToolSlug="jours-ouvres" />
+              <NextStepBlock currentToolSlug="jours-ouvres" />
             </>
           )}
 

@@ -5,7 +5,7 @@ import { ToolLayout, TrustFooter, FAQ } from "@ecosysteme/ui";
 import { track } from "@ecosysteme/analytics";
 import { calculerNiveauRichesse } from "@ecosysteme/core/salary";
 import type { NiveauRichesseOutput } from "@ecosysteme/core/salary";
-import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { NextStepBlock } from "../../lib/NextStepBlock";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_RICHESSE } from "../../lib/faq-data";
 import { NiveauRichesseContent } from "./NiveauRichesseContent";
@@ -189,7 +189,7 @@ export function NiveauRichessePage() {
             }} />
           </div>
 
-          <ToolRecommendations currentToolSlug="niveau-richesse" />
+          <NextStepBlock currentToolSlug="niveau-richesse" />
         </div>
       )}
 
