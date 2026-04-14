@@ -63,21 +63,30 @@ export function RendementLocatifPage() {
             <FormField label="Prix d'achat du bien" name="prix" type="number" inputMode="decimal" placeholder="ex: 200 000"
               helpText="Prix d'acquisition hors frais de notaire" value={prix} onChange={(e) => setPrix(e.target.value)} required min={0} step="any" />
             <FormField label="Loyer mensuel hors charges" name="loyer" type="number" inputMode="decimal" placeholder="ex: 800"
-              helpText="Le loyer que vous percevez ou prévoyez de percevoir" value={loyer} onChange={(e) => setLoyer(e.target.value)} required min={0} step="any" />
-            <FormField label="Charges annuelles" name="charges" type="number" inputMode="decimal" placeholder="ex: 2 000"
-              helpText="Taxe fonciere, assurance PNO, gestion, travaux... (optionnel)" value={charges} onChange={(e) => setCharges(e.target.value)} min={0} step="any" />
-            <FormField label="Frais de notaire" name="fraisNotaire" type="number" inputMode="decimal" placeholder="ex: 15 000"
-              helpText="Frais d'acquisition (optionnel, pour le rendement net)" value={fraisNotaire} onChange={(e) => setFraisNotaire(e.target.value)} min={0} step="any" />
-            <div className="space-y-1.5">
-              <label htmlFor="vacance" className="block text-sm font-medium text-gray-900">Vacance locative</label>
-              <select id="vacance" value={vacance} onChange={(e) => setVacance(e.target.value)}
-                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1">
-                <option value="0">Aucune (0 mois)</option>
-                <option value="1">1 mois / an</option>
-                <option value="2">2 mois / an</option>
-                <option value="3">3 mois / an</option>
-              </select>
-            </div>
+              helpText="Le loyer que vous percevez ou prevoyez de percevoir" value={loyer} onChange={(e) => setLoyer(e.target.value)} required min={0} step="any" />
+
+            <details className="mt-4 rounded-lg border border-border">
+              <summary className="cursor-pointer px-4 py-3 text-sm font-medium text-muted hover:text-foreground">
+                Affiner le calcul (optionnel)
+              </summary>
+              <div className="border-t border-border/50 px-4 py-4 space-y-4">
+                <FormField label="Charges annuelles" name="charges" type="number" inputMode="decimal" placeholder="0 par defaut"
+                  helpText="Taxe fonciere, assurance PNO, gestion, travaux..." value={charges} onChange={(e) => setCharges(e.target.value)} min={0} step="any" />
+                <FormField label="Frais de notaire" name="fraisNotaire" type="number" inputMode="decimal" placeholder="0 par defaut"
+                  helpText="Frais d'acquisition (pour le rendement net)" value={fraisNotaire} onChange={(e) => setFraisNotaire(e.target.value)} min={0} step="any" />
+                <div className="space-y-1.5">
+                  <label htmlFor="vacance" className="block text-sm font-medium text-gray-900">Vacance locative</label>
+                  <select id="vacance" value={vacance} onChange={(e) => setVacance(e.target.value)}
+                    className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1">
+                    <option value="0">Aucune (0 mois)</option>
+                    <option value="1">1 mois / an (defaut)</option>
+                    <option value="2">2 mois / an</option>
+                    <option value="3">3 mois / an</option>
+                  </select>
+                </div>
+              </div>
+            </details>
+
             <button type="submit" className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Calculer le rendement
             </button>

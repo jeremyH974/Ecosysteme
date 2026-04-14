@@ -26,13 +26,13 @@ function fmt(n: number) {
 }
 
 export function FraisReelsPage() {
-  const [joursDeplacementAn, setJoursDeplacementAn] = useState("220");
   const [distanceAllerKm, setDistanceAllerKm] = useState("");
   const [puissanceFiscale, setPuissanceFiscale] = useState("5");
-  const [nbRepasHorsDomicile, setNbRepasHorsDomicile] = useState("200");
-  const [valeurRepasActuel, setValeurRepasActuel] = useState("10");
-  const [autresFrais, setAutresFrais] = useState("0");
   const [salaireBrutAnnuel, setSalaireBrutAnnuel] = useState("");
+  const [joursDeplacementAn, setJoursDeplacementAn] = useState("");
+  const [nbRepasHorsDomicile, setNbRepasHorsDomicile] = useState("");
+  const [valeurRepasActuel, setValeurRepasActuel] = useState("");
+  const [autresFrais, setAutresFrais] = useState("");
   const [result, setResult] = useState<FraisReelsOutput | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
@@ -57,13 +57,13 @@ export function FraisReelsPage() {
 
     try {
       const r = calculerFraisReels({
-        joursDeplacementAn: parseInt(joursDeplacementAn, 10) || 0,
+        joursDeplacementAn: joursDeplacementAn ? parseInt(joursDeplacementAn, 10) : 228,
         distanceAllerKm: dk,
         puissanceFiscale: puissanceFiscale as "3" | "4" | "5" | "6" | "7+",
-        nbRepasHorsDomicile: parseInt(nbRepasHorsDomicile, 10) || 0,
-        valeurRepasActuel: parseFloat(valeurRepasActuel) || 0,
+        nbRepasHorsDomicile: nbRepasHorsDomicile ? parseInt(nbRepasHorsDomicile, 10) : 0,
+        valeurRepasActuel: valeurRepasActuel ? parseFloat(valeurRepasActuel) : 10,
         valeurRepasDomicile: VALEUR_REPAS_DOMICILE,
-        autresFrais: parseFloat(autresFrais) || 0,
+        autresFrais: autresFrais ? parseFloat(autresFrais) : 0,
         salaireBrutAnnuel: sb,
         baremeKm: BAREME_KM,
       });
@@ -96,34 +96,20 @@ export function FraisReelsPage() {
       <div className="grid gap-8 lg:grid-cols-2">
         <div>
           <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <FormField
-                label="Jours de deplacement / an"
-                name="joursDeplacementAn"
-                type="number"
-                inputMode="numeric"
-                placeholder="220"
-                helpText="Nombre de jours travailles dans l'annee (utilisez notre calculateur jours ouvres)"
-                value={joursDeplacementAn}
-                onChange={(e) => setJoursDeplacementAn(e.target.value)}
-                min={0}
-                max={365}
-              />
-              <FormField
-                label="Distance aller (km)"
-                name="distanceAllerKm"
-                type="number"
-                inputMode="decimal"
-                placeholder="ex: 25"
-                helpText="Distance domicile-travail, aller simple"
-                value={distanceAllerKm}
-                onChange={(e) => setDistanceAllerKm(e.target.value)}
-                error={formErrors.distanceAllerKm}
-                required
-                min={0}
-                step="any"
-              />
-            </div>
+            <FormField
+              label="Distance aller (km)"
+              name="distanceAllerKm"
+              type="number"
+              inputMode="decimal"
+              placeholder="ex: 25"
+              helpText="Distance domicile-travail, aller simple"
+              value={distanceAllerKm}
+              onChange={(e) => setDistanceAllerKm(e.target.value)}
+              error={formErrors.distanceAllerKm}
+              required
+              min={0}
+              step="any"
+            />
 
             <div className="space-y-1.5">
               <label htmlFor="puissanceFiscale" className="block text-sm font-medium text-gray-900">Puissance fiscale du vehicule</label>
@@ -141,45 +127,6 @@ export function FraisReelsPage() {
               </select>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <FormField
-                label="Repas hors domicile / an"
-                name="nbRepasHorsDomicile"
-                type="number"
-                inputMode="numeric"
-                placeholder="200"
-                helpText="Nombre de repas pris hors du domicile"
-                value={nbRepasHorsDomicile}
-                onChange={(e) => setNbRepasHorsDomicile(e.target.value)}
-                min={0}
-              />
-              <FormField
-                label="Cout moyen du repas (EUR)"
-                name="valeurRepasActuel"
-                type="number"
-                inputMode="decimal"
-                placeholder="10"
-                helpText="Ce que vous payez reellement par repas"
-                value={valeurRepasActuel}
-                onChange={(e) => setValeurRepasActuel(e.target.value)}
-                min={0}
-                step="any"
-              />
-            </div>
-
-            <FormField
-              label="Autres frais annuels (EUR)"
-              name="autresFrais"
-              type="number"
-              inputMode="decimal"
-              placeholder="0"
-              helpText="Materiel, fournitures, formation, teletravail..."
-              value={autresFrais}
-              onChange={(e) => setAutresFrais(e.target.value)}
-              min={0}
-              step="any"
-            />
-
             <FormField
               label="Salaire brut annuel (EUR)"
               name="salaireBrutAnnuel"
@@ -194,6 +141,63 @@ export function FraisReelsPage() {
               min={0}
               step="any"
             />
+
+            <details className="mt-4 rounded-lg border border-border">
+              <summary className="cursor-pointer px-4 py-3 text-sm font-medium text-muted hover:text-foreground">
+                Affiner le calcul (optionnel)
+              </summary>
+              <div className="border-t border-border/50 px-4 py-4 space-y-4">
+                <FormField
+                  label="Jours de deplacement / an"
+                  name="joursDeplacementAn"
+                  type="number"
+                  inputMode="numeric"
+                  placeholder="228 par defaut"
+                  helpText="Nombre de jours travailles dans l'annee (228 par defaut)"
+                  value={joursDeplacementAn}
+                  onChange={(e) => setJoursDeplacementAn(e.target.value)}
+                  min={0}
+                  max={365}
+                />
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <FormField
+                    label="Repas hors domicile / an"
+                    name="nbRepasHorsDomicile"
+                    type="number"
+                    inputMode="numeric"
+                    placeholder="0 par defaut"
+                    helpText="Nombre de repas pris hors du domicile"
+                    value={nbRepasHorsDomicile}
+                    onChange={(e) => setNbRepasHorsDomicile(e.target.value)}
+                    min={0}
+                  />
+                  <FormField
+                    label="Cout moyen du repas (EUR)"
+                    name="valeurRepasActuel"
+                    type="number"
+                    inputMode="decimal"
+                    placeholder="10"
+                    helpText="Ce que vous payez reellement par repas"
+                    value={valeurRepasActuel}
+                    onChange={(e) => setValeurRepasActuel(e.target.value)}
+                    min={0}
+                    step="any"
+                  />
+                </div>
+                <FormField
+                  label="Autres frais annuels (EUR)"
+                  name="autresFrais"
+                  type="number"
+                  inputMode="decimal"
+                  placeholder="0 par defaut"
+                  helpText="Materiel, fournitures, formation, teletravail..."
+                  value={autresFrais}
+                  onChange={(e) => setAutresFrais(e.target.value)}
+                  min={0}
+                  step="any"
+                />
+              </div>
+            </details>
 
             <button type="submit" className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Comparer frais reels vs forfait

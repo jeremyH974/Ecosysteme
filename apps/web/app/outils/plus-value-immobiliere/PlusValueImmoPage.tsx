@@ -125,18 +125,25 @@ export function PlusValueImmoPage() {
               min={0}
               step="1"
             />
-            <div className="flex items-center gap-3">
-              <input
-                id="residencePrincipale"
-                type="checkbox"
-                checked={residencePrincipale}
-                onChange={(e) => setResidencePrincipale(e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
-              />
-              <label htmlFor="residencePrincipale" className="text-sm font-medium text-gray-900">
-                Residence principale (exoneration totale)
-              </label>
-            </div>
+            <details className="mt-4 rounded-lg border border-border">
+              <summary className="cursor-pointer px-4 py-3 text-sm font-medium text-muted hover:text-foreground">
+                Affiner le calcul (optionnel)
+              </summary>
+              <div className="border-t border-border/50 px-4 py-4 space-y-4">
+                <div className="flex items-center gap-3">
+                  <input
+                    id="residencePrincipale"
+                    type="checkbox"
+                    checked={residencePrincipale}
+                    onChange={(e) => setResidencePrincipale(e.target.checked)}
+                    className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                  />
+                  <label htmlFor="residencePrincipale" className="text-sm font-medium text-gray-900">
+                    Residence principale (exoneration totale)
+                  </label>
+                </div>
+              </div>
+            </details>
             <button type="submit" className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Calculer la plus-value
             </button>

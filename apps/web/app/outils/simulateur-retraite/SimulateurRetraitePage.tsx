@@ -37,8 +37,8 @@ export function SimulateurRetraitePage() {
     const s = parseFloat(salaire);
     const aa = parseInt(ageActuel, 10);
     const ad = parseInt(ageDepart, 10);
-    const t = parseInt(trimestres, 10);
-    if (!salaire || isNaN(s) || s <= 0 || !ageActuel || isNaN(aa) || aa < 18 || !trimestres || isNaN(t) || t < 0) {
+    const t = trimestres ? parseInt(trimestres, 10) : Math.max(0, (aa - 22) * 4);
+    if (!salaire || isNaN(s) || s <= 0 || !ageActuel || isNaN(aa) || aa < 18) {
       setResult(null);
       return;
     }
@@ -83,7 +83,7 @@ export function SimulateurRetraitePage() {
       }
     >
       {/* Saisie */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-3">
         <div>
           <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted">
             Salaire net mensuel actuel
@@ -133,22 +133,30 @@ export function SimulateurRetraitePage() {
             ))}
           </select>
         </div>
-
-        <div>
-          <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted">
-            Trimestres valides
-          </label>
-          <input
-            type="number"
-            inputMode="numeric"
-            placeholder="Ex: 120"
-            value={trimestres}
-            onChange={(e) => setTrimestres(e.target.value)}
-            className="w-full rounded-lg border border-border bg-surface-card px-3 py-2.5 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-            min={0}
-          />
-        </div>
       </div>
+
+      <details className="mt-4 rounded-lg border border-border">
+        <summary className="cursor-pointer px-4 py-3 text-sm font-medium text-muted hover:text-foreground">
+          Affiner le calcul (optionnel)
+        </summary>
+        <div className="border-t border-border/50 px-4 py-4 space-y-4">
+          <div>
+            <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted">
+              Trimestres valides
+            </label>
+            <input
+              type="number"
+              inputMode="numeric"
+              placeholder={ageActuel ? `${Math.max(0, (parseInt(ageActuel, 10) - 22) * 4)} (estime)` : "Ex: 120"}
+              value={trimestres}
+              onChange={(e) => setTrimestres(e.target.value)}
+              className="w-full rounded-lg border border-border bg-surface-card px-3 py-2.5 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-light focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              min={0}
+            />
+            <p className="mt-1 text-xs text-muted">Si non renseigne, estime a (age actuel - 22) x 4 trimestres.</p>
+          </div>
+        </div>
+      </details>
 
       {/* Resultat */}
       {result && (

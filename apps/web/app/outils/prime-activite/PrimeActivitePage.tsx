@@ -165,6 +165,11 @@ export function PrimeActivitePage() {
                 </span>
               )}
             </div>
+            <p className="mt-3 text-sm text-muted">
+              {result.eligible
+                ? `Vous pourriez percevoir ${fmt(result.montantEstime)} EUR de prime d'activite par mois. Faites votre demande sur caf.fr.`
+                : "D'apres cette estimation, vous ne seriez pas eligible a la prime d'activite. Verifiez votre situation sur caf.fr."}
+            </p>
           </div>
 
           {/* Detail */}
