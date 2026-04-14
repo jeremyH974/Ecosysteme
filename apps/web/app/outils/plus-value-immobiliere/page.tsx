@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PlusValueImmoPage } from "./PlusValueImmoPage";
 import { JsonLd, faqJsonLd, toolJsonLd } from "../../lib/JsonLd";
+import { Breadcrumb } from "../../lib/Breadcrumb";
 import { FAQ_PV } from "../../lib/faq-data";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Outils", href: "/outils" }, { label: "Plus-value immobiliere" }]} />
       <JsonLd type="FAQPage" data={faqJsonLd(FAQ_PV)} />
       <JsonLd type="WebApplication" data={toolJsonLd("Calcul plus-value immobiliere", "Calculez l'imposition sur la revente de votre bien immobilier", "/outils/plus-value-immobiliere")} />
       <PlusValueImmoPage />

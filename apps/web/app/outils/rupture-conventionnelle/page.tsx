@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { RuptureCalcPage } from "./RuptureCalcPage";
 import { JsonLd, faqJsonLd, toolJsonLd } from "../../lib/JsonLd";
+import { Breadcrumb } from "../../lib/Breadcrumb";
 import { FAQ_RUPTURE } from "../../lib/faq-data";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Outils", href: "/outils" }, { label: "Rupture conventionnelle" }]} />
       <JsonLd type="FAQPage" data={faqJsonLd(FAQ_RUPTURE)} />
       <JsonLd type="WebApplication" data={toolJsonLd("Calcul rupture conventionnelle", "Calculez votre indemnite legale de rupture conventionnelle", "/outils/rupture-conventionnelle")} />
       <RuptureCalcPage />

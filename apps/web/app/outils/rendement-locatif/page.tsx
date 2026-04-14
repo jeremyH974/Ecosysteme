@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { RendementLocatifPage } from "./RendementLocatifPage";
 import { JsonLd, faqJsonLd, toolJsonLd } from "../../lib/JsonLd";
+import { Breadcrumb } from "../../lib/Breadcrumb";
 import { FAQ_RENDEMENT } from "../../lib/faq-data";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Outils", href: "/outils" }, { label: "Rendement locatif" }]} />
       <JsonLd type="FAQPage" data={faqJsonLd(FAQ_RENDEMENT)} />
       <JsonLd type="WebApplication" data={toolJsonLd("Calcul rendement locatif", "Evaluez la rentabilite de votre investissement immobilier", "/outils/rendement-locatif")} />
       <RendementLocatifPage />

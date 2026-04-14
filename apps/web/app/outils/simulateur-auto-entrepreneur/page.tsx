@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { AEPage } from "./AEPage";
 import { JsonLd, faqJsonLd, toolJsonLd } from "../../lib/JsonLd";
+import { Breadcrumb } from "../../lib/Breadcrumb";
 import { FAQ_AE } from "../../lib/faq-data";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Outils", href: "/outils" }, { label: "Auto-entrepreneur" }]} />
       <JsonLd type="FAQPage" data={faqJsonLd(FAQ_AE)} />
       <JsonLd type="WebApplication" data={toolJsonLd("Simulateur auto-entrepreneur", "Estimez vos cotisations sociales et votre revenu net en auto-entrepreneur", "/outils/simulateur-auto-entrepreneur")} />
       <AEPage />

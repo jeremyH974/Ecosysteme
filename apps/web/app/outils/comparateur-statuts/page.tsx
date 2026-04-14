@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ComparateurStatutsPage } from "./ComparateurStatutsPage";
 import { JsonLd, faqJsonLd, toolJsonLd } from "../../lib/JsonLd";
+import { Breadcrumb } from "../../lib/Breadcrumb";
 import { FAQ_COMPARATEUR } from "../../lib/faq-data";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Outils", href: "/outils" }, { label: "Comparateur SASU vs AE" }]} />
       <JsonLd type="FAQPage" data={faqJsonLd(FAQ_COMPARATEUR)} />
       <JsonLd type="WebApplication" data={toolJsonLd("Comparateur SASU vs Auto-entrepreneur", "Comparez les revenus nets entre auto-entrepreneur et SASU", "/outils/comparateur-statuts")} />
       <ComparateurStatutsPage />

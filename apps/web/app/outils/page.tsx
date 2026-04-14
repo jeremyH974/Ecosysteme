@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "../lib/JsonLd";
+import { Breadcrumb } from "../lib/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Tous les outils — Ecosysteme",
@@ -30,6 +31,7 @@ const CATEGORIES = [...new Set(TOOLS.map((t) => t.cat))];
 export default function Page() {
   return (
     <>
+      <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Outils" }]} />
       <JsonLd type="WebApplication" data={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "Ecosysteme — Tous les outils", description: "14 calculateurs gratuits", url: "/outils" }} />
       <main className="mx-auto max-w-5xl px-5 py-10">
         <div className="mb-8">

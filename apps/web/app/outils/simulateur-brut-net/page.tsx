@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SimuBrutNetPage } from "./SimuBrutNetPage";
 import { JsonLd, faqJsonLd, toolJsonLd } from "../../lib/JsonLd";
+import { Breadcrumb } from "../../lib/Breadcrumb";
 import { FAQ_BRUT_NET } from "../../lib/faq-data";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Outils", href: "/outils" }, { label: "Simulateur brut/net" }]} />
       <JsonLd type="FAQPage" data={faqJsonLd(FAQ_BRUT_NET)} />
       <JsonLd type="WebApplication" data={toolJsonLd("Simulateur salaire brut net", "Convertissez votre salaire brut en net avec les cotisations salariales", "/outils/simulateur-brut-net")} />
       <SimuBrutNetPage />

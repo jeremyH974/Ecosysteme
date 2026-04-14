@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { FraisNotairePage } from "./FraisNotairePage";
 import { JsonLd, faqJsonLd, toolJsonLd } from "../../lib/JsonLd";
+import { Breadcrumb } from "../../lib/Breadcrumb";
 import { FAQ_NOTAIRE } from "../../lib/faq-data";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Outils", href: "/outils" }, { label: "Frais de notaire" }]} />
       <JsonLd type="FAQPage" data={faqJsonLd(FAQ_NOTAIRE)} />
       <JsonLd type="WebApplication" data={toolJsonLd("Calcul frais de notaire", "Estimez les frais de notaire pour votre achat immobilier", "/outils/frais-notaire")} />
       <FraisNotairePage />

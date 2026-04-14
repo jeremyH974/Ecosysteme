@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { RevisionLoyerPage } from "./RevisionLoyerPage";
 import { JsonLd, faqJsonLd, toolJsonLd } from "../../lib/JsonLd";
+import { Breadcrumb } from "../../lib/Breadcrumb";
 import { FAQ_LOYER } from "../../lib/faq-data";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Outils", href: "/outils" }, { label: "Revision de loyer" }]} />
       <JsonLd type="FAQPage" data={faqJsonLd(FAQ_LOYER)} />
       <JsonLd type="WebApplication" data={toolJsonLd("Calcul revision de loyer", "Calculez le nouveau montant de votre loyer apres revision annuelle avec l'IRL", "/outils/revision-loyer")} />
       <RevisionLoyerPage />
