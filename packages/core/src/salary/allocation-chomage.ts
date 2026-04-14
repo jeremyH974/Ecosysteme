@@ -7,8 +7,8 @@ export const AllocationChomageInputSchema = z.object({
   // Parametres ARE passes en params
   tauxJournalier57: z.number().default(0.57),
   tauxJournalier405: z.number().default(0.405),
-  partFixeJournaliere: z.number().default(12.95),
-  plancher: z.number().default(31.59), // ARE minimum journalier
+  partFixeJournaliere: z.number().default(13.18), // revalorise 01/07/2025
+  plancher: z.number().default(32.13), // ARE minimum journalier — revalorise 01/07/2025
   plafond: z.number().default(274.80), // ARE maximum journalier (75% SJR)
 });
 

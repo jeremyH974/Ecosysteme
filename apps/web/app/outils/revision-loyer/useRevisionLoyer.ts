@@ -37,9 +37,9 @@ function loadIRLOptions(): IRLOption[] {
     return [
       { label: "T4 2023 — 142.06", value: 142.06 },
       { label: "T1 2024 — 143.46", value: 143.46 },
-      { label: "T2 2024 — 144.44", value: 144.44 },
+      { label: "T2 2024 — 145.17", value: 145.17 },
       { label: "T3 2024 — 144.51", value: 144.51 },
-      { label: "T4 2024 — 145.47", value: 145.47 },
+      { label: "T4 2024 — 144.64", value: 144.64 },
     ];
   }
 }

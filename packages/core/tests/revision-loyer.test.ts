@@ -5,9 +5,9 @@ import { calculerRevisionLoyer } from "../src/property/revision-loyer.js";
 const IRL = {
   T4_2023: 142.06,
   T1_2024: 143.46,
-  T2_2024: 144.44,
+  T2_2024: 145.17,
   T3_2024: 144.51,
-  T4_2024: 145.47,
+  T4_2024: 144.64,
 };
 
 function calc(loyer: number, ancien: number, nouveau: number) {
@@ -25,10 +25,11 @@ describe("calculerRevisionLoyer", () => {
 
   test("Cas 1 — Loyer 800 EUR, IRL T4 2023 → T4 2024", () => {
     const result = calc(800, IRL.T4_2023, IRL.T4_2024);
-    // 800 * (145.47 / 142.06) = 800 * 1.024004 = 819.20
+    // 800 * (144.64 / 142.06) = 800 * 1.024004 = 819.20
     expect(result.nouveauLoyer).toBeCloseTo(800 * (IRL.T4_2024 / IRL.T4_2023), 2);
     expect(result.augmentationMontant).toBeGreaterThan(0);
-    expect(result.augmentationPourcentage).toBeCloseTo(2.40, 1);
+    // 144.64/142.06 - 1 = ~1.82%
+    expect(result.augmentationPourcentage).toBeCloseTo(1.82, 0);
   });
 
   test("Cas 2 — Loyer 1200 EUR, IRL T1 2024 → T1 suivant (utilise T1 2024 comme nouveau)", () => {
@@ -38,11 +39,11 @@ describe("calculerRevisionLoyer", () => {
     expect(result.augmentationMontant).toBeGreaterThan(0);
   });
 
-  test("Cas 3 — Loyer 650 EUR, IRL T2 2024 → T3 2024 (faible variation)", () => {
+  test("Cas 3 — Loyer 650 EUR, IRL T2 2024 → T3 2024 (variation negative)", () => {
     const result = calc(650, IRL.T2_2024, IRL.T3_2024);
-    // Variation tres faible : 144.51/144.44 = ~0.048%
-    expect(result.augmentationPourcentage).toBeCloseTo(0.048, 1);
-    expect(result.augmentationMontant).toBeCloseTo(0.31, 0);
+    // T3 (144.51) < T2 (145.17) → baisse
+    expect(result.augmentationPourcentage).toBeLessThan(0);
+    expect(result.augmentationMontant).toBeLessThan(0);
   });
 
   test("Cas 4 — Loyer 950 EUR, memes IRL T4 2023 → T4 2024", () => {
@@ -53,8 +54,9 @@ describe("calculerRevisionLoyer", () => {
 
   test("Cas 5 — Loyer 2500 EUR (loyer eleve)", () => {
     const result = calc(2500, IRL.T4_2023, IRL.T4_2024);
-    expect(result.augmentationMontant).toBeGreaterThan(50);
-    expect(result.augmentationMontant).toBeLessThan(100);
+    // ~1.82% de 2500 = ~45.40
+    expect(result.augmentationMontant).toBeGreaterThan(40);
+    expect(result.augmentationMontant).toBeLessThan(60);
   });
 
   // =====================================================
@@ -102,15 +104,15 @@ describe("calculerRevisionLoyer", () => {
   });
 
   test("Coherence — detail contient les valeurs d'entree", () => {
-    const result = calc(800, 142.06, 145.47);
+    const result = calc(800, 142.06, 144.64);
     expect(result.detail.loyerActuel).toBe(800);
     expect(result.detail.irlAncien).toBe(142.06);
-    expect(result.detail.irlNouveau).toBe(145.47);
+    expect(result.detail.irlNouveau).toBe(144.64);
   });
 
   test("Coherence — ratio IRL = nouveau / ancien", () => {
-    const result = calc(800, 142.06, 145.47);
-    expect(result.detail.ratioIRL).toBeCloseTo(145.47 / 142.06, 6);
+    const result = calc(800, 142.06, 144.64);
+    expect(result.detail.ratioIRL).toBeCloseTo(144.64 / 142.06, 6);
   });
 
   // =====================================================
@@ -118,15 +120,15 @@ describe("calculerRevisionLoyer", () => {
   // =====================================================
 
   test("Loyer 0 → erreur Zod", () => {
-    expect(() => calc(0, 142.06, 145.47)).toThrow();
+    expect(() => calc(0, 142.06, 144.64)).toThrow();
   });
 
   test("Loyer negatif → erreur Zod", () => {
-    expect(() => calc(-800, 142.06, 145.47)).toThrow();
+    expect(() => calc(-800, 142.06, 144.64)).toThrow();
   });
 
   test("IRL ancien 0 → erreur Zod", () => {
-    expect(() => calc(800, 0, 145.47)).toThrow();
+    expect(() => calc(800, 0, 144.64)).toThrow();
   });
 
   test("IRL nouveau negatif → erreur Zod", () => {
