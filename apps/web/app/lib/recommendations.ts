@@ -90,6 +90,27 @@ const TOOLS: ToolDefinition[] = [
     description: "Comparez les revenus nets entre auto-entrepreneur et SASU",
     tags: ["freelance", "comparaison", "statut", "sasu", "ae"],
   },
+  {
+    slug: "niveau-richesse",
+    name: "Niveau de richesse",
+    url: "/outils/niveau-richesse",
+    description: "Ou vous situez-vous par rapport aux autres Francais ?",
+    tags: ["salaire", "comparaison", "statistiques", "richesse"],
+  },
+  {
+    slug: "allocation-chomage",
+    name: "Allocations chomage",
+    url: "/outils/allocation-chomage",
+    description: "Estimez votre allocation chomage (ARE)",
+    tags: ["chomage", "are", "pole-emploi", "indemnisation"],
+  },
+  {
+    slug: "simulateur-retraite",
+    name: "Simulateur retraite",
+    url: "/outils/simulateur-retraite",
+    description: "Estimez votre future pension de retraite",
+    tags: ["retraite", "pension", "trimestres", "cotisation"],
+  },
 ];
 
 // Recommendations croisees explicites : pour chaque outil, les slugs recommandes (ordonnees)
@@ -105,6 +126,9 @@ const CROSS_RECOMMENDATIONS: Record<string, string[]> = {
   "indemnites-km": ["simulateur-tmi", "simu-brut-net"],
   "plus-value-immo": ["frais-notaire", "rendement-locatif"],
   "comparateur-statuts": ["simulateur-ae", "sasu-optim"],
+  "niveau-richesse": ["simu-brut-net", "simulateur-tmi"],
+  "allocation-chomage": ["rupture-calc", "simu-brut-net"],
+  "simulateur-retraite": ["simu-brut-net", "simulateur-tmi"],
 };
 
 /**

@@ -15,6 +15,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "indemnites-km",
     "plus-value-immobiliere",
     "comparateur-statuts",
+    "niveau-richesse",
+    "allocation-chomage",
+    "simulateur-retraite",
   ];
 
   return [

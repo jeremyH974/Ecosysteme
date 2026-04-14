@@ -71,6 +71,24 @@ export const FAQ_COMPARATEUR: FAQItem[] = [
   { question: "Peut-on passer de l'auto-entreprise a la SASU ?", answer: "Oui, c'est possible a tout moment. Il faut creer la SASU puis fermer l'auto-entreprise (ou apporter le fonds de commerce). Un expert-comptable peut vous accompagner dans cette transition." },
 ];
 
+export const FAQ_RICHESSE: FAQItem[] = [
+  { question: "Comment est calcule le niveau de richesse ?", answer: "Votre salaire net mensuel est compare aux statistiques nationales de l'INSEE : salaire moyen, median, SMIC, seuil de pauvrete et seuils des 10% et 1% les mieux payes." },
+  { question: "Quelle est la difference entre salaire moyen et median ?", answer: "Le salaire moyen est la somme de tous les salaires divisee par le nombre de salaries (2 735 EUR net en 2024). Le median est le salaire qui partage les salaries en deux moities egales (2 183 EUR). Le median est plus representatif car moins influence par les tres hauts salaires." },
+  { question: "Quel est le seuil de pauvrete en France ?", answer: "Le seuil de pauvrete est fixe a 60% du revenu median, soit environ 1 158 EUR net par mois pour une personne seule. Environ 14% de la population francaise vit sous ce seuil." },
+];
+
+export const FAQ_CHOMAGE: FAQItem[] = [
+  { question: "Quelles sont les conditions pour toucher le chomage ?", answer: "Il faut avoir travaille au moins 130 jours (6 mois) sur les 24 derniers mois (36 mois pour les 53 ans et plus). Il faut etre inscrit a France Travail et etre en recherche active d'emploi." },
+  { question: "Comment est calculee l'allocation chomage (ARE) ?", answer: "L'ARE est calculee a partir du Salaire Journalier de Reference (SJR). Deux methodes sont comparees : 57% du SJR ou 40,4% du SJR + 12,95 EUR/jour. La plus favorable est retenue, avec un minimum de 31,59 EUR/jour." },
+  { question: "Combien de temps peut-on toucher le chomage ?", answer: "La duree depend de l'age et de l'anciennete : maximum 24 mois avant 53 ans, 30 mois entre 53 et 55 ans, 36 mois apres 55 ans. La duree ne peut pas depasser la duree d'affiliation." },
+];
+
+export const FAQ_RETRAITE: FAQItem[] = [
+  { question: "A quel age peut-on partir a la retraite ?", answer: "L'age legal de depart est de 64 ans (reforme 2023, progressivement appliquee). Vous pouvez partir a taux plein a 67 ans quel que soit votre nombre de trimestres. Un depart anticipe est possible sous conditions (carriere longue, handicap, penibilite)." },
+  { question: "Combien de trimestres faut-il pour le taux plein ?", answer: "Pour les personnes nees a partir de 1965, il faut 172 trimestres (43 ans de cotisation) pour beneficier du taux plein de 50%. Chaque trimestre manquant entraine une decote de 0,625%." },
+  { question: "Comment est calculee la pension de base ?", answer: "La formule est : SAM x taux x (trimestres valides / trimestres requis). Le SAM est la moyenne des 25 meilleures annees de salaire brut. Le taux plein est de 50%. S'y ajoute la retraite complementaire AGIRC-ARRCO." },
+];
+
 export const FAQ_AE: FAQItem[] = [
   { question: "Quelles sont les charges d'un auto-entrepreneur ?", answer: "Les cotisations sociales sont un pourcentage du chiffre d'affaires : 12,3% pour la vente de marchandises, 21,2% pour les prestations BIC (artisan, commercial) et 21,1% pour les prestations BNC (liberal). S'ajoute la CFE (Cotisation Fonciere des Entreprises)." },
   { question: "Qu'est-ce que le versement liberatoire ?", answer: "C'est une option qui permet de payer l'impot sur le revenu en meme temps que les cotisations sociales, a un taux fixe (1% vente, 1,7% BIC, 2,2% BNC). C'est avantageux si votre taux marginal d'imposition est superieur a ces taux." },
