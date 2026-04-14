@@ -56,17 +56,17 @@ export function FraisNotairePage() {
             <FormField label="Prix d'achat" name="prix" type="number" inputMode="decimal" placeholder="ex: 250 000"
               helpText="Le prix d'acquisition du bien immobilier" value={prix} onChange={(e) => setPrix(e.target.value)} required min={0} step="any" />
             <div className="space-y-1.5">
-              <span className="block text-sm font-medium text-gray-900">Type de bien</span>
+              <span className="block text-sm font-medium text-foreground">Type de bien</span>
               <div className="mt-1.5 flex gap-4">
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input type="radio" name="type" checked={type === "ancien"} onChange={() => setType("ancien")}
-                    className="h-4 w-4 border-gray-300 text-primary focus:ring-primary" />
-                  <span className="text-sm text-gray-700">Ancien</span>
+                    className="h-4 w-4 border-border text-primary focus:ring-primary" />
+                  <span className="text-sm text-foreground">Ancien</span>
                 </label>
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input type="radio" name="type" checked={type === "neuf"} onChange={() => setType("neuf")}
-                    className="h-4 w-4 border-gray-300 text-primary focus:ring-primary" />
-                  <span className="text-sm text-gray-700">Neuf</span>
+                    className="h-4 w-4 border-border text-primary focus:ring-primary" />
+                  <span className="text-sm text-foreground">Neuf</span>
                 </label>
               </div>
             </div>
@@ -76,17 +76,17 @@ export function FraisNotairePage() {
           </form>
         </div>
         <div>
-          {error && <div className="rounded-md border border-red-200 bg-red-50 p-4"><p className="text-sm text-red-800">{error}</p></div>}
+          {error && <div className="rounded-md border border-danger bg-danger-light p-4"><p className="text-sm text-danger">{error}</p></div>}
           {result && (
             <>
               <ResultCard label="Frais de notaire estimes" value={fmt(result.totalFraisNotaire)} unit="EUR"
                 interpretation={`Les frais de notaire representent environ ${result.pourcentageDuPrix.toFixed(1)}% du prix d'achat pour un bien ${type === "ancien" ? "dans l'ancien" : "neuf"}.`}
                 detail={
                   <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
-                    <span className="text-gray-500">Droits de mutation</span><span className="text-right font-medium">{fmt(result.detail.droitsMutation)} EUR</span>
-                    <span className="text-gray-500">Emoluments notaire</span><span className="text-right font-medium">{fmt(result.detail.emolumentsNotaire)} EUR</span>
-                    <span className="text-gray-500">Frais divers</span><span className="text-right font-medium">{fmt(result.detail.fraisDivers)} EUR</span>
-                    <span className="border-t border-gray-200 pt-1 font-bold">Total</span><span className="border-t border-gray-200 pt-1 text-right font-bold">{fmt(result.totalFraisNotaire)} EUR</span>
+                    <span className="text-muted">Droits de mutation</span><span className="text-right font-medium">{fmt(result.detail.droitsMutation)} EUR</span>
+                    <span className="text-muted">Emoluments notaire</span><span className="text-right font-medium">{fmt(result.detail.emolumentsNotaire)} EUR</span>
+                    <span className="text-muted">Frais divers</span><span className="text-right font-medium">{fmt(result.detail.fraisDivers)} EUR</span>
+                    <span className="border-t border-border pt-1 font-bold">Total</span><span className="border-t border-border pt-1 text-right font-bold">{fmt(result.totalFraisNotaire)} EUR</span>
                   </div>
                 }
               />
@@ -109,7 +109,7 @@ export function FraisNotairePage() {
               <NextStepBlock currentToolSlug="frais-notaire" />
             </>
           )}
-          {!result && !error && <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-gray-200 p-8"><p className="text-center text-sm text-gray-400">Remplissez le formulaire pour obtenir votre estimation</p></div>}
+          {!result && !error && <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-border p-8"><p className="text-center text-sm text-muted-light">Remplissez le formulaire pour obtenir votre estimation</p></div>}
         </div>
       </div>
 

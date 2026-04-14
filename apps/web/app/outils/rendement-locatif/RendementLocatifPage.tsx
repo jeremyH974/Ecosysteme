@@ -75,9 +75,9 @@ export function RendementLocatifPage() {
                 <FormField label="Frais de notaire" name="fraisNotaire" type="number" inputMode="decimal" placeholder="0 par defaut"
                   helpText="Frais d'acquisition (pour le rendement net)" value={fraisNotaire} onChange={(e) => setFraisNotaire(e.target.value)} min={0} step="any" />
                 <div className="space-y-1.5">
-                  <label htmlFor="vacance" className="block text-sm font-medium text-gray-900">Vacance locative</label>
+                  <label htmlFor="vacance" className="block text-sm font-medium text-foreground">Vacance locative</label>
                   <select id="vacance" value={vacance} onChange={(e) => setVacance(e.target.value)}
-                    className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1">
+                    className="block w-full rounded-md border border-border px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1">
                     <option value="0">Aucune (0 mois)</option>
                     <option value="1">1 mois / an (defaut)</option>
                     <option value="2">2 mois / an</option>
@@ -93,19 +93,19 @@ export function RendementLocatifPage() {
           </form>
         </div>
         <div>
-          {error && <div className="rounded-md border border-red-200 bg-red-50 p-4"><p className="text-sm text-red-800">{error}</p></div>}
+          {error && <div className="rounded-md border border-danger bg-danger-light p-4"><p className="text-sm text-danger">{error}</p></div>}
           {result && (
             <>
               <div className="space-y-4">
                 <ResultCard label="Rendement brut" value={result.rendementBrut.toFixed(2) + "%"} interpretation={`Votre investissement genere ${fmt(result.revenuAnnuelBrut)} EUR de loyers annuels bruts pour un bien a ${fmt(result.coutTotalAcquisition)} EUR (acquisition + frais).`}
                   detail={
                     <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
-                      <span className="text-gray-500">Loyer annuel brut</span><span className="text-right font-medium">{fmt(result.detail.loyerAnnuel)} EUR</span>
-                      <span className="text-gray-500">Loyer effectif (- vacance)</span><span className="text-right font-medium">{fmt(result.detail.loyerEffectif)} EUR</span>
-                      <span className="text-gray-500">Charges annuelles</span><span className="text-right font-medium">-{fmt(result.detail.chargesAnnuelles)} EUR</span>
-                      <span className="text-gray-500">Revenu net annuel</span><span className="text-right font-medium">{fmt(result.revenuAnnuelNet)} EUR</span>
-                      <span className="border-t border-gray-200 pt-1 font-bold text-primary">Rendement net</span>
-                      <span className="border-t border-gray-200 pt-1 text-right font-bold text-primary">{result.rendementNet.toFixed(2)}%</span>
+                      <span className="text-muted">Loyer annuel brut</span><span className="text-right font-medium">{fmt(result.detail.loyerAnnuel)} EUR</span>
+                      <span className="text-muted">Loyer effectif (- vacance)</span><span className="text-right font-medium">{fmt(result.detail.loyerEffectif)} EUR</span>
+                      <span className="text-muted">Charges annuelles</span><span className="text-right font-medium">-{fmt(result.detail.chargesAnnuelles)} EUR</span>
+                      <span className="text-muted">Revenu net annuel</span><span className="text-right font-medium">{fmt(result.revenuAnnuelNet)} EUR</span>
+                      <span className="border-t border-border pt-1 font-bold text-primary">Rendement net</span>
+                      <span className="border-t border-border pt-1 text-right font-bold text-primary">{result.rendementNet.toFixed(2)}%</span>
                     </div>
                   }
                 />
@@ -128,7 +128,7 @@ export function RendementLocatifPage() {
               <NextStepBlock currentToolSlug="rendement-locatif" />
             </>
           )}
-          {!result && !error && <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-gray-200 p-8"><p className="text-center text-sm text-gray-400">Remplissez le formulaire pour obtenir votre estimation</p></div>}
+          {!result && !error && <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-border p-8"><p className="text-center text-sm text-muted-light">Remplissez le formulaire pour obtenir votre estimation</p></div>}
         </div>
       </div>
 

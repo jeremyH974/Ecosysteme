@@ -109,12 +109,12 @@ export function ComparateurStatutsPage() {
               step="any"
             />
             <div className="space-y-1.5">
-              <label htmlFor="activite" className="block text-sm font-medium text-gray-900">Type d&apos;activite</label>
+              <label htmlFor="activite" className="block text-sm font-medium text-foreground">Type d&apos;activite</label>
               <select
                 id="activite"
                 value={activite}
                 onChange={(e) => setActivite(e.target.value)}
-                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
+                className="block w-full rounded-md border border-border px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
               >
                 <option value="prestation_bnc">Prestation de service BNC (liberal)</option>
                 <option value="prestation_bic">Prestation de service BIC (artisan/commercial)</option>
@@ -141,8 +141,8 @@ export function ComparateurStatutsPage() {
 
         <div>
           {error && (
-            <div className="rounded-md border border-red-200 bg-red-50 p-4">
-              <p className="text-sm text-red-800">{error}</p>
+            <div className="rounded-md border border-danger bg-danger-light p-4">
+              <p className="text-sm text-danger">{error}</p>
             </div>
           )}
 
@@ -155,23 +155,23 @@ export function ComparateurStatutsPage() {
                   interpretation={result.recommandation}
                   detail={
                     <div className="space-y-4">
-                      <div className="overflow-hidden rounded-lg border border-gray-200">
+                      <div className="overflow-hidden rounded-lg border border-border">
                         <table className="w-full text-sm">
                           <thead>
-                            <tr className="bg-gray-50">
-                              <th className="px-3 py-2 text-left font-medium text-gray-600"></th>
-                              <th className="px-3 py-2 text-right font-medium text-gray-600">Auto-entrepreneur</th>
-                              <th className="px-3 py-2 text-right font-medium text-gray-600">SASU</th>
+                            <tr className="bg-surface">
+                              <th className="px-3 py-2 text-left font-medium text-muted"></th>
+                              <th className="px-3 py-2 text-right font-medium text-muted">Auto-entrepreneur</th>
+                              <th className="px-3 py-2 text-right font-medium text-muted">SASU</th>
                             </tr>
                           </thead>
                           <tbody className="divide-y divide-gray-100">
                             <tr>
-                              <td className="px-3 py-2 text-gray-500">Charges sociales</td>
+                              <td className="px-3 py-2 text-muted">Charges sociales</td>
                               <td className="px-3 py-2 text-right font-medium">{fmt(result.autoEntrepreneur.chargesSociales)} EUR</td>
                               <td className="px-3 py-2 text-right font-medium">{fmt(result.sasu.chargesSociales)} EUR</td>
                             </tr>
                             <tr>
-                              <td className="px-3 py-2 text-gray-500">Impots (IR)</td>
+                              <td className="px-3 py-2 text-muted">Impots (IR)</td>
                               <td className="px-3 py-2 text-right font-medium">{fmt(result.autoEntrepreneur.impots)} EUR</td>
                               <td className="px-3 py-2 text-right font-medium">{fmt(result.sasu.impots)} EUR</td>
                             </tr>
@@ -181,19 +181,19 @@ export function ComparateurStatutsPage() {
                               <td className="px-3 py-2 text-right text-primary-hover">{fmt(result.sasu.revenuNet)} EUR</td>
                             </tr>
                             <tr>
-                              <td className="px-3 py-2 text-gray-500">Protection sociale</td>
+                              <td className="px-3 py-2 text-muted">Protection sociale</td>
                               <td className="px-3 py-2 text-right text-xs">{result.autoEntrepreneur.protectionSociale}</td>
                               <td className="px-3 py-2 text-right text-xs">{result.sasu.protectionSociale}</td>
                             </tr>
                             <tr>
-                              <td className="px-3 py-2 text-gray-500">Complexite</td>
+                              <td className="px-3 py-2 text-muted">Complexite</td>
                               <td className="px-3 py-2 text-right text-xs">{result.autoEntrepreneur.complexite}</td>
                               <td className="px-3 py-2 text-right text-xs">{result.sasu.complexite}</td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-muted">
                         Ecart : {fmt(Math.abs(result.ecart))} EUR/an en faveur de {result.ecart > 0 ? "l'auto-entreprise" : "la SASU"}
                       </p>
                     </div>
@@ -223,8 +223,8 @@ export function ComparateurStatutsPage() {
           )}
 
           {!result && !error && (
-            <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-gray-200 p-8">
-              <p className="text-center text-sm text-gray-400">Remplissez le formulaire pour obtenir votre estimation</p>
+            <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-border p-8">
+              <p className="text-center text-sm text-muted-light">Remplissez le formulaire pour obtenir votre estimation</p>
             </div>
           )}
         </div>

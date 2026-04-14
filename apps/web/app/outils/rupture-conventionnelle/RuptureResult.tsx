@@ -42,17 +42,17 @@ export function RuptureResult({ result, conventionCollective }: RuptureResultPro
             onClick={() => track({ name: "detail_expanded", props: { tool: "rupture-calc" } })}
           >
             <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-              <span className="text-gray-500">Salaire de reference retenu</span>
+              <span className="text-muted">Salaire de reference retenu</span>
               <span className="text-right font-medium">{formatEuros(detail.baseCalcul)} EUR/mois</span>
 
-              <span className="text-gray-500">Anciennete prise en compte</span>
+              <span className="text-muted">Anciennete prise en compte</span>
               <span className="text-right font-medium">
                 {formatAnciennete(detail.ancienneteTotaleEnAnnees)}
               </span>
 
               {detail.montantPremierTranche > 0 && (
                 <>
-                  <span className="text-gray-500">Tranche 1 (jusqu&apos;a 10 ans)</span>
+                  <span className="text-muted">Tranche 1 (jusqu&apos;a 10 ans)</span>
                   <span className="text-right font-medium">
                     {formatEuros(detail.montantPremierTranche)} EUR
                   </span>
@@ -61,17 +61,17 @@ export function RuptureResult({ result, conventionCollective }: RuptureResultPro
 
               {detail.montantDeuxiemeTranche > 0 && (
                 <>
-                  <span className="text-gray-500">Tranche 2 (au-dela de 10 ans)</span>
+                  <span className="text-muted">Tranche 2 (au-dela de 10 ans)</span>
                   <span className="text-right font-medium">
                     {formatEuros(detail.montantDeuxiemeTranche)} EUR
                   </span>
                 </>
               )}
 
-              <span className="border-t border-gray-200 pt-1 font-medium text-gray-900">
+              <span className="border-t border-border pt-1 font-medium text-foreground">
                 Total minimum legal
               </span>
-              <span className="border-t border-gray-200 pt-1 text-right font-bold text-gray-900">
+              <span className="border-t border-border pt-1 text-right font-bold text-foreground">
                 {formatEuros(result.montantMinimalLegal)} EUR
               </span>
             </div>
@@ -103,8 +103,8 @@ export function RuptureResult({ result, conventionCollective }: RuptureResultPro
       />
 
       {!conventionCollective && (
-        <div className="rounded-md border border-amber-200 bg-amber-50 p-4">
-          <p className="text-sm text-amber-800">
+        <div className="rounded-md border border-warning bg-warning-light p-4">
+          <p className="text-sm text-warning">
             Votre convention collective peut prevoir une indemnite superieure a ce minimum legal.
             Verifiez sur votre bulletin de paie ou contactez votre delegue syndical.
           </p>

@@ -51,15 +51,15 @@ export function SASUOptimForm({ onSubmit }: SASUOptimFormProps) {
       />
 
       <div className="space-y-1.5">
-        <label htmlFor="nbParts" className="block text-sm font-medium text-gray-900">
+        <label htmlFor="nbParts" className="block text-sm font-medium text-foreground">
           Situation familiale
         </label>
-        <p className="text-sm text-gray-500">Determine votre nombre de parts fiscales</p>
+        <p className="text-sm text-muted">Determine votre nombre de parts fiscales</p>
         <select
           id="nbParts"
           value={nbParts}
           onChange={(e) => setNbParts(e.target.value)}
-          className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
+          className="block w-full rounded-md border border-border px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
         >
           <option value="1">Celibataire (1 part)</option>
           <option value="1.5">Celibataire + 1 enfant (1.5 parts)</option>

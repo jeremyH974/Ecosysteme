@@ -50,14 +50,14 @@ export function RuptureCalcPage() {
 
         <div>
           {error && (
-            <div className="rounded-md border border-red-200 bg-red-50 p-4">
-              <p className="text-sm text-red-800">{error}</p>
+            <div className="rounded-md border border-danger bg-danger-light p-4">
+              <p className="text-sm text-danger">{error}</p>
             </div>
           )}
 
           {warning && !result && (
-            <div className="rounded-md border border-amber-200 bg-amber-50 p-4">
-              <p className="text-sm text-amber-800">{warning}</p>
+            <div className="rounded-md border border-warning bg-warning-light p-4">
+              <p className="text-sm text-warning">{warning}</p>
             </div>
           )}
 
@@ -69,8 +69,8 @@ export function RuptureCalcPage() {
           )}
 
           {!result && !error && !warning && (
-            <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-gray-200 p-8">
-              <p className="text-center text-sm text-gray-400">
+            <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-border p-8">
+              <p className="text-center text-sm text-muted-light">
                 Remplissez le formulaire pour obtenir votre estimation
               </p>
             </div>

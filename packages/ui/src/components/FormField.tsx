@@ -33,8 +33,8 @@ export function FormField({ label, name, helpText, error, required, suffix, ...i
           aria-describedby={[helpId, errorId].filter(Boolean).join(" ") || undefined}
           aria-invalid={error ? true : undefined}
           className={[
-            "block w-full rounded-lg border bg-white px-3.5 py-2.5 text-sm text-foreground shadow-sm transition-colors",
-            "placeholder:text-muted-light",
+            "block w-full rounded-lg border bg-surface-card px-3.5 py-2.5 text-sm text-foreground shadow-sm transition-colors",
+            "placeholder:text-muted",
             "focus:outline-none focus:ring-2 focus:ring-offset-1",
             suffix ? "pr-12" : "",
             error

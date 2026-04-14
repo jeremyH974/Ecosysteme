@@ -87,12 +87,12 @@ export function IndemniteKmPage() {
               step="any"
             />
             <div className="space-y-1.5">
-              <label htmlFor="puissanceFiscale" className="block text-sm font-medium text-gray-900">Puissance fiscale du vehicule</label>
+              <label htmlFor="puissanceFiscale" className="block text-sm font-medium text-foreground">Puissance fiscale du vehicule</label>
               <select
                 id="puissanceFiscale"
                 value={puissanceFiscale}
                 onChange={(e) => setPuissanceFiscale(e.target.value)}
-                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
+                className="block w-full rounded-md border border-border px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
               >
                 <option value="3">3 CV</option>
                 <option value="4">4 CV</option>
@@ -109,8 +109,8 @@ export function IndemniteKmPage() {
 
         <div>
           {error && (
-            <div className="rounded-md border border-red-200 bg-red-50 p-4">
-              <p className="text-sm text-red-800">{error}</p>
+            <div className="rounded-md border border-danger bg-danger-light p-4">
+              <p className="text-sm text-danger">{error}</p>
             </div>
           )}
 
@@ -123,12 +123,12 @@ export function IndemniteKmPage() {
                   interpretation={`Soit ${fmt(result.montantMensuel)} EUR par mois. Ce montant est deductible de vos revenus imposables si vous optez pour les frais reels.`}
                   detail={
                     <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
-                      <span className="text-gray-500">Distance annuelle</span><span className="text-right font-medium">{fmt(result.detail.distanceAnnuelle)} km</span>
-                      <span className="text-gray-500">Puissance fiscale</span><span className="text-right font-medium">{result.detail.puissanceFiscale} CV</span>
-                      <span className="text-gray-500">Tranche</span><span className="text-right font-medium">{result.detail.tranche}</span>
-                      <span className="text-gray-500">Formule</span><span className="text-right font-medium">{result.detail.formule}</span>
-                      <span className="border-t border-gray-200 pt-1 font-bold text-primary">Montant mensuel</span>
-                      <span className="border-t border-gray-200 pt-1 text-right font-bold text-primary">{fmt(result.montantMensuel)} EUR</span>
+                      <span className="text-muted">Distance annuelle</span><span className="text-right font-medium">{fmt(result.detail.distanceAnnuelle)} km</span>
+                      <span className="text-muted">Puissance fiscale</span><span className="text-right font-medium">{result.detail.puissanceFiscale} CV</span>
+                      <span className="text-muted">Tranche</span><span className="text-right font-medium">{result.detail.tranche}</span>
+                      <span className="text-muted">Formule</span><span className="text-right font-medium">{result.detail.formule}</span>
+                      <span className="border-t border-border pt-1 font-bold text-primary">Montant mensuel</span>
+                      <span className="border-t border-border pt-1 text-right font-bold text-primary">{fmt(result.montantMensuel)} EUR</span>
                     </div>
                   }
                 />
@@ -153,8 +153,8 @@ export function IndemniteKmPage() {
           )}
 
           {!result && !error && (
-            <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-gray-200 p-8">
-              <p className="text-center text-sm text-gray-400">Remplissez le formulaire pour obtenir votre estimation</p>
+            <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-border p-8">
+              <p className="text-center text-sm text-muted-light">Remplissez le formulaire pour obtenir votre estimation</p>
             </div>
           )}
         </div>

@@ -62,10 +62,10 @@ export function RuptureForm({ onSubmit }: RuptureFormProps) {
       />
 
       <div>
-        <label className="block text-sm font-medium text-gray-900">
-          Anciennete dans l&apos;entreprise <span className="ml-0.5 text-red-500">*</span>
+        <label className="block text-sm font-medium text-foreground">
+          Anciennete dans l&apos;entreprise <span className="ml-0.5 text-danger">*</span>
         </label>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-muted">
           Depuis votre date d&apos;entree dans l&apos;entreprise (CDI)
         </p>
 
@@ -81,22 +81,22 @@ export function RuptureForm({ onSubmit }: RuptureFormProps) {
               max={50}
               className={[
                 "block w-full rounded-md border px-3 py-2 text-sm shadow-sm",
-                "placeholder:text-gray-400",
+                "placeholder:text-muted-light",
                 "focus:outline-none focus:ring-2 focus:ring-offset-1",
                 errors.ancienneteAnnees
-                  ? "border-red-300 focus:border-red-500 focus:ring-red-500"
-                  : "border-gray-300 focus:border-primary focus:ring-primary",
+                  ? "border-danger focus:border-danger focus:ring-danger"
+                  : "border-border focus:border-primary focus:ring-primary",
               ].join(" ")}
               aria-label="Annees d'anciennete"
             />
-            <span className="mt-0.5 block text-xs text-gray-400">annees</span>
+            <span className="mt-0.5 block text-xs text-muted-light">annees</span>
           </div>
 
           <div className="flex-1">
             <select
               value={ancienneteMois}
               onChange={(e) => setAncienneteMois(e.target.value)}
-              className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
+              className="block w-full rounded-md border border-border px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
               aria-label="Mois d'anciennete"
             >
               {Array.from({ length: 12 }, (_, i) => (
@@ -105,17 +105,17 @@ export function RuptureForm({ onSubmit }: RuptureFormProps) {
                 </option>
               ))}
             </select>
-            <span className="mt-0.5 block text-xs text-gray-400">mois</span>
+            <span className="mt-0.5 block text-xs text-muted-light">mois</span>
           </div>
         </div>
 
         {errors.ancienneteAnnees && (
-          <p role="alert" className="mt-1 text-sm text-red-600">
+          <p role="alert" className="mt-1 text-sm text-danger">
             {errors.ancienneteAnnees}
           </p>
         )}
 
-        <p className="mt-1.5 text-xs text-gray-400">
+        <p className="mt-1.5 text-xs text-muted-light">
           Comptez depuis votre date d&apos;embauche officielle (sur votre contrat)
         </p>
       </div>

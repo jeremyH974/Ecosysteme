@@ -77,12 +77,12 @@ export function TMIPage() {
               step="any"
             />
             <div className="space-y-1.5">
-              <label htmlFor="nbParts" className="block text-sm font-medium text-gray-900">Nombre de parts fiscales</label>
+              <label htmlFor="nbParts" className="block text-sm font-medium text-foreground">Nombre de parts fiscales</label>
               <select
                 id="nbParts"
                 value={nbParts}
                 onChange={(e) => setNbParts(e.target.value)}
-                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
+                className="block w-full rounded-md border border-border px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
               >
                 <option value="1">1 part (celibataire)</option>
                 <option value="1.5">1.5 parts (celibataire + 1 enfant)</option>
@@ -100,8 +100,8 @@ export function TMIPage() {
 
         <div>
           {error && (
-            <div className="rounded-md border border-red-200 bg-red-50 p-4">
-              <p className="text-sm text-red-800">{error}</p>
+            <div className="rounded-md border border-danger bg-danger-light p-4">
+              <p className="text-sm text-danger">{error}</p>
             </div>
           )}
 
@@ -114,17 +114,17 @@ export function TMIPage() {
                   interpretation={`Votre impot sur le revenu est de ${formatEuros(result.montantIR)} EUR, soit un taux moyen de ${formatPct(result.tauxMoyen)}. Chaque euro supplementaire est impose a ${formatPct(result.tauxMarginal)}.`}
                   detail={
                     <div className="space-y-2">
-                      <h4 className="font-medium text-gray-700">Detail par tranche</h4>
+                      <h4 className="font-medium text-foreground">Detail par tranche</h4>
                       <div className="space-y-1 text-sm">
                         {result.detailParTranche.map((t, i) => (
                           <div key={i} className="flex justify-between">
-                            <span className="text-gray-500">
+                            <span className="text-muted">
                               {formatPct(t.taux)} ({formatEuros(t.de)} - {t.jusqu_a ? formatEuros(t.jusqu_a) : "..."})
                             </span>
                             <span className="font-medium">{formatEuros(t.montantImpot)} EUR</span>
                           </div>
                         ))}
-                        <div className="flex justify-between border-t border-gray-200 pt-1 font-bold">
+                        <div className="flex justify-between border-t border-border pt-1 font-bold">
                           <span>Total IR</span>
                           <span>{formatEuros(result.montantIR)} EUR</span>
                         </div>
@@ -153,8 +153,8 @@ export function TMIPage() {
           )}
 
           {!result && !error && (
-            <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-gray-200 p-8">
-              <p className="text-center text-sm text-gray-400">Remplissez le formulaire pour obtenir votre estimation</p>
+            <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-border p-8">
+              <p className="text-center text-sm text-muted-light">Remplissez le formulaire pour obtenir votre estimation</p>
             </div>
           )}
         </div>

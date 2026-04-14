@@ -64,9 +64,9 @@ export function AEPage() {
             <FormField label="Chiffre d'affaires annuel" name="ca" type="number" inputMode="decimal" placeholder="ex: 50 000"
               helpText="Votre CA annuel ou previsionnel" value={ca} onChange={(e) => setCa(e.target.value)} required min={0} step="any" />
             <div className="space-y-1.5">
-              <span className="block text-sm font-medium text-gray-900">Type d&apos;activite</span>
+              <span className="block text-sm font-medium text-foreground">Type d&apos;activite</span>
               <select value={activite} onChange={(e) => setActivite(e.target.value as typeof activite)}
-                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1">
+                className="block w-full rounded-md border border-border px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1">
                 <option value="prestation_bnc">Prestation de service BNC (liberal)</option>
                 <option value="prestation_bic">Prestation de service BIC (artisan/commercial)</option>
                 <option value="vente">Vente de marchandises</option>
@@ -74,8 +74,8 @@ export function AEPage() {
             </div>
             <label className="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" checked={vl} onChange={(e) => setVl(e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" />
-              <span className="text-sm text-gray-700">Versement liberatoire de l&apos;impot sur le revenu</span>
+                className="h-4 w-4 rounded border-border text-primary focus:ring-primary" />
+              <span className="text-sm text-foreground">Versement liberatoire de l&apos;impot sur le revenu</span>
             </label>
             <button type="submit" className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Simuler mes charges
@@ -83,20 +83,20 @@ export function AEPage() {
           </form>
         </div>
         <div>
-          {error && <div className="rounded-md border border-red-200 bg-red-50 p-4"><p className="text-sm text-red-800">{error}</p></div>}
+          {error && <div className="rounded-md border border-danger bg-danger-light p-4"><p className="text-sm text-danger">{error}</p></div>}
           {result && (
             <>
               <ResultCard label="Revenu net apres cotisations" value={fmt(result.revenuApresCharges)} unit="EUR / an"
                 interpretation={`Vos cotisations sociales representent ${(result.tauxChargesEffectif * 100).toFixed(1)}% de votre CA. ${vl ? `Le versement liberatoire de l'IR ajoute ${fmt(result.versementLiberatoireIR)} EUR.` : `Votre revenu imposable est de ${fmt(result.revenuImposable)} EUR (apres abattement fiscal).`}`}
                 detail={
                   <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
-                    <span className="text-gray-500">Chiffre d&apos;affaires</span><span className="text-right font-medium">{fmt(result.detail.chiffreAffaires)} EUR</span>
-                    <span className="text-gray-500">Cotisations sociales</span><span className="text-right font-medium">-{fmt(result.cotisationsSociales)} EUR</span>
-                    {vl && <><span className="text-gray-500">Versement liberatoire IR</span><span className="text-right font-medium">-{fmt(result.versementLiberatoireIR)} EUR</span></>}
-                    <span className="border-t border-gray-200 pt-1 font-bold text-primary">Revenu net</span>
-                    <span className="border-t border-gray-200 pt-1 text-right font-bold text-primary">{fmt(result.revenuApresCharges)} EUR</span>
-                    <span className="text-gray-500">Abattement fiscal</span><span className="text-right font-medium">{fmt(result.detail.abattementFiscal)} EUR</span>
-                    <span className="text-gray-500">Revenu imposable</span><span className="text-right font-medium">{fmt(result.revenuImposable)} EUR</span>
+                    <span className="text-muted">Chiffre d&apos;affaires</span><span className="text-right font-medium">{fmt(result.detail.chiffreAffaires)} EUR</span>
+                    <span className="text-muted">Cotisations sociales</span><span className="text-right font-medium">-{fmt(result.cotisationsSociales)} EUR</span>
+                    {vl && <><span className="text-muted">Versement liberatoire IR</span><span className="text-right font-medium">-{fmt(result.versementLiberatoireIR)} EUR</span></>}
+                    <span className="border-t border-border pt-1 font-bold text-primary">Revenu net</span>
+                    <span className="border-t border-border pt-1 text-right font-bold text-primary">{fmt(result.revenuApresCharges)} EUR</span>
+                    <span className="text-muted">Abattement fiscal</span><span className="text-right font-medium">{fmt(result.detail.abattementFiscal)} EUR</span>
+                    <span className="text-muted">Revenu imposable</span><span className="text-right font-medium">{fmt(result.revenuImposable)} EUR</span>
                   </div>
                 }
               />
@@ -119,7 +119,7 @@ export function AEPage() {
               <NextStepBlock currentToolSlug="simulateur-ae" />
             </>
           )}
-          {!result && !error && <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-gray-200 p-8"><p className="text-center text-sm text-gray-400">Remplissez le formulaire pour obtenir votre estimation</p></div>}
+          {!result && !error && <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-border p-8"><p className="text-center text-sm text-muted-light">Remplissez le formulaire pour obtenir votre estimation</p></div>}
         </div>
       </div>
 

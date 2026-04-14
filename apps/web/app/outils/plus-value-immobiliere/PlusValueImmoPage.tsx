@@ -136,9 +136,9 @@ export function PlusValueImmoPage() {
                     type="checkbox"
                     checked={residencePrincipale}
                     onChange={(e) => setResidencePrincipale(e.target.checked)}
-                    className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                    className="h-4 w-4 rounded border-border text-primary focus:ring-primary"
                   />
-                  <label htmlFor="residencePrincipale" className="text-sm font-medium text-gray-900">
+                  <label htmlFor="residencePrincipale" className="text-sm font-medium text-foreground">
                     Residence principale (exoneration totale)
                   </label>
                 </div>
@@ -152,8 +152,8 @@ export function PlusValueImmoPage() {
 
         <div>
           {error && (
-            <div className="rounded-md border border-red-200 bg-red-50 p-4">
-              <p className="text-sm text-red-800">{error}</p>
+            <div className="rounded-md border border-danger bg-danger-light p-4">
+              <p className="text-sm text-danger">{error}</p>
             </div>
           )}
 
@@ -170,14 +170,14 @@ export function PlusValueImmoPage() {
                   }
                   detail={
                     <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
-                      <span className="text-gray-500">Plus-value brute</span><span className="text-right font-medium">{fmt(result.plusValueBrute)} EUR</span>
-                      <span className="text-gray-500">Prix d&apos;achat corrige</span><span className="text-right font-medium">{fmt(result.detail.prixAchatCorrige)} EUR</span>
-                      <span className="text-gray-500">Abattement IR ({formatPct(result.detail.abattementIR)})</span><span className="text-right font-medium">{fmt(result.impotIR)} EUR</span>
-                      <span className="text-gray-500">Abattement PS ({formatPct(result.detail.abattementPS)})</span><span className="text-right font-medium">{fmt(result.prelevementsSociaux)} EUR</span>
-                      <span className="text-gray-500">Impot sur le revenu (19%)</span><span className="text-right font-medium">{fmt(result.impotIR)} EUR</span>
-                      <span className="text-gray-500">Prelevements sociaux (17,2%)</span><span className="text-right font-medium">{fmt(result.prelevementsSociaux)} EUR</span>
-                      <span className="border-t border-gray-200 pt-1 font-bold text-primary">Net apres impot</span>
-                      <span className="border-t border-gray-200 pt-1 text-right font-bold text-primary">{fmt(result.netApresImpot)} EUR</span>
+                      <span className="text-muted">Plus-value brute</span><span className="text-right font-medium">{fmt(result.plusValueBrute)} EUR</span>
+                      <span className="text-muted">Prix d&apos;achat corrige</span><span className="text-right font-medium">{fmt(result.detail.prixAchatCorrige)} EUR</span>
+                      <span className="text-muted">Abattement IR ({formatPct(result.detail.abattementIR)})</span><span className="text-right font-medium">{fmt(result.impotIR)} EUR</span>
+                      <span className="text-muted">Abattement PS ({formatPct(result.detail.abattementPS)})</span><span className="text-right font-medium">{fmt(result.prelevementsSociaux)} EUR</span>
+                      <span className="text-muted">Impot sur le revenu (19%)</span><span className="text-right font-medium">{fmt(result.impotIR)} EUR</span>
+                      <span className="text-muted">Prelevements sociaux (17,2%)</span><span className="text-right font-medium">{fmt(result.prelevementsSociaux)} EUR</span>
+                      <span className="border-t border-border pt-1 font-bold text-primary">Net apres impot</span>
+                      <span className="border-t border-border pt-1 text-right font-bold text-primary">{fmt(result.netApresImpot)} EUR</span>
                     </div>
                   }
                 />
@@ -203,8 +203,8 @@ export function PlusValueImmoPage() {
           )}
 
           {!result && !error && (
-            <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-gray-200 p-8">
-              <p className="text-center text-sm text-gray-400">Remplissez le formulaire pour obtenir votre estimation</p>
+            <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-border p-8">
+              <p className="text-center text-sm text-muted-light">Remplissez le formulaire pour obtenir votre estimation</p>
             </div>
           )}
         </div>

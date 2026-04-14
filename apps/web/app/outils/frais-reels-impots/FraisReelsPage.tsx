@@ -114,12 +114,12 @@ export function FraisReelsPage() {
             />
 
             <div className="space-y-1.5">
-              <label htmlFor="puissanceFiscale" className="block text-sm font-medium text-gray-900">Puissance fiscale du vehicule</label>
+              <label htmlFor="puissanceFiscale" className="block text-sm font-medium text-foreground">Puissance fiscale du vehicule</label>
               <select
                 id="puissanceFiscale"
                 value={puissanceFiscale}
                 onChange={(e) => setPuissanceFiscale(e.target.value)}
-                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
+                className="block w-full rounded-md border border-border px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
               >
                 <option value="3">3 CV</option>
                 <option value="4">4 CV</option>
@@ -209,15 +209,15 @@ export function FraisReelsPage() {
 
         <div>
           {error && (
-            <div className="rounded-md border border-red-200 bg-red-50 p-4">
-              <p className="text-sm text-red-800">{error}</p>
+            <div className="rounded-md border border-danger bg-danger-light p-4">
+              <p className="text-sm text-danger">{error}</p>
             </div>
           )}
 
           {result && (
             <>
               {/* Recommandation principale */}
-              <div className={`rounded-xl border p-6 text-center ${result.plusFavorable === "frais_reels" ? "border-green-200 bg-green-50" : "border-blue-200 bg-blue-50"}`}>
+              <div className={`rounded-xl border p-6 text-center ${result.plusFavorable === "frais_reels" ? "border-primary/30 bg-primary-light" : "border-border bg-surface"}`}>
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted">Option la plus avantageuse</p>
                 <p className="mt-2 text-2xl font-extrabold text-foreground sm:text-3xl">
                   {result.plusFavorable === "frais_reels" ? "Frais reels" : "Forfait 10%"}
@@ -229,11 +229,11 @@ export function FraisReelsPage() {
 
               {/* Comparaison */}
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                <div className={`rounded-xl border p-4 text-center ${result.plusFavorable === "frais_reels" ? "border-green-200 bg-green-50" : "border-border bg-surface-card"}`}>
+                <div className={`rounded-xl border p-4 text-center ${result.plusFavorable === "frais_reels" ? "border-primary/30 bg-primary-light" : "border-border bg-surface-card"}`}>
                   <p className="text-[10px] font-medium text-muted">Frais reels</p>
                   <p className="mt-1 text-xl font-bold text-foreground">{fmt(result.totalFraisReels)} EUR</p>
                 </div>
-                <div className={`rounded-xl border p-4 text-center ${result.plusFavorable === "forfait" ? "border-blue-200 bg-blue-50" : "border-border bg-surface-card"}`}>
+                <div className={`rounded-xl border p-4 text-center ${result.plusFavorable === "forfait" ? "border-border bg-surface" : "border-border bg-surface-card"}`}>
                   <p className="text-[10px] font-medium text-muted">Forfait 10%</p>
                   <p className="mt-1 text-xl font-bold text-foreground">{fmt(result.deductionForfaitaire10)} EUR</p>
                 </div>
@@ -307,8 +307,8 @@ export function FraisReelsPage() {
           )}
 
           {!result && !error && (
-            <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-gray-200 p-8">
-              <p className="text-center text-sm text-gray-400">Remplissez le formulaire pour comparer frais reels et forfait 10%</p>
+            <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-border p-8">
+              <p className="text-center text-sm text-muted-light">Remplissez le formulaire pour comparer frais reels et forfait 10%</p>
             </div>
           )}
         </div>

@@ -58,10 +58,10 @@ export function RevisionLoyerForm({ onSubmit, irlOptions }: RevisionLoyerFormPro
       />
 
       <div className="space-y-1.5">
-        <label htmlFor="irlAncien" className="block text-sm font-medium text-gray-900">
-          IRL de reference (ancien) <span className="ml-0.5 text-red-500">*</span>
+        <label htmlFor="irlAncien" className="block text-sm font-medium text-foreground">
+          IRL de reference (ancien) <span className="ml-0.5 text-danger">*</span>
         </label>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-muted">
           Le trimestre IRL mentionne dans votre bail ou utilise lors de la derniere revision
         </p>
         <select
@@ -72,8 +72,8 @@ export function RevisionLoyerForm({ onSubmit, irlOptions }: RevisionLoyerFormPro
             "block w-full rounded-md border px-3 py-2 text-sm shadow-sm",
             "focus:outline-none focus:ring-2 focus:ring-offset-1",
             errors.irlAncien
-              ? "border-red-300 focus:border-red-500 focus:ring-red-500"
-              : "border-gray-300 focus:border-primary focus:ring-primary",
+              ? "border-danger focus:border-danger focus:ring-danger"
+              : "border-border focus:border-primary focus:ring-primary",
           ].join(" ")}
         >
           <option value="">Selectionnez un trimestre</option>
@@ -84,17 +84,17 @@ export function RevisionLoyerForm({ onSubmit, irlOptions }: RevisionLoyerFormPro
           ))}
         </select>
         {errors.irlAncien && (
-          <p role="alert" className="text-sm text-red-600">
+          <p role="alert" className="text-sm text-danger">
             {errors.irlAncien}
           </p>
         )}
       </div>
 
       <div className="space-y-1.5">
-        <label htmlFor="irlNouveau" className="block text-sm font-medium text-gray-900">
-          IRL actuel (nouveau) <span className="ml-0.5 text-red-500">*</span>
+        <label htmlFor="irlNouveau" className="block text-sm font-medium text-foreground">
+          IRL actuel (nouveau) <span className="ml-0.5 text-danger">*</span>
         </label>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-muted">
           Le trimestre IRL le plus recent correspondant (meme trimestre, annee suivante)
         </p>
         <select
@@ -105,8 +105,8 @@ export function RevisionLoyerForm({ onSubmit, irlOptions }: RevisionLoyerFormPro
             "block w-full rounded-md border px-3 py-2 text-sm shadow-sm",
             "focus:outline-none focus:ring-2 focus:ring-offset-1",
             errors.irlNouveau
-              ? "border-red-300 focus:border-red-500 focus:ring-red-500"
-              : "border-gray-300 focus:border-primary focus:ring-primary",
+              ? "border-danger focus:border-danger focus:ring-danger"
+              : "border-border focus:border-primary focus:ring-primary",
           ].join(" ")}
         >
           <option value="">Selectionnez un trimestre</option>
@@ -117,7 +117,7 @@ export function RevisionLoyerForm({ onSubmit, irlOptions }: RevisionLoyerFormPro
           ))}
         </select>
         {errors.irlNouveau && (
-          <p role="alert" className="text-sm text-red-600">
+          <p role="alert" className="text-sm text-danger">
             {errors.irlNouveau}
           </p>
         )}

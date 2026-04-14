@@ -77,29 +77,29 @@ export function JoursOuvresPage() {
         <div>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="dateDebut" className="block text-sm font-medium text-gray-900">Date de debut</label>
+              <label htmlFor="dateDebut" className="block text-sm font-medium text-foreground">Date de debut</label>
               <input
                 id="dateDebut"
                 type="date"
                 value={dateDebut}
                 onChange={(e) => setDateDebut(e.target.value)}
-                className="mt-1.5 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
+                className="mt-1.5 block w-full rounded-md border border-border px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
                 required
               />
             </div>
             <div>
-              <label htmlFor="dateFin" className="block text-sm font-medium text-gray-900">Date de fin</label>
+              <label htmlFor="dateFin" className="block text-sm font-medium text-foreground">Date de fin</label>
               <input
                 id="dateFin"
                 type="date"
                 value={dateFin}
                 onChange={(e) => setDateFin(e.target.value)}
-                className="mt-1.5 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
+                className="mt-1.5 block w-full rounded-md border border-border px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
                 required
               />
             </div>
             <div>
-              <p className="block text-sm font-medium text-gray-900 mb-2">Mode de calcul</p>
+              <p className="block text-sm font-medium text-foreground mb-2">Mode de calcul</p>
               <div className="flex gap-4">
                 <label className="flex items-center gap-2 text-sm">
                   <input
@@ -124,7 +124,7 @@ export function JoursOuvresPage() {
                   Jours ouvrables (lun-sam)
                 </label>
               </div>
-              <p className="mt-1 text-xs text-gray-500">Ouvres = lundi au vendredi. Ouvrables = lundi au samedi.</p>
+              <p className="mt-1 text-xs text-muted">Ouvres = lundi au vendredi. Ouvrables = lundi au samedi.</p>
             </div>
             <button type="submit" className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Calculer les jours
@@ -134,8 +134,8 @@ export function JoursOuvresPage() {
 
         <div>
           {error && (
-            <div className="rounded-md border border-red-200 bg-red-50 p-4">
-              <p className="text-sm text-red-800">{error}</p>
+            <div className="rounded-md border border-danger bg-danger-light p-4">
+              <p className="text-sm text-danger">{error}</p>
             </div>
           )}
 
@@ -223,8 +223,8 @@ export function JoursOuvresPage() {
           )}
 
           {!result && !error && (
-            <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-gray-200 p-8">
-              <p className="text-center text-sm text-gray-400">Remplissez le formulaire pour obtenir le nombre de jours ouvres</p>
+            <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-border p-8">
+              <p className="text-center text-sm text-muted-light">Remplissez le formulaire pour obtenir le nombre de jours ouvres</p>
             </div>
           )}
         </div>
