@@ -21,6 +21,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "simulateur-retraite",
     "prime-activite",
     "conges-payes",
+    "jours-ouvres",
+    "frais-reels-impots",
   ];
 
   const guides = [
@@ -34,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "prelevement-a-la-source",
     "indemnite-licenciement",
     "methode-calcul-brut-net",
+    "frais-reels-ou-forfait-10-pourcent",
   ];
 
   return [

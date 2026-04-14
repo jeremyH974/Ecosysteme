@@ -12,6 +12,7 @@ const CATEGORIES = [
       { name: "Simulateur retraite", url: "/outils/simulateur-retraite", desc: "Estimez votre pension" },
       { name: "Prime d'activite", url: "/outils/prime-activite", desc: "Estimation CAF" },
       { name: "Conges payes", url: "/outils/conges-payes", desc: "Indemnite de conges" },
+      { name: "Jours ouvres", url: "/outils/jours-ouvres", desc: "Feries inclus" },
     ],
   },
   {
@@ -39,6 +40,7 @@ const CATEGORIES = [
     tools: [
       { name: "Simulateur TMI", url: "/outils/simulateur-tmi", desc: "Taux marginal d'imposition" },
       { name: "Indemnites km", url: "/outils/indemnites-km", desc: "Frais kilometriques deductibles" },
+      { name: "Frais reels", url: "/outils/frais-reels-impots", desc: "Frais reels vs forfait 10%" },
     ],
   },
 ];
@@ -51,7 +53,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl px-5 py-16 sm:py-24 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary-light px-3 py-1 text-xs font-medium text-primary">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
-            16 outils gratuits
+            18 outils gratuits
           </div>
           <h1 className="mt-5 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Les outils financiers<br className="hidden sm:block" /> que vous cherchiez

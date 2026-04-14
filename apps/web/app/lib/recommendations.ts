@@ -125,11 +125,25 @@ const TOOLS: ToolDefinition[] = [
     description: "Calculez votre indemnite de conges payes",
     tags: ["conges", "vacances", "indemnite", "jours"],
   },
+  {
+    slug: "jours-ouvres",
+    name: "Jours ouvres",
+    url: "/outils/jours-ouvres",
+    description: "Calculez le nombre de jours ouvres entre deux dates",
+    tags: ["jours", "ouvres", "feries", "calendrier"],
+  },
+  {
+    slug: "frais-reels-impots",
+    name: "Frais reels",
+    url: "/outils/frais-reels-impots",
+    description: "Comparez frais reels vs forfait 10%",
+    tags: ["frais", "reels", "forfait", "deduction", "ir"],
+  },
 ];
 
 // Recommendations croisees explicites : pour chaque outil, les slugs recommandes (ordonnees)
 const CROSS_RECOMMENDATIONS: Record<string, string[]> = {
-  "rupture-calc": ["simu-brut-net", "simulateur-tmi"],
+  "rupture-calc": ["simu-brut-net", "simulateur-tmi", "jours-ouvres"],
   "simu-brut-net": ["rupture-calc", "simulateur-tmi"],
   "sasu-optim": ["simulateur-ae", "simulateur-tmi"],
   "revision-loyer": ["frais-notaire", "rendement-locatif"],
@@ -137,7 +151,7 @@ const CROSS_RECOMMENDATIONS: Record<string, string[]> = {
   "frais-notaire": ["rendement-locatif", "revision-loyer"],
   "rendement-locatif": ["frais-notaire", "revision-loyer"],
   "simulateur-ae": ["sasu-optim", "simulateur-tmi"],
-  "indemnites-km": ["simulateur-tmi", "simu-brut-net"],
+  "indemnites-km": ["simulateur-tmi", "frais-reels-impots"],
   "plus-value-immo": ["frais-notaire", "rendement-locatif"],
   "comparateur-statuts": ["simulateur-ae", "sasu-optim"],
   "niveau-richesse": ["simu-brut-net", "simulateur-tmi"],
@@ -145,6 +159,8 @@ const CROSS_RECOMMENDATIONS: Record<string, string[]> = {
   "simulateur-retraite": ["simu-brut-net", "simulateur-tmi"],
   "prime-activite": ["simu-brut-net", "niveau-richesse"],
   "conges-payes": ["rupture-calc", "simu-brut-net"],
+  "jours-ouvres": ["frais-reels-impots", "conges-payes"],
+  "frais-reels-impots": ["simulateur-tmi", "indemnites-km"],
 };
 
 /**

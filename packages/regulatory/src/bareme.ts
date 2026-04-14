@@ -13,6 +13,8 @@ export const BaremeCategorie = z.enum([
   "abattements_immo",
   "smic",
   "rupture_conventionnelle",
+  "jours_feries",
+  "frais_repas",
 ]);
 
 export type BaremeCategorie = z.infer<typeof BaremeCategorie>;

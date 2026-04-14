@@ -252,6 +252,54 @@
       "source_label": "ANIL/INSEE — IRL T4 2025 (+0.79%)",
       "verifie_le": "2026-04-14T00:00:00Z",
       "verifie_par": "AUDIT"
+    },
+    {
+      "id": "jours_feries_france",
+      "nom": "Jours feries legaux France metropolitaine",
+      "categorie": "jours_feries",
+      "valeur": {
+        "fixes": [
+          { "mois": 1, "jour": 1, "nom": "Jour de l'An" },
+          { "mois": 5, "jour": 1, "nom": "Fete du Travail" },
+          { "mois": 5, "jour": 8, "nom": "Victoire 1945" },
+          { "mois": 7, "jour": 14, "nom": "Fete Nationale" },
+          { "mois": 8, "jour": 15, "nom": "Assomption" },
+          { "mois": 11, "jour": 1, "nom": "Toussaint" },
+          { "mois": 11, "jour": 11, "nom": "Armistice" },
+          { "mois": 12, "jour": 25, "nom": "Noel" }
+        ],
+        "mobiles": ["paques", "lundi_paques", "ascension", "lundi_pentecote"]
+      },
+      "date_debut": "2024-01-01T00:00:00Z",
+      "date_fin": null,
+      "source_url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006902611",
+      "source_label": "Code du travail — Art. L3133-1",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
+    },
+    {
+      "id": "repas_domicile_2024",
+      "nom": "Valeur repas pris a domicile",
+      "categorie": "frais_repas",
+      "valeur": 5.20,
+      "date_debut": "2024-01-01T00:00:00Z",
+      "date_fin": null,
+      "source_url": "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/frais-professionnels.html",
+      "source_label": "URSSAF — Frais professionnels 2024",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
+    },
+    {
+      "id": "ikv_velo_2024",
+      "nom": "Indemnite kilometrique velo",
+      "categorie": "baremes_km",
+      "valeur": 0.35,
+      "date_debut": "2024-01-01T00:00:00Z",
+      "date_fin": null,
+      "source_url": "https://www.service-public.fr/particuliers/vosdroits/F34715",
+      "source_label": "Service-Public — IKV 2024",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
     }
   ]
 }

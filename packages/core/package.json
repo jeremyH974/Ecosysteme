@@ -21,6 +21,10 @@
     "./property": {
       "types": "./dist/property/index.d.ts",
       "import": "./dist/property/index.js"
+    },
+    "./dates": {
+      "types": "./dist/dates/index.d.ts",
+      "import": "./dist/dates/index.js"
     }
   },
   "scripts": {

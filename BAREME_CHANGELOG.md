@@ -4,6 +4,23 @@ Ce fichier documente toutes les modifications de baremes reglementaires avec les
 
 ---
 
+## 2026-04-14 — Ajout baremes jours feries, frais repas, IKV velo
+
+### Jours feries France metropolitaine — AJOUTE
+- **8 jours fixes** + **4 jours mobiles** (Paques, lundi de Paques, Ascension, lundi de Pentecote)
+- **Source** : [Code du travail — Art. L3133-1](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006902611)
+
+### Valeur repas pris a domicile — AJOUTE
+- **Valeur** : 5,20 EUR (2024)
+- **Usage** : calcul des frais reels de repas deductibles
+- **Source** : [URSSAF — Frais professionnels](https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/frais-professionnels.html)
+
+### Indemnite kilometrique velo (IKV) — AJOUTE
+- **Valeur** : 0,35 EUR/km
+- **Source** : [Service-Public — IKV 2024](https://www.service-public.fr/particuliers/vosdroits/F34715)
+
+---
+
 ## 2026-04-14 — Audit complet + mise a jour 2026
 
 ### SMIC

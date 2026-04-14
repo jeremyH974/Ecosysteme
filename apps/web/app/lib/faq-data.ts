@@ -107,3 +107,15 @@ export const FAQ_AE: FAQItem[] = [
   { question: "Quels sont les plafonds de CA en auto-entrepreneur ?", answer: "En 2024 : 188 700 EUR pour la vente de marchandises et 77 700 EUR pour les prestations de service. Au-dela, vous basculez automatiquement vers le regime reel d'imposition." },
   { question: "L'auto-entreprise est-elle mieux que la SASU ?", answer: "Ca depend. L'auto-entreprise est plus simple et moins couteuse en charges tant que le CA est modere. La SASU offre une meilleure protection sociale, la possibilite de deduire les charges reelles et d'optimiser via les dividendes. Utilisez notre simulateur SASU pour comparer." },
 ];
+
+export const FAQ_JOURS_OUVRES: FAQItem[] = [
+  { question: "Quelle difference entre jours ouvres et ouvrables ?", answer: "Les jours ouvres sont les jours du lundi au vendredi (hors feries). Les jours ouvrables vont du lundi au samedi (hors dimanches et feries). Les conges payes se comptent en jours ouvrables (30 par an) ou ouvres (25 par an)." },
+  { question: "Combien y a-t-il de jours ouvres dans une annee ?", answer: "En moyenne 251 jours ouvres par an en France (365 - 104 weekends - ~10 feries hors weekend). Ce nombre varie selon les annees en fonction du jour de la semaine ou tombent les jours feries." },
+  { question: "Les jours feries sont-ils toujours chomes ?", answer: "Seul le 1er mai est obligatoirement chome et paye. Les autres jours feries peuvent etre travailles selon la convention collective ou l'accord d'entreprise, mais la plupart des employeurs les accordent." },
+];
+
+export const FAQ_FRAIS_REELS: FAQItem[] = [
+  { question: "Quand les frais reels sont-ils plus avantageux ?", answer: "Les frais reels sont plus interessants que l'abattement de 10% quand vos depenses professionnelles reelles (transport, repas, materiel) depassent 10% de votre salaire brut. C'est souvent le cas pour les salaries qui habitent loin de leur lieu de travail." },
+  { question: "Quels justificatifs conserver ?", answer: "Conservez tous vos justificatifs pendant 3 ans : factures de carburant, abonnements transport, tickets de parking, factures de materiel professionnel, notes de restaurant (si repas hors domicile obligatoire)." },
+  { question: "Le teletravail reduit-il les frais reels ?", answer: "Oui, les jours de teletravail ne generent pas de frais de transport domicile-travail. En revanche, vous pouvez deduire une quote-part de vos frais de bureau a domicile (electricite, internet, loyer proportionnel)." },
+];

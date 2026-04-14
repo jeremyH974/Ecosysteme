@@ -54,3 +54,11 @@ export {
   type ComparateurStatutsInput,
   type ComparateurStatutsOutput,
 } from "./comparateur-statuts.js";
+
+export {
+  calculerFraisReels,
+  FraisReelsInputSchema,
+  FraisReelsOutputSchema,
+  type FraisReelsInput,
+  type FraisReelsOutput,
+} from "./frais-reels.js";
