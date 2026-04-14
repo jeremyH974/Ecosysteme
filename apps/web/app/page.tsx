@@ -13,6 +13,7 @@ const CATEGORIES = [
     tools: [
       { name: "Optimisation SASU", url: "/outils/optimisation-sasu", desc: "Trouvez la repartition optimale salaire/dividendes pour votre SASU." },
       { name: "Auto-entrepreneur", url: "/outils/simulateur-auto-entrepreneur", desc: "Simulez vos cotisations sociales et votre revenu net en micro-entreprise." },
+      { name: "Comparateur SASU vs AE", url: "/outils/comparateur-statuts", desc: "Comparez les revenus nets et la protection sociale des deux statuts." },
     ],
   },
   {
@@ -22,6 +23,7 @@ const CATEGORIES = [
       { name: "Revision de loyer (IRL)", url: "/outils/revision-loyer", desc: "Calculez le nouveau montant de votre loyer avec l'indice IRL de l'INSEE." },
       { name: "Frais de notaire", url: "/outils/frais-notaire", desc: "Estimez les frais de notaire pour votre achat immobilier (ancien ou neuf)." },
       { name: "Rendement locatif", url: "/outils/rendement-locatif", desc: "Evaluez la rentabilite brute et nette de votre investissement locatif." },
+      { name: "Plus-value immobiliere", url: "/outils/plus-value-immobiliere", desc: "Calculez l'imposition sur la revente de votre bien immobilier." },
     ],
   },
   {
@@ -29,6 +31,7 @@ const CATEGORIES = [
     description: "Impot sur le revenu et fiscalite pratique",
     tools: [
       { name: "Simulateur TMI", url: "/outils/simulateur-tmi", desc: "Calculez votre taux marginal d'imposition et le detail de votre IR." },
+      { name: "Indemnites kilometriques", url: "/outils/indemnites-km", desc: "Calculez vos frais kilometriques deductibles pour votre declaration IR." },
     ],
   },
 ];
@@ -46,7 +49,7 @@ export default function HomePage() {
             Ecosysteme
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-gray-600">
-            8 outils gratuits, precis et transparents pour les Francais.
+            11 outils gratuits, precis et transparents pour les Francais.
             Droit du travail, fiscalite, freelance et immobilier.
           </p>
           <p className="mt-3 text-sm text-gray-400">
@@ -66,7 +69,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 text-center">
             <div>
-              <p className="text-3xl font-bold text-gray-900">8</p>
+              <p className="text-3xl font-bold text-gray-900">11</p>
               <p className="mt-1 text-xs text-gray-500">Outils gratuits</p>
             </div>
             <div>

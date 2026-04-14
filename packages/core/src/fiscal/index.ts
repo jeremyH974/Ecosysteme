@@ -38,3 +38,19 @@ export {
   type AEInput,
   type AEOutput,
 } from "./auto-entrepreneur.js";
+
+export {
+  calculerIndemnitesKm,
+  IndemniteKmInputSchema,
+  IndemniteKmOutputSchema,
+  type IndemniteKmInput,
+  type IndemniteKmOutput,
+} from "./indemnites-km.js";
+
+export {
+  comparerStatuts,
+  ComparateurStatutsInputSchema,
+  ComparateurStatutsOutputSchema,
+  type ComparateurStatutsInput,
+  type ComparateurStatutsOutput,
+} from "./comparateur-statuts.js";

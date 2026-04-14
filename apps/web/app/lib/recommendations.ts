@@ -69,6 +69,27 @@ const TOOLS: ToolDefinition[] = [
     description: "Simulez vos cotisations et revenus en auto-entrepreneur",
     tags: ["freelance", "auto-entrepreneur", "micro", "cotisations"],
   },
+  {
+    slug: "indemnites-km",
+    name: "Indemnites kilometriques",
+    url: "/outils/indemnites-km",
+    description: "Calculez vos frais kilometriques deductibles",
+    tags: ["fiscal", "frais", "voiture", "deduction"],
+  },
+  {
+    slug: "plus-value-immo",
+    name: "Plus-value immobiliere",
+    url: "/outils/plus-value-immobiliere",
+    description: "Calculez l'imposition sur la revente de votre bien",
+    tags: ["immobilier", "plus-value", "vente", "impot"],
+  },
+  {
+    slug: "comparateur-statuts",
+    name: "Comparateur SASU vs AE",
+    url: "/outils/comparateur-statuts",
+    description: "Comparez les revenus nets entre auto-entrepreneur et SASU",
+    tags: ["freelance", "comparaison", "statut", "sasu", "ae"],
+  },
 ];
 
 // Recommendations croisees explicites : pour chaque outil, les slugs recommandes (ordonnees)
@@ -81,6 +102,9 @@ const CROSS_RECOMMENDATIONS: Record<string, string[]> = {
   "frais-notaire": ["rendement-locatif", "revision-loyer"],
   "rendement-locatif": ["frais-notaire", "revision-loyer"],
   "simulateur-ae": ["sasu-optim", "simulateur-tmi"],
+  "indemnites-km": ["simulateur-tmi", "simu-brut-net"],
+  "plus-value-immo": ["frais-notaire", "rendement-locatif"],
+  "comparateur-statuts": ["simulateur-ae", "sasu-optim"],
 };
 
 /**

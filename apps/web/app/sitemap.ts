@@ -12,6 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "revision-loyer",
     "frais-notaire",
     "rendement-locatif",
+    "indemnites-km",
+    "plus-value-immobiliere",
+    "comparateur-statuts",
   ];
 
   return [

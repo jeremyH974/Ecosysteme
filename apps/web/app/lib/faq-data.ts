@@ -49,6 +49,24 @@ export const FAQ_RENDEMENT: FAQItem[] = [
   { question: "Qu'est-ce que la vacance locative ?", answer: "C'est la periode pendant laquelle le logement est vide entre deux locataires. On estime generalement 1 mois par an en moyenne, mais cela varie selon la localisation et le type de bien." },
 ];
 
+export const FAQ_KM: FAQItem[] = [
+  { question: "A quoi servent les indemnites kilometriques ?", answer: "Elles permettent de deduire de vos impots les frais de deplacement professionnel avec votre vehicule personnel. Vous pouvez les utiliser dans votre declaration de revenus en optant pour les frais reels au lieu de l'abattement forfaitaire de 10%." },
+  { question: "Comment determiner ma puissance fiscale ?", answer: "La puissance fiscale (CV) est inscrite sur votre carte grise (certificat d'immatriculation), a la rubrique P.6. Elle est differente de la puissance reelle du moteur." },
+  { question: "Le bareme couvre-t-il tous les frais ?", answer: "Le bareme kilometrique couvre la depreciation du vehicule, les frais de reparation et d'entretien, les depenses de pneumatiques, la consommation de carburant et les primes d'assurance. Les frais de peage et de stationnement peuvent etre ajoutes en plus." },
+];
+
+export const FAQ_PV: FAQItem[] = [
+  { question: "La residence principale est-elle exoneree ?", answer: "Oui, la vente de votre residence principale est totalement exoneree de plus-value, quelle que soit la duree de detention ou le montant de la plus-value. C'est l'exoneration la plus importante en immobilier." },
+  { question: "Au bout de combien d'annees est-on exonere ?", answer: "Pour l'impot sur le revenu (19%), l'exoneration totale est atteinte apres 22 ans de detention. Pour les prelevements sociaux (17.2%), il faut attendre 30 ans. Entre les deux, une exoneration partielle s'applique par annee de detention." },
+  { question: "Comment reduire la plus-value imposable ?", answer: "Vous pouvez majorer le prix d'acquisition des frais de notaire (reels ou forfait 7.5%) et des travaux d'amelioration (sur justificatifs ou forfait 15% apres 5 ans de detention). Cela reduit la base imposable." },
+];
+
+export const FAQ_COMPARATEUR: FAQItem[] = [
+  { question: "Quelle est la principale difference entre AE et SASU ?", answer: "L'auto-entrepreneur paie des cotisations sociales sur le chiffre d'affaires (pas de deduction de charges). La SASU permet de deduire les charges reelles et d'optimiser entre salaire et dividendes, mais les cotisations sociales sont plus elevees en pourcentage." },
+  { question: "A partir de quel CA la SASU devient-elle plus interessante ?", answer: "Il n'y a pas de seuil universel. La SASU devient souvent plus avantageuse quand le CA depasse 40-50k EUR avec des charges reelles significatives a deduire, ou quand la protection sociale complete (retraite, maladie) est une priorite." },
+  { question: "Peut-on passer de l'auto-entreprise a la SASU ?", answer: "Oui, c'est possible a tout moment. Il faut creer la SASU puis fermer l'auto-entreprise (ou apporter le fonds de commerce). Un expert-comptable peut vous accompagner dans cette transition." },
+];
+
 export const FAQ_AE: FAQItem[] = [
   { question: "Quelles sont les charges d'un auto-entrepreneur ?", answer: "Les cotisations sociales sont un pourcentage du chiffre d'affaires : 12,3% pour la vente de marchandises, 21,2% pour les prestations BIC (artisan, commercial) et 21,1% pour les prestations BNC (liberal). S'ajoute la CFE (Cotisation Fonciere des Entreprises)." },
   { question: "Qu'est-ce que le versement liberatoire ?", answer: "C'est une option qui permet de payer l'impot sur le revenu en meme temps que les cotisations sociales, a un taux fixe (1% vente, 1,7% BIC, 2,2% BNC). C'est avantageux si votre taux marginal d'imposition est superieur a ces taux." },

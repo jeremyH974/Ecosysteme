@@ -21,6 +21,9 @@ const TOOLS = [
   { name: "Revision de loyer", url: "/outils/revision-loyer", desc: "Revision annuelle avec indice IRL", cat: "Immobilier", tags: ["loyer", "irl", "bailleur", "locataire", "indexation"] },
   { name: "Frais de notaire", url: "/outils/frais-notaire", desc: "Estimation frais achat immobilier", cat: "Immobilier", tags: ["notaire", "achat", "ancien", "neuf", "droits mutation"] },
   { name: "Rendement locatif", url: "/outils/rendement-locatif", desc: "Rentabilite brute et nette investissement", cat: "Immobilier", tags: ["rendement", "investissement", "locatif", "rentabilite"] },
+  { name: "Plus-value immobiliere", url: "/outils/plus-value-immobiliere", desc: "Imposition sur la revente d'un bien", cat: "Immobilier", tags: ["plus-value", "vente", "imposition", "exoneration"] },
+  { name: "Indemnites kilometriques", url: "/outils/indemnites-km", desc: "Frais kilometriques deductibles (bareme fiscal)", cat: "Fiscalite", tags: ["km", "voiture", "frais reels", "bareme"] },
+  { name: "Comparateur SASU vs AE", url: "/outils/comparateur-statuts", desc: "Comparez revenus nets et protection sociale", cat: "Freelance", tags: ["comparaison", "sasu", "auto-entrepreneur", "statut"] },
 ];
 
 const CATEGORIES = [...new Set(TOOLS.map((t) => t.cat))];
@@ -31,7 +34,7 @@ function ToolsIndex() {
       <div className="mb-10">
         <h1 className="text-3xl font-bold tracking-tight text-gray-900">Tous les outils</h1>
         <p className="mt-2 text-gray-600">
-          8 calculateurs gratuits, precis et transparents. Chaque outil cite ses sources officielles.
+          11 calculateurs gratuits, precis et transparents. Chaque outil cite ses sources officielles.
         </p>
       </div>
 

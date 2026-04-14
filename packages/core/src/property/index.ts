@@ -21,3 +21,11 @@ export {
   type RendementLocatifInput,
   type RendementLocatifOutput,
 } from "./rendement-locatif.js";
+
+export {
+  calculerPlusValueImmo,
+  PlusValueImmoInputSchema,
+  PlusValueImmoOutputSchema,
+  type PlusValueImmoInput,
+  type PlusValueImmoOutput,
+} from "./plus-value-immo.js";
