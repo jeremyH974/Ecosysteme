@@ -47,7 +47,9 @@ export function FraisReelsPage() {
     const sb = parseFloat(salaireBrutAnnuel);
 
     if (!distanceAllerKm || isNaN(dk) || dk < 0) errors.distanceAllerKm = "Saisissez la distance aller";
+    if (dk > 200) errors.distanceAllerKm = "Distance aller simple max 200 km (saisissez en km, pas en metres)";
     if (!salaireBrutAnnuel || isNaN(sb) || sb <= 0) errors.salaireBrutAnnuel = "Saisissez votre salaire brut annuel";
+    if (sb > 500000) errors.salaireBrutAnnuel = "Verifiez le montant (salaire brut annuel en euros)";
 
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
