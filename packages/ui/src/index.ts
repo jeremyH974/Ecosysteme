@@ -4,4 +4,7 @@ export { ResultCard, type ResultCardProps } from "./components/ResultCard.js";
 export { TrustFooter, type TrustFooterProps, type TrustFooterSource } from "./components/TrustFooter.js";
 export { ProgressBar, type ProgressBarProps } from "./components/ProgressBar.js";
 export { CrossPromo, type CrossPromoProps } from "./components/CrossPromo.js";
+export { FAQ, type FAQItem, type FAQProps } from "./components/FAQ.js";
+export { Tooltip, type TooltipProps } from "./components/Tooltip.js";
+export { ShareButton, type ShareButtonProps } from "./components/ShareButton.js";
 export * from "./tokens.js";

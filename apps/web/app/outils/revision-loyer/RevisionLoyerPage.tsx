@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
-import { ToolLayout, TrustFooter } from "@ecosysteme/ui";
+import { ToolLayout, TrustFooter, FAQ } from "@ecosysteme/ui";
 import { track } from "@ecosysteme/analytics";
 import { RevisionLoyerForm } from "./RevisionLoyerForm";
 import { RevisionLoyerResult } from "./RevisionLoyerResult";
 import { useRevisionLoyer } from "./useRevisionLoyer";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { FAQ_LOYER } from "../../lib/faq-data";
 
 export function RevisionLoyerPage() {
   const { result, error, calculate, irlOptions } = useRevisionLoyer();
@@ -69,6 +70,8 @@ export function RevisionLoyerPage() {
           )}
         </div>
       </div>
+
+      <FAQ items={FAQ_LOYER} />
     </ToolLayout>
   );
 }

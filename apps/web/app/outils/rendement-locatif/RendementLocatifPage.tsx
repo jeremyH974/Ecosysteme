@@ -1,12 +1,13 @@
 "use client";
 
 import { type FormEvent, useEffect, useState } from "react";
-import { ToolLayout, TrustFooter, FormField, ResultCard } from "@ecosysteme/ui";
+import { ToolLayout, TrustFooter, FormField, ResultCard, FAQ } from "@ecosysteme/ui";
 import { track } from "@ecosysteme/analytics";
 import { calculerRendementLocatif } from "@ecosysteme/core/property";
 import type { RendementLocatifOutput } from "@ecosysteme/core/property";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
+import { FAQ_RENDEMENT } from "../../lib/faq-data";
 
 function fmt(n: number) {
   return new Intl.NumberFormat("fr-FR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(n));
@@ -120,6 +121,8 @@ export function RendementLocatifPage() {
           {!result && !error && <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-gray-200 p-8"><p className="text-center text-sm text-gray-400">Remplissez le formulaire pour obtenir votre estimation</p></div>}
         </div>
       </div>
+
+      <FAQ items={FAQ_RENDEMENT} />
     </ToolLayout>
   );
 }

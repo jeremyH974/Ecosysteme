@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
-import { ToolLayout, TrustFooter } from "@ecosysteme/ui";
+import { ToolLayout, TrustFooter, FAQ } from "@ecosysteme/ui";
 import { track } from "@ecosysteme/analytics";
 import { SASUOptimForm } from "./SASUOptimForm";
 import { SASUOptimResult } from "./SASUOptimResult";
 import { useSASUOptim } from "./useSASUOptim";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { FAQ_SASU } from "../../lib/faq-data";
 
 export function SASUOptimPage() {
   const { result, error, calculate } = useSASUOptim();
@@ -73,6 +74,8 @@ export function SASUOptimPage() {
           )}
         </div>
       </div>
+
+      <FAQ items={FAQ_SASU} />
     </ToolLayout>
   );
 }

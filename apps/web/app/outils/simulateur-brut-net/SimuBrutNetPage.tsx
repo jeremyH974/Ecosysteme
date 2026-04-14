@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ToolLayout, TrustFooter } from "@ecosysteme/ui";
+import { ToolLayout, TrustFooter, FAQ } from "@ecosysteme/ui";
 import { track } from "@ecosysteme/analytics";
 import { SimuBrutNetForm } from "./SimuBrutNetForm";
 import { SimuBrutNetResult } from "./SimuBrutNetResult";
 import { useSimuBrutNet } from "./useSimuBrutNet";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { FAQ_BRUT_NET } from "../../lib/faq-data";
 
 export function SimuBrutNetPage() {
   const { result, error, calculate } = useSimuBrutNet();
@@ -75,6 +76,8 @@ export function SimuBrutNetPage() {
           )}
         </div>
       </div>
+
+      <FAQ items={FAQ_BRUT_NET} />
     </ToolLayout>
   );
 }

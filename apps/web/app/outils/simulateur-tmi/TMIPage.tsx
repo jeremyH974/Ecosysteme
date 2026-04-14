@@ -1,11 +1,12 @@
 "use client";
 
 import { type FormEvent, useEffect, useState } from "react";
-import { ToolLayout, TrustFooter, FormField, ResultCard } from "@ecosysteme/ui";
+import { ToolLayout, TrustFooter, FormField, ResultCard, FAQ } from "@ecosysteme/ui";
 import { track } from "@ecosysteme/analytics";
 import { useTMI } from "./useTMI";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
+import { FAQ_TMI } from "../../lib/faq-data";
 
 function formatEuros(n: number): string {
   return new Intl.NumberFormat("fr-FR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(n));
@@ -157,6 +158,8 @@ export function TMIPage() {
           )}
         </div>
       </div>
+
+      <FAQ items={FAQ_TMI} />
     </ToolLayout>
   );
 }

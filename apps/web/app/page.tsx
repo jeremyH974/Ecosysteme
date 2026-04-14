@@ -85,6 +85,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Parcours par profil */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 lg:px-8">
+          <h2 className="text-center text-lg font-bold text-gray-900">Je suis...</h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            <a href="#droit-du-travail-&-salaire" className="group rounded-lg border-2 border-gray-100 bg-gray-50 p-5 text-center transition-all hover:border-emerald-200 hover:bg-emerald-50">
+              <p className="text-2xl">&#128188;</p>
+              <p className="mt-2 text-sm font-semibold text-gray-900 group-hover:text-emerald-700">Salarie</p>
+              <p className="mt-1 text-xs text-gray-500">Rupture conventionnelle, brut/net, TMI</p>
+            </a>
+            <a href="#freelance-&-societe" className="group rounded-lg border-2 border-gray-100 bg-gray-50 p-5 text-center transition-all hover:border-emerald-200 hover:bg-emerald-50">
+              <p className="text-2xl">&#128187;</p>
+              <p className="mt-2 text-sm font-semibold text-gray-900 group-hover:text-emerald-700">Freelance / Dirigeant</p>
+              <p className="mt-1 text-xs text-gray-500">SASU, auto-entrepreneur, TMI</p>
+            </a>
+            <a href="#immobilier" className="group rounded-lg border-2 border-gray-100 bg-gray-50 p-5 text-center transition-all hover:border-emerald-200 hover:bg-emerald-50">
+              <p className="text-2xl">&#127968;</p>
+              <p className="mt-2 text-sm font-semibold text-gray-900 group-hover:text-emerald-700">Proprietaire / Bailleur</p>
+              <p className="mt-1 text-xs text-gray-500">Loyer, frais de notaire, rendement</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Outils par categorie */}
       <section id="outils" className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="space-y-12">

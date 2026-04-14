@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
-import { ToolLayout, TrustFooter } from "@ecosysteme/ui";
+import { ToolLayout, TrustFooter, FAQ } from "@ecosysteme/ui";
 import { track } from "@ecosysteme/analytics";
 import { RuptureForm } from "./RuptureForm";
 import { RuptureResult } from "./RuptureResult";
 import { useRuptureCalc } from "./useRuptureCalc";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { FAQ_RUPTURE } from "../../lib/faq-data";
 
 export function RuptureCalcPage() {
   const { result, error, warning, calculate } = useRuptureCalc();
@@ -75,6 +76,8 @@ export function RuptureCalcPage() {
           )}
         </div>
       </div>
+
+      <FAQ items={FAQ_RUPTURE} />
     </ToolLayout>
   );
 }
