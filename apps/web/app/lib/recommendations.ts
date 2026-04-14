@@ -111,6 +111,20 @@ const TOOLS: ToolDefinition[] = [
     description: "Estimez votre future pension de retraite",
     tags: ["retraite", "pension", "trimestres", "cotisation"],
   },
+  {
+    slug: "prime-activite",
+    name: "Prime d'activite",
+    url: "/outils/prime-activite",
+    description: "Estimez votre prime d'activite CAF",
+    tags: ["prime", "caf", "aide", "salaire"],
+  },
+  {
+    slug: "conges-payes",
+    name: "Conges payes",
+    url: "/outils/conges-payes",
+    description: "Calculez votre indemnite de conges payes",
+    tags: ["conges", "vacances", "indemnite", "jours"],
+  },
 ];
 
 // Recommendations croisees explicites : pour chaque outil, les slugs recommandes (ordonnees)
@@ -129,6 +143,8 @@ const CROSS_RECOMMENDATIONS: Record<string, string[]> = {
   "niveau-richesse": ["simu-brut-net", "simulateur-tmi"],
   "allocation-chomage": ["rupture-calc", "simu-brut-net"],
   "simulateur-retraite": ["simu-brut-net", "simulateur-tmi"],
+  "prime-activite": ["simu-brut-net", "niveau-richesse"],
+  "conges-payes": ["rupture-calc", "simu-brut-net"],
 };
 
 /**

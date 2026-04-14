@@ -37,3 +37,19 @@ export {
   type RetraiteInput,
   type RetraiteOutput,
 } from "./simulateur-retraite.js";
+
+export {
+  calculerPrimeActivite,
+  PrimeActiviteInputSchema,
+  PrimeActiviteOutputSchema,
+  type PrimeActiviteInput,
+  type PrimeActiviteOutput,
+} from "./prime-activite.js";
+
+export {
+  calculerCongesPayes,
+  CongesPayesInputSchema,
+  CongesPayesOutputSchema,
+  type CongesPayesInput,
+  type CongesPayesOutput,
+} from "./conges-payes.js";

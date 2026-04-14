@@ -10,6 +10,8 @@ const CATEGORIES = [
       { name: "Niveau de richesse", url: "/outils/niveau-richesse", desc: "Ou vous situez-vous ?" },
       { name: "Allocations chomage", url: "/outils/allocation-chomage", desc: "Estimation ARE" },
       { name: "Simulateur retraite", url: "/outils/simulateur-retraite", desc: "Estimez votre pension" },
+      { name: "Prime d'activite", url: "/outils/prime-activite", desc: "Estimation CAF" },
+      { name: "Conges payes", url: "/outils/conges-payes", desc: "Indemnite de conges" },
     ],
   },
   {
@@ -49,7 +51,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl px-5 py-16 sm:py-24 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary-light px-3 py-1 text-xs font-medium text-primary">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
-            14 outils gratuits
+            16 outils gratuits
           </div>
           <h1 className="mt-5 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Les outils financiers<br className="hidden sm:block" /> que vous cherchiez
@@ -80,7 +82,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl px-5 py-8">
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
             {[
-              { value: "14", label: "Outils gratuits" },
+              { value: "16", label: "Outils gratuits" },
               { value: "219", label: "Tests automatises" },
               { value: "12", label: "Baremes officiels" },
               { value: "< 30s", label: "Pour un resultat" },

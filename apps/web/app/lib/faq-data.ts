@@ -89,6 +89,18 @@ export const FAQ_RETRAITE: FAQItem[] = [
   { question: "Comment est calculee la pension de base ?", answer: "La formule est : SAM x taux x (trimestres valides / trimestres requis). Le SAM est la moyenne des 25 meilleures annees de salaire brut. Le taux plein est de 50%. S'y ajoute la retraite complementaire AGIRC-ARRCO." },
 ];
 
+export const FAQ_PRIME: FAQItem[] = [
+  { question: "Qui peut beneficier de la prime d'activite ?", answer: "Toute personne de 18 ans ou plus, residant en France, exercant une activite professionnelle (salariee ou independante) et dont les revenus ne depassent pas un certain plafond. Les etudiants et apprentis y ont droit si leur revenu depasse 1 082 EUR net/mois." },
+  { question: "Comment demander la prime d'activite ?", answer: "La demande se fait en ligne sur caf.fr ou msa.fr. Vous devez declarer vos revenus tous les 3 mois pour continuer a la percevoir. Le versement est mensuel, le 5 du mois suivant." },
+  { question: "La prime d'activite est-elle imposable ?", answer: "Non, la prime d'activite est totalement exoneree d'impot sur le revenu. Elle n'a pas a etre declaree." },
+];
+
+export const FAQ_CONGES: FAQItem[] = [
+  { question: "Combien de jours de conges payes ai-je par an ?", answer: "Un salarie a temps plein acquiert 2,5 jours ouvrables de conges par mois travaille, soit 30 jours ouvrables (5 semaines) par an. En jours ouvres, cela correspond a 25 jours (du lundi au vendredi)." },
+  { question: "Comment est calculee l'indemnite de conges payes ?", answer: "L'employeur doit comparer deux methodes et retenir la plus favorable : le maintien du salaire (salaire habituel pendant les conges) ou le 1/10e de la remuneration brute annuelle. En general, le maintien est plus favorable pour les salaries avec un salaire stable." },
+  { question: "Que deviennent mes conges non pris ?", answer: "Les conges non pris avant le 31 mai de l'annee suivante sont en principe perdus, sauf accord d'entreprise prevoyant un report. En cas de rupture du contrat, les conges non pris sont payes sous forme d'indemnite compensatrice." },
+];
+
 export const FAQ_AE: FAQItem[] = [
   { question: "Quelles sont les charges d'un auto-entrepreneur ?", answer: "Les cotisations sociales sont un pourcentage du chiffre d'affaires : 12,3% pour la vente de marchandises, 21,2% pour les prestations BIC (artisan, commercial) et 21,1% pour les prestations BNC (liberal). S'ajoute la CFE (Cotisation Fonciere des Entreprises)." },
   { question: "Qu'est-ce que le versement liberatoire ?", answer: "C'est une option qui permet de payer l'impot sur le revenu en meme temps que les cotisations sociales, a un taux fixe (1% vente, 1,7% BIC, 2,2% BNC). C'est avantageux si votre taux marginal d'imposition est superieur a ces taux." },

@@ -19,6 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "niveau-richesse",
     "allocation-chomage",
     "simulateur-retraite",
+    "prime-activite",
+    "conges-payes",
   ];
 
   const guides = [
@@ -29,6 +31,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "2500-brut-en-net",
     "3000-brut-en-net",
     "2000-brut-en-net",
+    "prelevement-a-la-source",
+    "indemnite-licenciement",
+    "methode-calcul-brut-net",
   ];
 
   return [

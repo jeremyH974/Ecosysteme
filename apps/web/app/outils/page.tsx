@@ -5,8 +5,8 @@ import { Breadcrumb } from "../lib/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Tous les outils — Ecosysteme",
-  description: "14 calculateurs gratuits pour les Francais : droit du travail, freelance, immobilier, fiscalite.",
-  openGraph: { title: "Tous les outils — Ecosysteme", description: "14 calculateurs gratuits et precis.", type: "website" },
+  description: "16 calculateurs gratuits pour les Francais : droit du travail, freelance, immobilier, fiscalite.",
+  openGraph: { title: "Tous les outils — Ecosysteme", description: "16 calculateurs gratuits et precis.", type: "website" },
 };
 
 const TOOLS = [
@@ -24,6 +24,8 @@ const TOOLS = [
   { name: "Niveau de richesse", url: "/outils/niveau-richesse", desc: "Ou vous situez-vous par rapport aux Francais ?", cat: "Salaire" },
   { name: "Allocations chomage", url: "/outils/allocation-chomage", desc: "Estimation allocation chomage (ARE)", cat: "Droit du travail" },
   { name: "Simulateur retraite", url: "/outils/simulateur-retraite", desc: "Estimation pension de retraite", cat: "Droit du travail" },
+  { name: "Prime d'activite", url: "/outils/prime-activite", desc: "Estimation prime d'activite CAF", cat: "Salaire" },
+  { name: "Conges payes", url: "/outils/conges-payes", desc: "Indemnite de conges payes", cat: "Droit du travail" },
 ];
 
 const CATEGORIES = [...new Set(TOOLS.map((t) => t.cat))];
@@ -32,11 +34,11 @@ export default function Page() {
   return (
     <>
       <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Outils" }]} />
-      <JsonLd type="WebApplication" data={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "Ecosysteme — Tous les outils", description: "14 calculateurs gratuits", url: "/outils" }} />
+      <JsonLd type="WebApplication" data={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "Ecosysteme — Tous les outils", description: "16 calculateurs gratuits", url: "/outils" }} />
       <main className="mx-auto max-w-5xl px-5 py-10">
         <div className="mb-8">
           <h1 className="text-xl font-bold text-foreground sm:text-2xl">Tous les outils</h1>
-          <p className="mt-1.5 text-sm text-muted">14 calculateurs gratuits, precis et transparents.</p>
+          <p className="mt-1.5 text-sm text-muted">16 calculateurs gratuits, precis et transparents.</p>
         </div>
 
         <nav className="mb-8 flex flex-wrap gap-2">
