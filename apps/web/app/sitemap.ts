@@ -26,19 +26,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return [
-    { url: BASE_URL, lastModified: LAST_MODIFIED, changeFrequency: "monthly", priority: 1 },
+    // Homepage — priority 1.0
+    { url: BASE_URL, lastModified: LAST_MODIFIED, changeFrequency: "monthly", priority: 1.0 },
+
+    // Outils index — priority 0.9
     { url: `${BASE_URL}/outils`, lastModified: LAST_MODIFIED, changeFrequency: "weekly", priority: 0.9 },
+
+    // 14 outils — priority 0.9
     ...tools.map((slug) => ({
       url: `${BASE_URL}/outils/${slug}`,
       lastModified: LAST_MODIFIED,
       changeFrequency: "monthly" as const,
-      priority: 0.8,
+      priority: 0.9,
     })),
+
+    // Guides — priority 0.8
     ...guides.map((slug) => ({
       url: `${BASE_URL}/guides/${slug}`,
       lastModified: LAST_MODIFIED,
       changeFrequency: "monthly" as const,
-      priority: 0.7,
+      priority: 0.8,
     })),
   ];
 }
