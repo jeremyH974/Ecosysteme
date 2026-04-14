@@ -14,8 +14,13 @@ describe("getBaremeActif", () => {
     expect(rupture.categorie).toBe("rupture_conventionnelle");
   });
 
+  test("retourne le bareme kilometrique actif", () => {
+    const km = getBaremeActif("baremes_km", new Date("2026-04-01"));
+    expect(km.id).toBe("bareme_km_2025");
+  });
+
   test("leve une erreur pour une categorie sans bareme", () => {
-    expect(() => getBaremeActif("baremes_km", new Date("2026-04-01"))).toThrow(
+    expect(() => getBaremeActif("abattements_immo", new Date("2026-04-01"))).toThrow(
       "BAREME_INTROUVABLE",
     );
   });
@@ -32,15 +37,20 @@ describe("getBaremesParCategorie", () => {
     expect(baremes[0]?.categorie).toBe("smic");
   });
 
-  test("retourne un tableau vide pour une categorie vide", () => {
+  test("retourne les baremes kilometriques", () => {
     const baremes = getBaremesParCategorie("baremes_km");
+    expect(baremes.length).toBeGreaterThanOrEqual(1);
+  });
+
+  test("retourne un tableau vide pour une categorie inexistante", () => {
+    const baremes = getBaremesParCategorie("abattements_immo");
     expect(baremes).toHaveLength(0);
   });
 });
 
 describe("getAllBaremes", () => {
-  test("retourne au moins 10 baremes", () => {
+  test("retourne au moins 15 baremes", () => {
     const all = getAllBaremes();
-    expect(all.length).toBeGreaterThanOrEqual(10);
+    expect(all.length).toBeGreaterThanOrEqual(15);
   });
 });

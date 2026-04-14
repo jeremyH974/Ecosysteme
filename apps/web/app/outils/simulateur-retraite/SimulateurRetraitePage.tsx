@@ -78,7 +78,7 @@ export function SimulateurRetraitePage() {
           sources={[{ label: "Info-Retraite.fr — Estimation pension", url: "https://www.info-retraite.fr" }]}
           verifieLe="15 janvier 2024"
           casCouverts="les salaries du secteur prive, reforme 2023 (generation 1965+)"
-          casNonCouverts="les fonctionnaires, les independants, les regimes speciaux, les carriere longues"
+          casNonCouverts="les fonctionnaires, les independants, les regimes speciaux, les carrieres longues. Le SAM est estime a partir du salaire actuel (pas des 25 meilleures annees reelles). Estimation a +/-20%. Consultez votre releve de carriere sur info-retraite.fr pour une simulation personnalisee"
         />
       }
     >

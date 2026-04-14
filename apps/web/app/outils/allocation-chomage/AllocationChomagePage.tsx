@@ -71,7 +71,7 @@ export function AllocationChomagePage() {
           sources={[{ label: "France Travail — Calcul de l'allocation ARE", url: "https://www.francetravail.fr/candidat/mes-droits-aux-aides-et-allegements/a-chaque-situation-son-allocatio/quelle-est-ma-situation-professi/allocation-d-aide-au-retour-a-l-.html" }]}
           verifieLe="15 janvier 2024"
           casCouverts="les salaries du secteur prive involontairement prives d'emploi (licenciement, rupture conventionnelle, fin de CDD)"
-          casNonCouverts="les demissions (sauf legitimes), les fonctionnaires, les independants"
+          casNonCouverts="les demissions (sauf legitimes), les fonctionnaires, les independants. Limitations : le SJR est approxime (brut annuel / 365), la degresivite au-dela de 4 939 EUR/mois brut n'est pas implementee, le simulateur peut sous-estimer l'allocation dans ce cas"
         />
       }
     >

@@ -12,9 +12,9 @@ import { FAQ_KM } from "../../lib/faq-data";
 const BAREME_KM = [
   { puissance: "3", jusqu_a_5000: { coeff: 0.529, ajout: 0 }, de_5001_a_20000: { coeff: 0.316, ajout: 1065 }, au_dela_20000: { coeff: 0.370, ajout: 0 } },
   { puissance: "4", jusqu_a_5000: { coeff: 0.606, ajout: 0 }, de_5001_a_20000: { coeff: 0.340, ajout: 1330 }, au_dela_20000: { coeff: 0.407, ajout: 0 } },
-  { puissance: "5", jusqu_a_5000: { coeff: 0.636, ajout: 0 }, de_5001_a_20000: { coeff: 0.357, ajout: 1395 }, au_dela_20000: { coeff: 0.427, ajout: 0 } },
-  { puissance: "6", jusqu_a_5000: { coeff: 0.665, ajout: 0 }, de_5001_a_20000: { coeff: 0.374, ajout: 1457 }, au_dela_20000: { coeff: 0.447, ajout: 0 } },
-  { puissance: "7+", jusqu_a_5000: { coeff: 0.697, ajout: 0 }, de_5001_a_20000: { coeff: 0.394, ajout: 1515 }, au_dela_20000: { coeff: 0.470, ajout: 0 } },
+  { puissance: "5", jusqu_a_5000: { coeff: 0.657, ajout: 0 }, de_5001_a_20000: { coeff: 0.357, ajout: 1395 }, au_dela_20000: { coeff: 0.407, ajout: 0 } },
+  { puissance: "6", jusqu_a_5000: { coeff: 0.665, ajout: 0 }, de_5001_a_20000: { coeff: 0.374, ajout: 1435 }, au_dela_20000: { coeff: 0.407, ajout: 0 } },
+  { puissance: "7+", jusqu_a_5000: { coeff: 0.661, ajout: 0 }, de_5001_a_20000: { coeff: 0.374, ajout: 1435 }, au_dela_20000: { coeff: 0.407, ajout: 0 } },
 ];
 
 function fmt(n: number) {

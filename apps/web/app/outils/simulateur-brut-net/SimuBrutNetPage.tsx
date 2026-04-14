@@ -126,7 +126,7 @@ export function SimuBrutNetPage() {
         <TrustFooter baremeNom="Cotisations salariales 2024 — URSSAF" dateBareme="1er janvier 2024"
           sources={[{ label: "URSSAF — Taux de cotisations secteur prive", url: "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-secteur-prive.html" }]}
           verifieLe="15 janvier 2024" casCouverts="les salaries du secteur prive (CDI/CDD), cadres et non-cadres"
-          casNonCouverts="les fonctionnaires, les independants/TNS, les regimes speciaux" />
+          casNonCouverts="les fonctionnaires, les independants/TNS, les regimes speciaux, les exonerations sectorielles, les situations avec plusieurs employeurs" />
       }
     >
       {/* SAISIE — 6 champs editables */}

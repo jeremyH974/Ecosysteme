@@ -90,6 +90,26 @@
       "verifie_par": "AUDIT"
     },
     {
+      "id": "tranches_ir_2025",
+      "nom": "Bareme IR 2025 (revenus 2024)",
+      "categorie": "tranches_ir",
+      "valeur": {
+        "tranches": [
+          { "de": 0, "jusqu_a": 11294, "taux": 0.00 },
+          { "de": 11295, "jusqu_a": 28797, "taux": 0.11 },
+          { "de": 28798, "jusqu_a": 82341, "taux": 0.30 },
+          { "de": 82342, "jusqu_a": 177106, "taux": 0.41 },
+          { "de": 177107, "jusqu_a": null, "taux": 0.45 }
+        ]
+      },
+      "date_debut": "2025-01-01T00:00:00Z",
+      "date_fin": "2025-12-31T00:00:00Z",
+      "source_url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049034498",
+      "source_label": "Legifrance — LFI 2025, Art. 2 (revenus 2024)",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
+    },
+    {
       "id": "taux_is_2026",
       "nom": "Taux IS 2026",
       "categorie": "taux_is",
@@ -102,6 +122,26 @@
       "date_fin": null,
       "source_url": "https://entreprendre.service-public.gouv.fr/vosdroits/F23575",
       "source_label": "Service-Public Entreprendre — IS 2026 (inchange)",
+      "verifie_le": "2026-04-14T00:00:00Z",
+      "verifie_par": "AUDIT"
+    },
+    {
+      "id": "bareme_km_2025",
+      "nom": "Bareme kilometrique automobiles 2025-2026",
+      "categorie": "baremes_km",
+      "valeur": {
+        "automobiles": [
+          { "puissance": "3", "t1_coeff": 0.529, "t1_ajout": 0, "t2_coeff": 0.316, "t2_ajout": 1065, "t3_coeff": 0.407, "t3_ajout": 0 },
+          { "puissance": "4", "t1_coeff": 0.606, "t1_ajout": 0, "t2_coeff": 0.340, "t2_ajout": 1330, "t3_coeff": 0.407, "t3_ajout": 0 },
+          { "puissance": "5", "t1_coeff": 0.657, "t1_ajout": 0, "t2_coeff": 0.357, "t2_ajout": 1395, "t3_coeff": 0.407, "t3_ajout": 0 },
+          { "puissance": "6", "t1_coeff": 0.665, "t1_ajout": 0, "t2_coeff": 0.374, "t2_ajout": 1435, "t3_coeff": 0.407, "t3_ajout": 0 },
+          { "puissance": "7+", "t1_coeff": 0.661, "t1_ajout": 0, "t2_coeff": 0.374, "t2_ajout": 1435, "t3_coeff": 0.407, "t3_ajout": 0 }
+        ]
+      },
+      "date_debut": "2025-01-01T00:00:00Z",
+      "date_fin": null,
+      "source_url": "https://bofip.impots.gouv.fr/bofip/2185-PGP.html/identifiant=BOI-BAREME-000001-20230720",
+      "source_label": "BOFIP — Bareme kilometrique 2025-2026 (inchange)",
       "verifie_le": "2026-04-14T00:00:00Z",
       "verifie_par": "AUDIT"
     },
