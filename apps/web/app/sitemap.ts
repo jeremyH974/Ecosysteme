@@ -46,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Outils index — priority 0.9
     { url: `${BASE_URL}/outils`, lastModified: LAST_MODIFIED, changeFrequency: "weekly", priority: 0.9 },
 
-    // 14 outils — priority 0.9
+    // 18 outils — priority 0.9
     ...tools.map((slug) => ({
       url: `${BASE_URL}/outils/${slug}`,
       lastModified: LAST_MODIFIED,
