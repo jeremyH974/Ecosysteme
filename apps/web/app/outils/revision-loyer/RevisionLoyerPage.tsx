@@ -9,6 +9,7 @@ import { useRevisionLoyer } from "./useRevisionLoyer";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { FAQ_LOYER } from "../../lib/faq-data";
 import { RevisionLoyerContent } from "./RevisionLoyerContent";
+import { IRLAlertOptIn } from "./IRLAlertOptIn";
 
 export function RevisionLoyerPage() {
   const { result, error, calculate, irlOptions } = useRevisionLoyer();
@@ -58,6 +59,7 @@ export function RevisionLoyerPage() {
           {result && (
             <>
               <RevisionLoyerResult result={result} />
+              <IRLAlertOptIn />
               <ToolRecommendations currentToolSlug="revision-loyer" />
             </>
           )}
