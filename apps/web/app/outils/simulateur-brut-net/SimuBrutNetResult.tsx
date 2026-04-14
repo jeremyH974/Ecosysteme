@@ -3,6 +3,7 @@
 import { ResultCard } from "@ecosysteme/ui";
 import type { BrutNetOutput } from "@ecosysteme/core/salary";
 import { track } from "@ecosysteme/analytics";
+import { ExportPDFButton } from "../../lib/ExportPDFButton";
 
 interface SimuBrutNetResultProps {
   result: BrutNetOutput;
@@ -24,6 +25,7 @@ export function SimuBrutNetResult({ result, salaireBrut }: SimuBrutNetResultProp
   const d = result.detail;
 
   return (
+    <>
     <ResultCard
       label="Votre salaire net avant impot sur le revenu"
       value={formatEuros(result.salaireNetAvantImpot)}
@@ -81,5 +83,22 @@ export function SimuBrutNetResult({ result, salaireBrut }: SimuBrutNetResultProp
         </div>
       }
     />
+    <div className="mt-4">
+      <ExportPDFButton toolSlug="simulateur-brut-net" templateData={{
+        title: "Simulation salaire brut / net", toolName: "Simulateur brut net",
+        generatedAt: new Date().toLocaleDateString("fr-FR"),
+        sections: [{ heading: "Resultat", rows: [
+          { label: "Salaire brut mensuel", value: `${formatEuros(salaireBrut)} EUR` },
+          { label: "CSG + CRDS", value: `-${formatEuros(d.montantCsgCrds)} EUR` },
+          { label: "Assurance vieillesse", value: `-${formatEuros(d.montantVieillessePlafonnee + d.montantVieillesseDeplafonnee)} EUR` },
+          { label: "Retraite complementaire", value: `-${formatEuros(d.montantRetraiteComplementaire)} EUR` },
+          { label: "Total cotisations", value: `-${formatEuros(result.totalCotisationsSalariales)} EUR (${formatPct(d.tauxGlobalCotisations)})` },
+          { label: "Salaire net avant impot", value: `${formatEuros(result.salaireNetAvantImpot)} EUR` },
+        ]}],
+        sources: [{ label: "URSSAF — Taux de cotisations", url: "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-secteur-prive.html" }],
+        disclaimer: "Les resultats sont fournis a titre indicatif.",
+      }} />
+    </div>
+    </>
   );
 }

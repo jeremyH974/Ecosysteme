@@ -3,6 +3,7 @@
 import { ResultCard } from "@ecosysteme/ui";
 import type { RevisionLoyerOutput } from "@ecosysteme/core/property";
 import { track } from "@ecosysteme/analytics";
+import { ExportPDFButton } from "../../lib/ExportPDFButton";
 
 interface RevisionLoyerResultProps {
   result: RevisionLoyerOutput;
@@ -20,6 +21,7 @@ export function RevisionLoyerResult({ result }: RevisionLoyerResultProps) {
   const hausse = result.augmentationMontant >= 0;
 
   return (
+    <>
     <ResultCard
       label="Nouveau loyer apres revision"
       value={formatEuros(result.nouveauLoyer)}
@@ -58,5 +60,22 @@ export function RevisionLoyerResult({ result }: RevisionLoyerResultProps) {
         </div>
       }
     />
+    <div className="mt-4">
+      <ExportPDFButton toolSlug="revision-loyer" templateData={{
+        title: "Revision de loyer (IRL)", toolName: "Revision loyer",
+        generatedAt: new Date().toLocaleDateString("fr-FR"),
+        sections: [{ heading: "Resultat", rows: [
+          { label: "Loyer actuel", value: `${formatEuros(d.loyerActuel)} EUR` },
+          { label: "IRL ancien", value: d.irlAncien.toFixed(2) },
+          { label: "IRL nouveau", value: d.irlNouveau.toFixed(2) },
+          { label: "Variation", value: `${result.augmentationPourcentage >= 0 ? "+" : ""}${result.augmentationPourcentage.toFixed(2)}%` },
+          { label: "Nouveau loyer", value: `${formatEuros(result.nouveauLoyer)} EUR` },
+          { label: "Augmentation mensuelle", value: `${result.augmentationMontant >= 0 ? "+" : ""}${formatEuros(result.augmentationMontant)} EUR` },
+        ]}],
+        sources: [{ label: "INSEE — IRL", url: "https://www.insee.fr/fr/statistiques/serie/001515333" }],
+        disclaimer: "Les resultats sont fournis a titre indicatif.",
+      }} />
+    </div>
+    </>
   );
 }

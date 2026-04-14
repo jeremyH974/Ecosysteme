@@ -6,6 +6,7 @@ import { track } from "@ecosysteme/analytics";
 import { calculerAutoEntrepreneur } from "@ecosysteme/core/fiscal";
 import type { AEOutput } from "@ecosysteme/core/fiscal";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { ExportPDFButton } from "../../lib/ExportPDFButton";
 
 function fmt(n: number) {
   return new Intl.NumberFormat("fr-FR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(n));
@@ -97,6 +98,22 @@ export function AEPage() {
                   </div>
                 }
               />
+              <div className="mt-4">
+                <ExportPDFButton toolSlug="simulateur-auto-entrepreneur" templateData={{
+                  title: "Simulation auto-entrepreneur", toolName: "Auto-entrepreneur",
+                  generatedAt: new Date().toLocaleDateString("fr-FR"),
+                  sections: [{ heading: "Resultat", rows: [
+                    { label: "Chiffre d'affaires", value: `${fmt(parseFloat(ca))} EUR` },
+                    { label: "Cotisations sociales", value: `-${fmt(result.cotisationsSociales)} EUR` },
+                    ...(vl ? [{ label: "Versement liberatoire IR", value: `-${fmt(result.versementLiberatoireIR)} EUR` }] : []),
+                    { label: "Revenu net", value: `${fmt(result.revenuApresCharges)} EUR` },
+                    { label: "Revenu imposable", value: `${fmt(result.revenuImposable)} EUR` },
+                    { label: "Taux de charges effectif", value: `${(result.tauxChargesEffectif * 100).toFixed(1)}%` },
+                  ]}],
+                  sources: [{ label: "URSSAF — Auto-entrepreneur", url: "https://www.autoentrepreneur.urssaf.fr/portail/accueil/sinformer-sur-le-statut/lessentiel-du-statut.html" }],
+                  disclaimer: "Les resultats sont fournis a titre indicatif.",
+                }} />
+              </div>
               <ToolRecommendations currentToolSlug="simulateur-ae" />
             </>
           )}

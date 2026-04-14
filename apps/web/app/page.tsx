@@ -1,108 +1,134 @@
+const CATEGORIES = [
+  {
+    title: "Droit du travail & Salaire",
+    description: "Outils pour les salaries et les RH",
+    tools: [
+      { name: "Rupture conventionnelle", url: "/outils/rupture-conventionnelle", desc: "Calculez votre indemnite legale de rupture conventionnelle en 30 secondes." },
+      { name: "Simulateur brut/net", url: "/outils/simulateur-brut-net", desc: "Convertissez votre salaire brut en net avec le detail des cotisations." },
+    ],
+  },
+  {
+    title: "Freelance & Societe",
+    description: "Optimisation pour les independants et dirigeants",
+    tools: [
+      { name: "Optimisation SASU", url: "/outils/optimisation-sasu", desc: "Trouvez la repartition optimale salaire/dividendes pour votre SASU." },
+      { name: "Auto-entrepreneur", url: "/outils/simulateur-auto-entrepreneur", desc: "Simulez vos cotisations sociales et votre revenu net en micro-entreprise." },
+    ],
+  },
+  {
+    title: "Immobilier",
+    description: "Calculs pour les proprietaires, bailleurs et investisseurs",
+    tools: [
+      { name: "Revision de loyer (IRL)", url: "/outils/revision-loyer", desc: "Calculez le nouveau montant de votre loyer avec l'indice IRL de l'INSEE." },
+      { name: "Frais de notaire", url: "/outils/frais-notaire", desc: "Estimez les frais de notaire pour votre achat immobilier (ancien ou neuf)." },
+      { name: "Rendement locatif", url: "/outils/rendement-locatif", desc: "Evaluez la rentabilite brute et nette de votre investissement locatif." },
+    ],
+  },
+  {
+    title: "Fiscalite",
+    description: "Impot sur le revenu et fiscalite pratique",
+    tools: [
+      { name: "Simulateur TMI", url: "/outils/simulateur-tmi", desc: "Calculez votre taux marginal d'imposition et le detail de votre IR." },
+    ],
+  },
+];
+
 export default function HomePage() {
   return (
-    <main className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-          Ecosysteme
-        </h1>
-        <p className="mt-4 text-lg text-gray-600">
-          Calculateurs utilitaires de reference pour les Francais
-        </p>
-        <p className="mt-2 text-sm text-gray-500">
-          L&apos;outil que votre expert-comptable aurait fait si vous lui aviez demande de le rendre
-          gratuit et accessible.
-        </p>
-      </div>
-
-      <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <a
-          href="/outils/rupture-conventionnelle"
-          className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-        >
-          <h2 className="text-lg font-semibold text-gray-900">Rupture conventionnelle</h2>
-          <p className="mt-1 text-sm text-gray-500">
-            Calculez votre indemnite legale de rupture conventionnelle en 30 secondes.
+    <main className="min-h-screen">
+      {/* Hero */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8 text-center">
+          <p className="text-sm font-medium uppercase tracking-widest text-emerald-700">
+            Calculateurs de reference
           </p>
-          <p className="mt-3 text-xs font-medium text-emerald-700">Simuler maintenant &rarr;</p>
-        </a>
-
-        <a
-          href="/outils/simulateur-brut-net"
-          className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-        >
-          <h2 className="text-lg font-semibold text-gray-900">Simulateur brut/net</h2>
-          <p className="mt-1 text-sm text-gray-500">
-            Convertissez votre salaire brut en net en tenant compte des charges sociales.
+          <h1 className="mt-3 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+            Ecosysteme
+          </h1>
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-gray-600">
+            8 outils gratuits, precis et transparents pour les Francais.
+            Droit du travail, fiscalite, freelance et immobilier.
           </p>
-          <p className="mt-3 text-xs font-medium text-emerald-700">Simuler maintenant &rarr;</p>
-        </a>
-
-        <a
-          href="/outils/optimisation-sasu"
-          className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-        >
-          <h2 className="text-lg font-semibold text-gray-900">Optimisation SASU</h2>
-          <p className="mt-1 text-sm text-gray-500">
-            Trouvez la repartition optimale salaire/dividendes pour votre SASU.
+          <p className="mt-3 text-sm text-gray-400">
+            L&apos;outil que votre expert-comptable aurait fait si vous lui aviez demande
+            de le rendre gratuit et accessible.
           </p>
-          <p className="mt-3 text-xs font-medium text-emerald-700">Optimiser maintenant &rarr;</p>
-        </a>
+          <div className="mt-8 flex justify-center gap-4">
+            <a href="#outils" className="rounded-md bg-emerald-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-800">
+              Voir les outils
+            </a>
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="/outils/revision-loyer"
-          className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-        >
-          <h2 className="text-lg font-semibold text-gray-900">Revision de loyer (IRL)</h2>
-          <p className="mt-1 text-sm text-gray-500">
-            Calculez le nouveau montant de votre loyer avec l&apos;indice IRL de l&apos;INSEE.
-          </p>
-          <p className="mt-3 text-xs font-medium text-emerald-700">Calculer maintenant &rarr;</p>
-        </a>
+      {/* Chiffres cles */}
+      <section className="bg-gray-50 border-b border-gray-100">
+        <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 text-center">
+            <div>
+              <p className="text-3xl font-bold text-gray-900">8</p>
+              <p className="mt-1 text-xs text-gray-500">Outils gratuits</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-gray-900">194</p>
+              <p className="mt-1 text-xs text-gray-500">Tests automatises</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-gray-900">12</p>
+              <p className="mt-1 text-xs text-gray-500">Baremes officiels</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-gray-900">30s</p>
+              <p className="mt-1 text-xs text-gray-500">Pour un resultat</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="/outils/simulateur-tmi"
-          className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-        >
-          <h2 className="text-lg font-semibold text-gray-900">Simulateur TMI</h2>
-          <p className="mt-1 text-sm text-gray-500">
-            Calculez votre taux marginal d&apos;imposition et le detail de votre IR.
-          </p>
-          <p className="mt-3 text-xs font-medium text-emerald-700">Calculer maintenant &rarr;</p>
-        </a>
+      {/* Outils par categorie */}
+      <section id="outils" className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="space-y-12">
+          {CATEGORIES.map((cat) => (
+            <div key={cat.title}>
+              <div className="mb-4">
+                <h2 className="text-xl font-bold text-gray-900">{cat.title}</h2>
+                <p className="text-sm text-gray-500">{cat.description}</p>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {cat.tools.map((tool) => (
+                  <a
+                    key={tool.url}
+                    href={tool.url}
+                    className="group rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition-all hover:shadow-md hover:border-emerald-200"
+                  >
+                    <h3 className="text-base font-semibold text-gray-900 group-hover:text-emerald-700">
+                      {tool.name}
+                    </h3>
+                    <p className="mt-1.5 text-sm text-gray-500 line-clamp-2">{tool.desc}</p>
+                    <p className="mt-3 text-xs font-medium text-emerald-700">
+                      Utiliser &rarr;
+                    </p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        <a
-          href="/outils/frais-notaire"
-          className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-        >
-          <h2 className="text-lg font-semibold text-gray-900">Frais de notaire</h2>
-          <p className="mt-1 text-sm text-gray-500">
-            Estimez les frais de notaire pour votre achat immobilier (ancien ou neuf).
-          </p>
-          <p className="mt-3 text-xs font-medium text-emerald-700">Calculer maintenant &rarr;</p>
-        </a>
-
-        <a
-          href="/outils/rendement-locatif"
-          className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-        >
-          <h2 className="text-lg font-semibold text-gray-900">Rendement locatif</h2>
-          <p className="mt-1 text-sm text-gray-500">
-            Evaluez la rentabilite brute et nette de votre investissement locatif.
-          </p>
-          <p className="mt-3 text-xs font-medium text-emerald-700">Calculer maintenant &rarr;</p>
-        </a>
-
-        <a
-          href="/outils/simulateur-auto-entrepreneur"
-          className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-        >
-          <h2 className="text-lg font-semibold text-gray-900">Auto-entrepreneur</h2>
-          <p className="mt-1 text-sm text-gray-500">
-            Simulez vos cotisations sociales et votre revenu net en micro-entreprise.
-          </p>
-          <p className="mt-3 text-xs font-medium text-emerald-700">Simuler maintenant &rarr;</p>
-        </a>
-      </div>
+      {/* Footer */}
+      <footer className="border-t border-gray-200 bg-white">
+        <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
+            <p className="text-sm text-gray-500">
+              Ecosysteme — Calculateurs utilitaires de reference
+            </p>
+            <p className="text-xs text-gray-400">
+              Resultats a titre indicatif. Sources officielles citees sur chaque outil.
+            </p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

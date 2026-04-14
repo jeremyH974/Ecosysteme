@@ -5,6 +5,7 @@ import { ToolLayout, TrustFooter, FormField, ResultCard } from "@ecosysteme/ui";
 import { track } from "@ecosysteme/analytics";
 import { useTMI } from "./useTMI";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { ExportPDFButton } from "../../lib/ExportPDFButton";
 
 function formatEuros(n: number): string {
   return new Intl.NumberFormat("fr-FR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(n));
@@ -129,6 +130,21 @@ export function TMIPage() {
                     </div>
                   }
                 />
+              </div>
+              <div className="mt-4">
+                <ExportPDFButton toolSlug="simulateur-tmi" templateData={{
+                  title: "Simulateur TMI — Taux marginal d'imposition", toolName: "Simulateur TMI",
+                  generatedAt: new Date().toLocaleDateString("fr-FR"),
+                  sections: [{ heading: "Resultat", rows: [
+                    { label: "Revenu net imposable", value: `${formatEuros(parseFloat(revenu))} EUR` },
+                    { label: "Nombre de parts", value: nbParts },
+                    { label: "TMI", value: formatPct(result.tauxMarginal) },
+                    { label: "Taux moyen", value: formatPct(result.tauxMoyen) },
+                    { label: "Impot sur le revenu", value: `${formatEuros(result.montantIR)} EUR` },
+                  ]}],
+                  sources: [{ label: "Service-Public.fr — Bareme IR", url: "https://www.service-public.fr/particuliers/vosdroits/F1419" }],
+                  disclaimer: "Les resultats sont fournis a titre indicatif.",
+                }} />
               </div>
               <ToolRecommendations currentToolSlug="simulateur-tmi" />
             </>

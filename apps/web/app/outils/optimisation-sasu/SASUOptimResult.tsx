@@ -2,6 +2,7 @@
 
 import type { SASUOptimOutput, ScenarioComparatif } from "@ecosysteme/core/fiscal";
 import { track } from "@ecosysteme/analytics";
+import { ExportPDFButton } from "../../lib/ExportPDFButton";
 
 interface SASUOptimResultProps {
   result: SASUOptimOutput;
@@ -121,6 +122,32 @@ export function SASUOptimResult({ result }: SASUOptimResultProps) {
             {formatEuros(o.netTotal)} EUR
           </span>
         </div>
+      </div>
+
+      <div className="mt-4">
+        <ExportPDFButton toolSlug="optimisation-sasu" templateData={{
+          title: "Optimisation remuneration SASU", toolName: "Optimisation SASU",
+          generatedAt: new Date().toLocaleDateString("fr-FR"),
+          sections: [
+            { heading: "Repartition optimale", rows: [
+              { label: "Salaire brut president", value: `${formatEuros(o.salaireBrut)} EUR` },
+              { label: "Salaire net", value: `${formatEuros(o.salaireNet)} EUR` },
+              { label: "Dividendes bruts", value: `${formatEuros(o.dividendesBruts)} EUR` },
+              { label: "Dividendes nets (apres PFU)", value: `${formatEuros(o.dividendesNets)} EUR` },
+            ]},
+            { heading: "Fiscalite", rows: [
+              { label: "Impot sur les societes (IS)", value: `${formatEuros(o.montantIS)} EUR` },
+              { label: "PFU sur dividendes", value: `${formatEuros(o.montantPFU)} EUR` },
+              { label: "Impot sur le revenu (IR)", value: `${formatEuros(o.montantIR)} EUR` },
+              { label: "Revenu net total optimise", value: `${formatEuros(o.netTotal)} EUR` },
+            ]},
+          ],
+          sources: [
+            { label: "Service-Public.fr — Bareme IR", url: "https://www.service-public.fr/particuliers/vosdroits/F1419" },
+            { label: "Service-Public — IS", url: "https://entreprendre.service-public.fr/vosdroits/F23575" },
+          ],
+          disclaimer: "Les resultats sont fournis a titre indicatif. Consultez un expert-comptable pour toute decision.",
+        }} />
       </div>
     </div>
   );

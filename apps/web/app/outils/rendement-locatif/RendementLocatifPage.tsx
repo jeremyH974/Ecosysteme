@@ -6,6 +6,7 @@ import { track } from "@ecosysteme/analytics";
 import { calculerRendementLocatif } from "@ecosysteme/core/property";
 import type { RendementLocatifOutput } from "@ecosysteme/core/property";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { ExportPDFButton } from "../../lib/ExportPDFButton";
 
 function fmt(n: number) {
   return new Intl.NumberFormat("fr-FR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(n));
@@ -97,6 +98,21 @@ export function RendementLocatifPage() {
                     </div>
                   }
                 />
+              </div>
+              <div className="mt-4">
+                <ExportPDFButton toolSlug="rendement-locatif" templateData={{
+                  title: "Calcul de rendement locatif", toolName: "Rendement locatif",
+                  generatedAt: new Date().toLocaleDateString("fr-FR"),
+                  sections: [{ heading: "Resultat", rows: [
+                    { label: "Prix d'achat", value: `${fmt(parseFloat(prix))} EUR` },
+                    { label: "Loyer mensuel", value: `${fmt(parseFloat(loyer))} EUR` },
+                    { label: "Rendement brut", value: `${result.rendementBrut.toFixed(2)}%` },
+                    { label: "Rendement net", value: `${result.rendementNet.toFixed(2)}%` },
+                    { label: "Revenu annuel net", value: `${fmt(result.revenuAnnuelNet)} EUR` },
+                  ]}],
+                  sources: [{ label: "Service-Public.fr — Investissement locatif", url: "https://www.service-public.fr/particuliers/vosdroits/F31235" }],
+                  disclaimer: "Les resultats sont fournis a titre indicatif.",
+                }} />
               </div>
               <ToolRecommendations currentToolSlug="rendement-locatif" />
             </>

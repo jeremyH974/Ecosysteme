@@ -6,6 +6,7 @@ import { track } from "@ecosysteme/analytics";
 import { calculerFraisNotaire } from "@ecosysteme/core/property";
 import type { FraisNotaireOutput } from "@ecosysteme/core/property";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
+import { ExportPDFButton } from "../../lib/ExportPDFButton";
 
 function fmt(n: number) {
   return new Intl.NumberFormat("fr-FR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(n));
@@ -87,6 +88,22 @@ export function FraisNotairePage() {
                   </div>
                 }
               />
+              <div className="mt-4">
+                <ExportPDFButton toolSlug="frais-notaire" templateData={{
+                  title: "Estimation frais de notaire", toolName: "Frais de notaire",
+                  generatedAt: new Date().toLocaleDateString("fr-FR"),
+                  sections: [{ heading: "Resultat", rows: [
+                    { label: "Prix d'achat", value: `${fmt(parseFloat(prix))} EUR` },
+                    { label: "Type de bien", value: type === "ancien" ? "Ancien" : "Neuf" },
+                    { label: "Droits de mutation", value: `${fmt(result.detail.droitsMutation)} EUR` },
+                    { label: "Emoluments notaire", value: `${fmt(result.detail.emolumentsNotaire)} EUR` },
+                    { label: "Frais divers", value: `${fmt(result.detail.fraisDivers)} EUR` },
+                    { label: "Total frais de notaire", value: `${fmt(result.totalFraisNotaire)} EUR (${result.pourcentageDuPrix.toFixed(1)}%)` },
+                  ]}],
+                  sources: [{ label: "Service-Public.fr — Frais de notaire", url: "https://www.service-public.fr/particuliers/vosdroits/F17759" }],
+                  disclaimer: "Les resultats sont fournis a titre indicatif.",
+                }} />
+              </div>
               <ToolRecommendations currentToolSlug="frais-notaire" />
             </>
           )}
