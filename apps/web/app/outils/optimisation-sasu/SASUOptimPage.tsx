@@ -8,6 +8,7 @@ import { SASUOptimResult } from "./SASUOptimResult";
 import { useSASUOptim } from "./useSASUOptim";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { FAQ_SASU } from "../../lib/faq-data";
+import { SASUContent } from "./SASUContent";
 
 export function SASUOptimPage() {
   const { result, error, calculate } = useSASUOptim();
@@ -75,6 +76,7 @@ export function SASUOptimPage() {
         </div>
       </div>
 
+      <SASUContent />
       <FAQ items={FAQ_SASU} />
     </ToolLayout>
   );

@@ -8,6 +8,7 @@ import type { FraisNotaireOutput } from "@ecosysteme/core/property";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_NOTAIRE } from "../../lib/faq-data";
+import { FraisNotaireContent } from "./FraisNotaireContent";
 
 function fmt(n: number) {
   return new Intl.NumberFormat("fr-FR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(n));
@@ -112,6 +113,7 @@ export function FraisNotairePage() {
         </div>
       </div>
 
+      <FraisNotaireContent />
       <FAQ items={FAQ_NOTAIRE} />
     </ToolLayout>
   );

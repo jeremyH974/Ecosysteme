@@ -7,6 +7,7 @@ import { useTMI } from "./useTMI";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_TMI } from "../../lib/faq-data";
+import { TMIContent } from "./TMIContent";
 
 function formatEuros(n: number): string {
   return new Intl.NumberFormat("fr-FR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(n));
@@ -159,6 +160,7 @@ export function TMIPage() {
         </div>
       </div>
 
+      <TMIContent />
       <FAQ items={FAQ_TMI} />
     </ToolLayout>
   );

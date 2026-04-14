@@ -8,6 +8,7 @@ import type { RetraiteOutput } from "@ecosysteme/core/salary";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_RETRAITE } from "../../lib/faq-data";
+import { RetraiteContent } from "./RetraiteContent";
 
 function fmt(n: number): string {
   return new Intl.NumberFormat("fr-FR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(n);
@@ -244,6 +245,7 @@ export function SimulateurRetraitePage() {
         </div>
       )}
 
+      <RetraiteContent />
       <FAQ items={FAQ_RETRAITE} />
     </ToolLayout>
   );

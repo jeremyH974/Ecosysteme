@@ -8,6 +8,7 @@ import type { AllocationChomageOutput } from "@ecosysteme/core/salary";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_CHOMAGE } from "../../lib/faq-data";
+import { AllocationChomageContent } from "./AllocationChomageContent";
 
 function fmt(n: number): string {
   return new Intl.NumberFormat("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n);
@@ -215,6 +216,7 @@ export function AllocationChomagePage() {
         </div>
       )}
 
+      <AllocationChomageContent />
       <FAQ items={FAQ_CHOMAGE} />
     </ToolLayout>
   );

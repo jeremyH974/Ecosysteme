@@ -8,6 +8,7 @@ import { RuptureResult } from "./RuptureResult";
 import { useRuptureCalc } from "./useRuptureCalc";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { FAQ_RUPTURE } from "../../lib/faq-data";
+import { RuptureContent } from "./RuptureContent";
 
 export function RuptureCalcPage() {
   const { result, error, warning, calculate } = useRuptureCalc();
@@ -77,6 +78,7 @@ export function RuptureCalcPage() {
         </div>
       </div>
 
+      <RuptureContent />
       <FAQ items={FAQ_RUPTURE} />
     </ToolLayout>
   );

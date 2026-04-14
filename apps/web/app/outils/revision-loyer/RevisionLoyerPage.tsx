@@ -8,6 +8,7 @@ import { RevisionLoyerResult } from "./RevisionLoyerResult";
 import { useRevisionLoyer } from "./useRevisionLoyer";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { FAQ_LOYER } from "../../lib/faq-data";
+import { RevisionLoyerContent } from "./RevisionLoyerContent";
 
 export function RevisionLoyerPage() {
   const { result, error, calculate, irlOptions } = useRevisionLoyer();
@@ -71,6 +72,7 @@ export function RevisionLoyerPage() {
         </div>
       </div>
 
+      <RevisionLoyerContent />
       <FAQ items={FAQ_LOYER} />
     </ToolLayout>
   );

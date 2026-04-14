@@ -8,6 +8,7 @@ import type { AEOutput } from "@ecosysteme/core/fiscal";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_AE } from "../../lib/faq-data";
+import { AEContent } from "./AEContent";
 
 function fmt(n: number) {
   return new Intl.NumberFormat("fr-FR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(n));
@@ -122,6 +123,7 @@ export function AEPage() {
         </div>
       </div>
 
+      <AEContent />
       <FAQ items={FAQ_AE} />
     </ToolLayout>
   );

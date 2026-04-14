@@ -8,6 +8,7 @@ import type { NiveauRichesseOutput } from "@ecosysteme/core/salary";
 import { ToolRecommendations } from "../../lib/ToolRecommendations";
 import { ExportPDFButton } from "../../lib/ExportPDFButton";
 import { FAQ_RICHESSE } from "../../lib/faq-data";
+import { NiveauRichesseContent } from "./NiveauRichesseContent";
 
 const STATS = {
   smicNet: 1427,
@@ -192,6 +193,7 @@ export function NiveauRichessePage() {
         </div>
       )}
 
+      <NiveauRichesseContent />
       <FAQ items={FAQ_RICHESSE} />
     </ToolLayout>
   );
