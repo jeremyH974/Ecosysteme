@@ -67,7 +67,7 @@ export function SimuBrutNetForm({ onSubmit }: SimuBrutNetFormProps) {
               value="non_cadre"
               checked={statut === "non_cadre"}
               onChange={() => setStatut("non_cadre")}
-              className="h-4 w-4 border-gray-300 text-emerald-600 focus:ring-emerald-500"
+              className="h-4 w-4 border-gray-300 text-primary focus:ring-primary"
             />
             <span className="text-sm text-gray-700">Non-cadre</span>
           </label>
@@ -78,7 +78,7 @@ export function SimuBrutNetForm({ onSubmit }: SimuBrutNetFormProps) {
               value="cadre"
               checked={statut === "cadre"}
               onChange={() => setStatut("cadre")}
-              className="h-4 w-4 border-gray-300 text-emerald-600 focus:ring-emerald-500"
+              className="h-4 w-4 border-gray-300 text-primary focus:ring-primary"
             />
             <span className="text-sm text-gray-700">Cadre</span>
           </label>
@@ -93,7 +93,7 @@ export function SimuBrutNetForm({ onSubmit }: SimuBrutNetFormProps) {
           id="tempsPartiel"
           value={tempsPartiel}
           onChange={(e) => setTempsPartiel(e.target.value)}
-          className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-1"
+          className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
         >
           <option value="1">Temps plein (100%)</option>
           <option value="0.8">80%</option>
@@ -103,7 +103,7 @@ export function SimuBrutNetForm({ onSubmit }: SimuBrutNetFormProps) {
 
       <button
         type="submit"
-        className="w-full rounded-md bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+        className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
       >
         Calculer mon salaire net
       </button>

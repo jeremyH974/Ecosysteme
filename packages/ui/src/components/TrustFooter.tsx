@@ -23,7 +23,7 @@ export function TrustFooter({
   return (
     <div className="space-y-2.5 text-xs leading-relaxed text-muted">
       <div className="flex items-start gap-2">
-        <svg className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" fill="currentColor" viewBox="0 0 20 20">
+        <svg className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" fill="currentColor" viewBox="0 0 20 20">
           <path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
         </svg>
         <div>
@@ -38,7 +38,7 @@ export function TrustFooter({
             href={source.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent underline decoration-accent/30 hover:decoration-accent"
+            className="text-primary underline decoration-primary/30 hover:decoration-primary"
           >
             consulter
           </a>

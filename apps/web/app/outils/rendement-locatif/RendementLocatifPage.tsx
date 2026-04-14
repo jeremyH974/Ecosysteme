@@ -70,14 +70,14 @@ export function RendementLocatifPage() {
             <div className="space-y-1.5">
               <label htmlFor="vacance" className="block text-sm font-medium text-gray-900">Vacance locative</label>
               <select id="vacance" value={vacance} onChange={(e) => setVacance(e.target.value)}
-                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-1">
+                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1">
                 <option value="0">Aucune (0 mois)</option>
                 <option value="1">1 mois / an</option>
                 <option value="2">2 mois / an</option>
                 <option value="3">3 mois / an</option>
               </select>
             </div>
-            <button type="submit" className="w-full rounded-md bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
+            <button type="submit" className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Calculer le rendement
             </button>
           </form>
@@ -94,8 +94,8 @@ export function RendementLocatifPage() {
                       <span className="text-gray-500">Loyer effectif (- vacance)</span><span className="text-right font-medium">{fmt(result.detail.loyerEffectif)} EUR</span>
                       <span className="text-gray-500">Charges annuelles</span><span className="text-right font-medium">-{fmt(result.detail.chargesAnnuelles)} EUR</span>
                       <span className="text-gray-500">Revenu net annuel</span><span className="text-right font-medium">{fmt(result.revenuAnnuelNet)} EUR</span>
-                      <span className="border-t border-gray-200 pt-1 font-bold text-emerald-700">Rendement net</span>
-                      <span className="border-t border-gray-200 pt-1 text-right font-bold text-emerald-700">{result.rendementNet.toFixed(2)}%</span>
+                      <span className="border-t border-gray-200 pt-1 font-bold text-primary">Rendement net</span>
+                      <span className="border-t border-gray-200 pt-1 text-right font-bold text-primary">{result.rendementNet.toFixed(2)}%</span>
                     </div>
                   }
                 />

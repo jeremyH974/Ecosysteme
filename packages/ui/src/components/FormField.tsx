@@ -39,7 +39,7 @@ export function FormField({ label, name, helpText, error, required, suffix, ...i
             suffix ? "pr-12" : "",
             error
               ? "border-danger focus:border-danger focus:ring-danger/20"
-              : "border-border hover:border-border-hover focus:border-accent focus:ring-accent/20",
+              : "border-border hover:border-border-hover focus:border-primary focus:ring-primary/20",
           ].join(" ")}
           {...inputProps}
         />

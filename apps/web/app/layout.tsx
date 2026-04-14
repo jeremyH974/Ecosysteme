@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import { ThemeToggle } from "./lib/ThemeToggle";
 
 export const metadata: Metadata = {
   title: {
@@ -19,14 +20,15 @@ export const metadata: Metadata = {
 
 function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 border-b border-border bg-surface-card/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3">
         <Link href="/" className="flex items-center gap-2.5">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent text-sm font-bold text-white">E</span>
+          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-white">E</span>
           <span className="text-[15px] font-semibold tracking-tight text-foreground">Ecosysteme</span>
         </Link>
-        <div className="flex items-center gap-5">
-          <Link href="/outils" className="text-sm text-muted transition-colors hover:text-foreground">Tous les outils</Link>
+        <div className="flex items-center gap-4">
+          <Link href="/outils" className="text-sm text-muted transition-colors hover:text-foreground">Outils</Link>
+          <ThemeToggle />
         </div>
       </div>
     </nav>
@@ -35,7 +37,7 @@ function Navbar() {
 
 function Footer() {
   return (
-    <footer className="border-t border-border bg-white">
+    <footer className="border-t border-border bg-surface-card">
       <div className="mx-auto max-w-5xl px-5 py-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -51,8 +53,19 @@ function Footer() {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr">
-      <body className="min-h-screen bg-surface font-sans text-foreground antialiased">
+    <html lang="fr" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `
+          try {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              document.documentElement.classList.add('dark')
+            } else {
+              document.documentElement.classList.remove('dark')
+            }
+          } catch (_) {}
+        `}} />
+      </head>
+      <body className="min-h-screen bg-background font-sans text-foreground antialiased transition-colors">
         <Navbar />
         <div className="min-h-[calc(100vh-120px)]">{children}</div>
         <Footer />

@@ -73,7 +73,7 @@ export function RevisionLoyerForm({ onSubmit, irlOptions }: RevisionLoyerFormPro
             "focus:outline-none focus:ring-2 focus:ring-offset-1",
             errors.irlAncien
               ? "border-red-300 focus:border-red-500 focus:ring-red-500"
-              : "border-gray-300 focus:border-emerald-500 focus:ring-emerald-500",
+              : "border-gray-300 focus:border-primary focus:ring-primary",
           ].join(" ")}
         >
           <option value="">Selectionnez un trimestre</option>
@@ -106,7 +106,7 @@ export function RevisionLoyerForm({ onSubmit, irlOptions }: RevisionLoyerFormPro
             "focus:outline-none focus:ring-2 focus:ring-offset-1",
             errors.irlNouveau
               ? "border-red-300 focus:border-red-500 focus:ring-red-500"
-              : "border-gray-300 focus:border-emerald-500 focus:ring-emerald-500",
+              : "border-gray-300 focus:border-primary focus:ring-primary",
           ].join(" ")}
         >
           <option value="">Selectionnez un trimestre</option>
@@ -125,7 +125,7 @@ export function RevisionLoyerForm({ onSubmit, irlOptions }: RevisionLoyerFormPro
 
       <button
         type="submit"
-        className="w-full rounded-md bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+        className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
       >
         Calculer le nouveau loyer
       </button>

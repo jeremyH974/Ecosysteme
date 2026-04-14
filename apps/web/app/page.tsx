@@ -42,10 +42,10 @@ export default function HomePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="border-b border-border bg-white">
+      <section className="border-b border-border bg-surface-card">
         <div className="mx-auto max-w-5xl px-5 py-16 sm:py-24 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent-light px-3 py-1 text-xs font-medium text-accent">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary-light px-3 py-1 text-xs font-medium text-primary">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
             11 outils gratuits
           </div>
           <h1 className="mt-5 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
@@ -58,7 +58,7 @@ export default function HomePage() {
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               href="/outils"
-              className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-accent-hover"
+              className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-hover"
             >
               Voir tous les outils
             </Link>
@@ -92,7 +92,7 @@ export default function HomePage() {
       </section>
 
       {/* Profils */}
-      <section className="border-b border-border bg-white">
+      <section className="border-b border-border bg-surface-card">
         <div className="mx-auto max-w-5xl px-5 py-12">
           <p className="text-center text-xs font-semibold uppercase tracking-widest text-muted">Je suis...</p>
           <div className="mt-5 grid gap-3 sm:grid-cols-3">
@@ -104,11 +104,11 @@ export default function HomePage() {
               <a
                 key={p.label}
                 href={p.href}
-                className="group flex items-center gap-4 rounded-xl border border-border bg-surface-card p-4 transition-all hover:border-accent/30 hover:shadow-sm"
+                className="group flex items-center gap-4 rounded-xl border border-border bg-surface-card p-4 transition-all hover:border-primary/30 hover:shadow-sm"
               >
                 <span className="text-2xl">{p.emoji}</span>
                 <div>
-                  <p className="text-sm font-semibold text-foreground group-hover:text-accent">{p.label}</p>
+                  <p className="text-sm font-semibold text-foreground group-hover:text-primary">{p.label}</p>
                   <p className="text-xs text-muted">{p.desc}</p>
                 </div>
               </a>
@@ -128,11 +128,11 @@ export default function HomePage() {
                   <Link
                     key={tool.url}
                     href={tool.url}
-                    className="group rounded-xl border border-border bg-surface-card p-4 transition-all hover:border-accent/30 hover:shadow-sm"
+                    className="group rounded-xl border border-border bg-surface-card p-4 transition-all hover:border-primary/30 hover:shadow-sm"
                   >
-                    <p className="text-sm font-semibold text-foreground group-hover:text-accent">{tool.name}</p>
+                    <p className="text-sm font-semibold text-foreground group-hover:text-primary">{tool.name}</p>
                     <p className="mt-1 text-xs text-muted">{tool.desc}</p>
-                    <p className="mt-3 text-xs font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
+                    <p className="mt-3 text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
                       Utiliser &rarr;
                     </p>
                   </Link>

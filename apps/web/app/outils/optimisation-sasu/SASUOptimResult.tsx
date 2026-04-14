@@ -17,13 +17,13 @@ function formatEuros(amount: number): string {
 
 function ScenarioRow({ scenario, highlight }: { scenario: ScenarioComparatif; highlight?: boolean }) {
   return (
-    <tr className={highlight ? "bg-emerald-50 font-medium" : ""}>
+    <tr className={highlight ? "bg-primary-light font-medium" : ""}>
       <td className="px-3 py-2 text-sm">{scenario.label}</td>
       <td className="px-3 py-2 text-right text-sm">{formatEuros(scenario.salaireBrut)} EUR</td>
       <td className="px-3 py-2 text-right text-sm">{formatEuros(scenario.dividendesBruts)} EUR</td>
       <td className="px-3 py-2 text-right text-sm">{formatEuros(scenario.montantIS)} EUR</td>
       <td className="px-3 py-2 text-right text-sm">{formatEuros(scenario.montantIR)} EUR</td>
-      <td className={`px-3 py-2 text-right text-sm font-bold ${highlight ? "text-emerald-700" : ""}`}>
+      <td className={`px-3 py-2 text-right text-sm font-bold ${highlight ? "text-primary" : ""}`}>
         {formatEuros(scenario.netTotal)} EUR
       </td>
     </tr>
@@ -115,10 +115,10 @@ export function SASUOptimResult({ result }: SASUOptimResultProps) {
           <span className="text-gray-500">Impot sur le revenu (IR)</span>
           <span className="text-right font-medium">-{formatEuros(o.montantIR)} EUR</span>
 
-          <span className="border-t border-gray-200 pt-2 font-semibold text-emerald-700">
+          <span className="border-t border-gray-200 pt-2 font-semibold text-primary">
             Revenu net total
           </span>
-          <span className="border-t border-gray-200 pt-2 text-right font-bold text-emerald-700">
+          <span className="border-t border-gray-200 pt-2 text-right font-bold text-primary">
             {formatEuros(o.netTotal)} EUR
           </span>
         </div>

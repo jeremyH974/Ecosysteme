@@ -16,8 +16,8 @@ export function ResultCard({ label, value, unit, interpretation, detail }: Resul
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-surface-card shadow-sm">
       {/* Resultat principal */}
-      <div className="border-b border-border/60 bg-accent-light px-5 py-5 sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-wider text-accent">{label}</p>
+      <div className="border-b border-border/60 bg-primary-light px-5 py-5 sm:px-6">
+        <p className="text-xs font-semibold uppercase tracking-wider text-primary">{label}</p>
         <p className="mt-2.5 flex items-baseline gap-2">
           <span className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">{value}</span>
           {unit && <span className="text-sm font-medium text-muted">{unit}</span>}
@@ -33,7 +33,7 @@ export function ResultCard({ label, value, unit, interpretation, detail }: Resul
             <button
               type="button"
               onClick={() => setDetailOpen((prev) => !prev)}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-accent transition-colors hover:text-accent-hover"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-primary transition-colors hover:text-primary-hover"
               aria-expanded={detailOpen}
             >
               <svg

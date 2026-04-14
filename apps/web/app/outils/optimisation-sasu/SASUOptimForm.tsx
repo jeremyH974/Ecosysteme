@@ -59,7 +59,7 @@ export function SASUOptimForm({ onSubmit }: SASUOptimFormProps) {
           id="nbParts"
           value={nbParts}
           onChange={(e) => setNbParts(e.target.value)}
-          className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-1"
+          className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
         >
           <option value="1">Celibataire (1 part)</option>
           <option value="1.5">Celibataire + 1 enfant (1.5 parts)</option>
@@ -85,7 +85,7 @@ export function SASUOptimForm({ onSubmit }: SASUOptimFormProps) {
 
       <button
         type="submit"
-        className="w-full rounded-md bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+        className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
       >
         Optimiser ma remuneration
       </button>

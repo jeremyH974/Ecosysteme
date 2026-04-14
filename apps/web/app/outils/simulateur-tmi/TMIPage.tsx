@@ -81,7 +81,7 @@ export function TMIPage() {
                 id="nbParts"
                 value={nbParts}
                 onChange={(e) => setNbParts(e.target.value)}
-                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-1"
+                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
               >
                 <option value="1">1 part (celibataire)</option>
                 <option value="1.5">1.5 parts (celibataire + 1 enfant)</option>
@@ -91,7 +91,7 @@ export function TMIPage() {
                 <option value="3.5">3.5 parts (couple + 3 enfants)</option>
               </select>
             </div>
-            <button type="submit" className="w-full rounded-md bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
+            <button type="submit" className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Calculer mon TMI
             </button>
           </form>

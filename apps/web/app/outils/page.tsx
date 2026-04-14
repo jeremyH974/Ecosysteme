@@ -37,7 +37,7 @@ export default function Page() {
         <nav className="mb-8 flex flex-wrap gap-2">
           {CATEGORIES.map((cat) => (
             <a key={cat} href={`#${cat.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-full border border-border bg-surface-card px-3 py-1 text-xs font-medium text-muted transition-colors hover:border-accent/30 hover:text-accent">
+              className="rounded-full border border-border bg-surface-card px-3 py-1 text-xs font-medium text-muted transition-colors hover:border-primary/30 hover:text-primary">
               {cat}
             </a>
           ))}
@@ -50,8 +50,8 @@ export default function Page() {
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {TOOLS.filter((t) => t.cat === cat).map((tool) => (
                   <Link key={tool.url} href={tool.url}
-                    className="group rounded-xl border border-border bg-surface-card p-4 transition-all hover:border-accent/30 hover:shadow-sm">
-                    <p className="text-sm font-semibold text-foreground group-hover:text-accent">{tool.name}</p>
+                    className="group rounded-xl border border-border bg-surface-card p-4 transition-all hover:border-primary/30 hover:shadow-sm">
+                    <p className="text-sm font-semibold text-foreground group-hover:text-primary">{tool.name}</p>
                     <p className="mt-1 text-xs text-muted">{tool.desc}</p>
                   </Link>
                 ))}

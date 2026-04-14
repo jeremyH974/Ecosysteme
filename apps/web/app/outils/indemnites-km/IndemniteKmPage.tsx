@@ -91,7 +91,7 @@ export function IndemniteKmPage() {
                 id="puissanceFiscale"
                 value={puissanceFiscale}
                 onChange={(e) => setPuissanceFiscale(e.target.value)}
-                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-1"
+                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
               >
                 <option value="3">3 CV</option>
                 <option value="4">4 CV</option>
@@ -100,7 +100,7 @@ export function IndemniteKmPage() {
                 <option value="7+">7 CV et plus</option>
               </select>
             </div>
-            <button type="submit" className="w-full rounded-md bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
+            <button type="submit" className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Calculer mes indemnites
             </button>
           </form>
@@ -126,8 +126,8 @@ export function IndemniteKmPage() {
                       <span className="text-gray-500">Puissance fiscale</span><span className="text-right font-medium">{result.detail.puissanceFiscale} CV</span>
                       <span className="text-gray-500">Tranche</span><span className="text-right font-medium">{result.detail.tranche}</span>
                       <span className="text-gray-500">Formule</span><span className="text-right font-medium">{result.detail.formule}</span>
-                      <span className="border-t border-gray-200 pt-1 font-bold text-emerald-700">Montant mensuel</span>
-                      <span className="border-t border-gray-200 pt-1 text-right font-bold text-emerald-700">{fmt(result.montantMensuel)} EUR</span>
+                      <span className="border-t border-gray-200 pt-1 font-bold text-primary">Montant mensuel</span>
+                      <span className="border-t border-gray-200 pt-1 text-right font-bold text-primary">{fmt(result.montantMensuel)} EUR</span>
                     </div>
                   }
                 />

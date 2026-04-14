@@ -75,8 +75,8 @@ export function SimuBrutNetResult({ result, salaireBrut }: SimuBrutNetResultProp
               {formatEuros(result.totalCotisationsSalariales)} EUR
             </span>
 
-            <span className="font-medium text-emerald-700">Salaire net</span>
-            <span className="text-right font-bold text-emerald-700">
+            <span className="font-medium text-primary">Salaire net</span>
+            <span className="text-right font-bold text-primary">
               {formatEuros(result.salaireNetAvantImpot)} EUR
             </span>
           </div>

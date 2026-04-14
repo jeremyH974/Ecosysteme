@@ -85,7 +85,7 @@ export function RuptureForm({ onSubmit }: RuptureFormProps) {
                 "focus:outline-none focus:ring-2 focus:ring-offset-1",
                 errors.ancienneteAnnees
                   ? "border-red-300 focus:border-red-500 focus:ring-red-500"
-                  : "border-gray-300 focus:border-emerald-500 focus:ring-emerald-500",
+                  : "border-gray-300 focus:border-primary focus:ring-primary",
               ].join(" ")}
               aria-label="Annees d'anciennete"
             />
@@ -96,7 +96,7 @@ export function RuptureForm({ onSubmit }: RuptureFormProps) {
             <select
               value={ancienneteMois}
               onChange={(e) => setAncienneteMois(e.target.value)}
-              className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-1"
+              className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
               aria-label="Mois d'anciennete"
             >
               {Array.from({ length: 12 }, (_, i) => (
@@ -122,7 +122,7 @@ export function RuptureForm({ onSubmit }: RuptureFormProps) {
 
       <button
         type="submit"
-        className="w-full rounded-md bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+        className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
       >
         Calculer mon indemnite
       </button>

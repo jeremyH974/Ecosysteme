@@ -113,7 +113,7 @@ export function ComparateurStatutsPage() {
                 id="activite"
                 value={activite}
                 onChange={(e) => setActivite(e.target.value)}
-                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-1"
+                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
               >
                 <option value="prestation_bnc">Prestation de service BNC (liberal)</option>
                 <option value="prestation_bic">Prestation de service BIC (artisan/commercial)</option>
@@ -132,7 +132,7 @@ export function ComparateurStatutsPage() {
               min={0}
               step="any"
             />
-            <button type="submit" className="w-full rounded-md bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
+            <button type="submit" className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Comparer les statuts
             </button>
           </form>
@@ -174,10 +174,10 @@ export function ComparateurStatutsPage() {
                               <td className="px-3 py-2 text-right font-medium">{fmt(result.autoEntrepreneur.impots)} EUR</td>
                               <td className="px-3 py-2 text-right font-medium">{fmt(result.sasu.impots)} EUR</td>
                             </tr>
-                            <tr className="bg-emerald-50 font-bold">
-                              <td className="px-3 py-2 text-emerald-800">Revenu net</td>
-                              <td className="px-3 py-2 text-right text-emerald-800">{fmt(result.autoEntrepreneur.revenuNet)} EUR</td>
-                              <td className="px-3 py-2 text-right text-emerald-800">{fmt(result.sasu.revenuNet)} EUR</td>
+                            <tr className="bg-primary-light font-bold">
+                              <td className="px-3 py-2 text-primary-hover">Revenu net</td>
+                              <td className="px-3 py-2 text-right text-primary-hover">{fmt(result.autoEntrepreneur.revenuNet)} EUR</td>
+                              <td className="px-3 py-2 text-right text-primary-hover">{fmt(result.sasu.revenuNet)} EUR</td>
                             </tr>
                             <tr>
                               <td className="px-3 py-2 text-gray-500">Protection sociale</td>

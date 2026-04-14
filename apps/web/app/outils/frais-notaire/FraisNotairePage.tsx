@@ -59,17 +59,17 @@ export function FraisNotairePage() {
               <div className="mt-1.5 flex gap-4">
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input type="radio" name="type" checked={type === "ancien"} onChange={() => setType("ancien")}
-                    className="h-4 w-4 border-gray-300 text-emerald-600 focus:ring-emerald-500" />
+                    className="h-4 w-4 border-gray-300 text-primary focus:ring-primary" />
                   <span className="text-sm text-gray-700">Ancien</span>
                 </label>
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input type="radio" name="type" checked={type === "neuf"} onChange={() => setType("neuf")}
-                    className="h-4 w-4 border-gray-300 text-emerald-600 focus:ring-emerald-500" />
+                    className="h-4 w-4 border-gray-300 text-primary focus:ring-primary" />
                   <span className="text-sm text-gray-700">Neuf</span>
                 </label>
               </div>
             </div>
-            <button type="submit" className="w-full rounded-md bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
+            <button type="submit" className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Calculer les frais
             </button>
           </form>
