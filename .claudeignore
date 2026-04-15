@@ -1,0 +1,21 @@
+# Build artifacts
+node_modules/
+.next/
+dist/
+.turbo/
+*.tsbuildinfo
+
+# Lock files
+pnpm-lock.yaml
+
+# Generated files
+graphify-out/
+.graphify_*.json
+.graphify_*.txt
+
+# Large compiled assets
+apps/web/public/*.png
+apps/web/public/google*.html
+
+# Test coverage
+coverage/
